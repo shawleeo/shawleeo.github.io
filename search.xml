@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>MAC下Hexo+Github博客搭建教程</title>
+    <url>/2021/09/26/MAC%E4%B8%8BHexo+Github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>参考1:<a href="https://segmentfault.com/a/1190000038373795">https://segmentfault.com/a/1190000038373795</a></p>
+<p>参考2:<a href="https://godweiyang.com/2018/04/13/hexo-blog/">https://godweiyang.com/2018/04/13/hexo-blog/</a></p>
+<p>开始之前需要在电脑上安装好Git和node.js，Mac上可以使用Homebrew命令行工具来安装Git和node.js</p>
+<p><strong>1、安装Homebrew</strong></p>
+<p>在命令行工具输入以下命令，如果已经安装过Homebrew可以忽略</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2、Homebrew 安装 node.js</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+
+
+<p>安装后可以使用命令来检查是否安装成功</p>
+<p>检查node</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">v12.14.1</span><br></pre></td></tr></table></figure>
+
+
+<p>检查npm是否安装成功，npm是node.js的包管理工具，用它来安装hexo</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p>输出结果:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">6.13.4</span><br></pre></td></tr></table></figure>
+
+<p><strong>3、Homebrew 安装git</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+
+<p>检查git是否安装成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git -v</span><br></pre></td></tr></table></figure>
+
+<p>输出结果:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git version 2.24.3 (Apple Git-128)</span><br></pre></td></tr></table></figure>
+
+<p><strong>4、使用 npm 安装 hexo</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，在Desktop创建一个blog文件夹，在该文件夹下初始化我们的博客</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/Desktop &amp;&amp; mkdir blog &amp;&amp; cd blog</span><br></pre></td></tr></table></figure>
+
+
+<p>在该文件件目录下执行博客初始化操作</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 会下载一些node.js的依赖文件</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p>初始化成功后，在blog目录下执行预览操作</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>当看到如下输出就可以预览我们创建的博客了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+
+<p>预览效果如下</p>
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/1.jpeg" alt="image"></p>
+<p><strong>5、配置客户端git 添加SSH Key到github</strong></p>
+<p>如果已经配置过，该步骤可以忽略<br>在命令行输入配置用户名和账号的命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>其中 username 是你的用户名，<a href="mailto:&#101;&#x6d;&#97;&#x69;&#108;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#101;&#x6d;&#97;&#x69;&#108;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>如果已经创建过会出现 Overwrite (y/n)? n提示可以输入 n，如果没有创建过会要求我们输入密码，然后一路回车下去就行，执行完成后会在~/.ssh/id_rsa.pub目录下生成 需要使用的 key。</p>
+<p>可以使用命令行输出key并复制</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>或者可以找到这个文件并打开它，复制里面的内容。</p>
+<p>登录github账号-》找到 setting-》选择所创建的项目-》Deploy keys-》将公钥信息粘贴上去</p>
+<p><strong>6、注册github账号</strong></p>
+<p>打开<a href="https://github.com/%EF%BC%8C%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%A6%82%E4%B8%8B%E6%89%80%E7%A4%BA%EF%BC%9A">https://github.com/，新建一个项目，如下所示：</a><br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/2.png" alt="image"></p>
+<p>然后如下图所示，输入自己的项目名字，后面一定要加.github.io后缀，README初始化也要勾上。名称一定要和你的github名字完全一样，比如你github名字叫abc，那么仓库名字一定要是abc.github.io。</p>
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/3.png" alt="image"></p>
+<p>这里要特别注意，后面有用<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/4.png" alt="image"></p>
+<p>然后项目就建成了，点击Settings，向下拉到最后有个GitHub Pages，点击Choose a theme选择一个主题。然后等一会儿，再回到GitHub Pages，会变成下面这样：</p>
+<p>++【请一定要注意这里的source,这里的source才会在page中显示出来】<br>++<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5.png" alt="image"></p>
+<p><strong>7、本地博客关联到Github主页</strong><br>然后命令行切换到本地blog目录下 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/Desktop/blog</span><br></pre></td></tr></table></figure>
+
+<p>执行命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>然后开始修改配置文件 ~/Desktop/blog/_config.yml<br>修改 deploy部分为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:username/username.github.io.git</span><br><span class="line">  branch: gh-pages</span><br></pre></td></tr></table></figure>
+<p>branch看上图的source是什么就写什么</p>
+<p>然后就可以把博客push到github了<br>在命令行执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#生成我们想要的博客文件</span><br><span class="line">hexo g</span><br><span class="line">#将本地的博客文件push到github</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>hexo d 执行成功后，就可以查看我们的Blog了</p>
+<p><strong>8、开始写博客</strong></p>
+<p>在命令行执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new firstPage.md</span><br></pre></td></tr></table></figure>
+<p>会在 ~/Desktop/blog/source/_post目录下生成 firstPage.md 打开这个文件就可以开心的写博客了<br>写完后重新执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>就可以同步博客到github</p>
+<p>附 hexo常用命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo n &quot;博客名称&quot;  =&gt; hexo new &quot;博客名称&quot;   #这两个都是创建新文章，前者是简写模式</span><br><span class="line">hexo p  =&gt; hexo publish</span><br><span class="line">hexo g  =&gt; hexo generate  #生成</span><br><span class="line">hexo s  =&gt; hexo server  #启动服务预览</span><br><span class="line">hexo d  =&gt; hexo deploy  #部署  </span><br><span class="line"></span><br><span class="line">hexo server   #Hexo 会监视文件变动并自动更新，无须重启服务器。</span><br><span class="line">hexo server -s   #静态模式</span><br><span class="line">hexo server -p 5000   #更改端口</span><br><span class="line">hexo server -i 192.168.1.1   #自定义IP</span><br><span class="line">hexo clean   #清除缓存，网页正常情况下可以忽略此条命令</span><br><span class="line">hexo g   #生成静态网页</span><br><span class="line">hexo d   #开始部署</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>计算机技能</tag>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/09/25/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>firstPage.md</title>
+    <url>/2021/09/25/firstPage-md/</url>
+    <content><![CDATA[<p>shawleeo’s first page</p>
+]]></content>
+      <tags>
+        <tag>ceshi</tag>
+      </tags>
+  </entry>
+</search>
