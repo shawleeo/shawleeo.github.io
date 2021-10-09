@@ -59,7 +59,7 @@
 <p>如果已经配置过，该步骤可以忽略<br>在命令行输入配置用户名和账号的命令</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
-<p>其中 username 是你的用户名，<a href="mailto:&#101;&#x6d;&#97;&#x69;&#108;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#101;&#x6d;&#97;&#x69;&#108;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
+<p>其中 username 是你的用户名，<a href="mailto:&#x65;&#109;&#x61;&#x69;&#x6c;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;">&#x65;&#109;&#x61;&#x69;&#x6c;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
 <p>如果已经创建过会出现 Overwrite (y/n)? n提示可以输入 n，如果没有创建过会要求我们输入密码，然后一路回车下去就行，执行完成后会在~/.ssh/id_rsa.pub目录下生成 需要使用的 key。</p>
@@ -101,6 +101,15 @@
       </tags>
   </entry>
   <entry>
+    <title>firstPage.md</title>
+    <url>/2021/09/25/firstPage-md/</url>
+    <content><![CDATA[<p>shawleeo’s first page</p>
+]]></content>
+      <tags>
+        <tag>ceshi</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2021/09/25/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -117,14 +126,5 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>firstPage.md</title>
-    <url>/2021/09/25/firstPage-md/</url>
-    <content><![CDATA[<p>shawleeo’s first page</p>
-]]></content>
-      <tags>
-        <tag>ceshi</tag>
-      </tags>
   </entry>
 </search>
