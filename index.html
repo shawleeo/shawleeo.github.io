@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 <meta name="description" content="Die Luft der Freiheit weht.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Blog">
@@ -220,20 +220,6 @@
     </span>
 
   
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/09/26/MAC%E4%B8%8BHexo+Github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/26/MAC下Hexo+Github博客搭建教程/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
 </div>
 
         </div>
@@ -299,7 +285,7 @@
 <p>如果已经配置过，该步骤可以忽略<br>在命令行输入配置用户名和账号的命令</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
-<p>其中 username 是你的用户名，<a href="mailto:&#x65;&#109;&#x61;&#x69;&#x6c;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;">&#x65;&#109;&#x61;&#x69;&#x6c;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
+<p>其中 username 是你的用户名，<a href="mailto:&#x65;&#109;&#x61;&#x69;&#108;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#x63;&#111;&#109;">&#x65;&#109;&#x61;&#x69;&#108;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#x63;&#111;&#109;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
 <p>如果已经创建过会出现 Overwrite (y/n)? n提示可以输入 n，如果没有创建过会要求我们输入密码，然后一路回车下去就行，执行完成后会在~/.ssh/id_rsa.pub目录下生成 需要使用的 key。</p>
@@ -389,20 +375,6 @@
     </span>
 
   
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/09/25/firstPage-md/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/25/firstPage-md/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
 </div>
 
         </div>
@@ -466,20 +438,6 @@
       <time title="Created: 2021-09-25 22:41:32" itemprop="dateCreated datePublished" datetime="2021-09-25T22:41:32+08:00">2021-09-25</time>
     </span>
 
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/09/25/hello-world/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/25/hello-world/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
   
 </div>
 
@@ -560,8 +518,10 @@
 
 
 
-<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"shawleeo","count":true,"i18n":{"disqus":"disqus"}}</script>
-<script src="/js/third-party/comments/disqus.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqusjs.css" integrity="sha256-GxdCIOyfxQ1OBfS99qAIJDoGK1ADuBsxhMTqXG82fAY=" crossorigin="anonymous">
+
+<script class="next-config" data-name="disqusjs" type="application/json">{"enable":true,"api":"https://disqus.com/api/","apikey":"HO3fRx2te8FfT5ycOMiUoxZsVbXDlDZ3b5jLUe2Fm24rVobdLWhGEAmuGsh9UU1c","shortname":"shawleeo","js":{"url":"https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqus.js","integrity":"sha256-LVaMHPQ2zLqOc5rXSAfr4d1PIkEGNLyyUTDNPZmTtUw="}}</script>
+<script src="/js/third-party/comments/disqusjs.js"></script>
 
 </body>
 </html>
