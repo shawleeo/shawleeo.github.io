@@ -21,25 +21,37 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Die Luft der Freiheit weht.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http://example.com/index.html">
+<meta name="description" content="PS：想问一下oracle cloud shell咋用？？会用的请评论 PS：oracle cloud的官方文档写的不咋地，有些错误，请小心 PS：下述脚本已经github备份，如果wget链接失效可以评论 —正文开始— 注册Oracle Cloud就不赘述了，最好手机开4G注册。 第一步，开一台云服务器实例，平台映像我选的是CentOS7。第二步，本机生成ssh公钥私钥（见之前文章），并上传公钥">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle Cloud 折腾记录">
+<meta property="og:url" content="http://example.com/2021/11/06/Oracle%20Cloud%20%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="Die Luft der Freiheit weht.">
+<meta property="og:description" content="PS：想问一下oracle cloud shell咋用？？会用的请评论 PS：oracle cloud的官方文档写的不咋地，有些错误，请小心 PS：下述脚本已经github备份，如果wget链接失效可以评论 —正文开始— 注册Oracle Cloud就不赘述了，最好手机开4G注册。 第一步，开一台云服务器实例，平台映像我选的是CentOS7。第二步，本机生成ssh公钥私钥（见之前文章），并上传公钥">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/6.jpeg">
+<meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7.jpeg">
+<meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/8.png">
+<meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/9.png">
+<meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/10.jpeg">
+<meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/12.jpeg">
+<meta property="article:published_time" content="2021-11-06T09:53:33.000Z">
+<meta property="article:modified_time" content="2021-11-06T10:35:43.142Z">
 <meta property="article:author" content="Shaw Lee">
+<meta property="article:tag" content="计算机技能">
+<meta property="article:tag" content="云服务器">
+<meta property="article:tag" content="BREAK">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/6.jpeg">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/11/06/Oracle%20Cloud%20%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2021/11/06/Oracle%20Cloud%20%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/","path":"2021/11/06/Oracle Cloud 折腾记录/","title":"Oracle Cloud 折腾记录"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Blog</title>
+<title>Oracle Cloud 折腾记录 | Blog</title>
   
 
 
@@ -131,7 +143,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -144,6 +156,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%8C%E5%BC%80%E4%B8%80%E5%8F%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E4%BE%8B%EF%BC%8C%E5%B9%B3%E5%8F%B0%E6%98%A0%E5%83%8F%E6%88%91%E9%80%89%E7%9A%84%E6%98%AFCentOS7%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">第一步，开一台云服务器实例，平台映像我选的是CentOS7。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%8C%E6%9C%AC%E6%9C%BA%E7%94%9F%E6%88%90ssh%E5%85%AC%E9%92%A5%E7%A7%81%E9%92%A5%EF%BC%88%E8%A7%81%E4%B9%8B%E5%89%8D%E6%96%87%E7%AB%A0%EF%BC%89%EF%BC%8C%E5%B9%B6%E4%B8%8A%E4%BC%A0%E5%85%AC%E9%92%A5%E3%80%82%E5%BC%95%E5%AF%BC%E5%8D%B7%E5%A4%A7%E5%B0%8F%E4%B8%8D%E7%94%A8%E5%8F%98%EF%BC%8C%E4%BD%86%E6%98%AF%E5%90%88%E8%AE%A1%E8%B6%85100G%E4%BC%9A%E6%94%B6%E8%B4%B9%EF%BC%8C%E6%89%80%E4%BB%A5%E5%88%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%B6%E4%B8%80%E5%AE%9A%E8%A6%81%E8%AE%B0%E5%BE%97%E5%88%A0%E5%8E%BB%E5%BC%95%E5%AF%BC%E5%8D%B7%EF%BC%8C%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E6%98%AF%E5%90%A6%E9%80%89%E6%8B%A9%E5%8A%A0%E5%AF%86%E7%9C%8B%E4%B8%AA%E4%BA%BA%E9%9C%80%E6%B1%82%E3%80%82"><span class="nav-number">2.</span> <span class="nav-text">第二步，本机生成ssh公钥私钥（见之前文章），并上传公钥。引导卷大小不用变，但是合计超100G会收费，所以删服务器时一定要记得删去引导卷，数据传输是否选择加密看个人需求。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%8C%E5%88%A9%E7%94%A8%E8%84%9A%E6%9C%AC%E5%BC%80%E5%90%AFroot%E7%99%BB%E9%99%86%E3%80%82"><span class="nav-number">3.</span> <span class="nav-text">第三步，利用脚本开启root登陆。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%EF%BC%9A%E5%A6%82%E5%AF%B9%E7%94%B2%E9%AA%A8%E6%96%87%E5%BF%83%E5%AD%98%E7%96%91%E8%99%91%EF%BC%8C%E5%8F%AF%E5%8E%BB%E6%8E%89%E5%8B%BE%E9%80%89cloud-agent%E7%9A%84%E6%89%93%E5%8B%BE%E9%80%89%E9%A1%B9%EF%BC%8C%E8%BF%99%E9%87%8C%E9%80%89%E7%9D%80%E5%90%8E%E9%9D%A2%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%8D%B8%E6%8E%89%E3%80%82"><span class="nav-number">4.</span> <span class="nav-text">第四步：如对甲骨文心存疑虑，可去掉勾选cloud-agent的打勾选项，这里选着后面也可以卸掉。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E6%AD%A5%EF%BC%9Aroot%E7%99%BB%E9%99%86"><span class="nav-number">5.</span> <span class="nav-text">第五步：root登陆</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%85%AD%E6%AD%A5%EF%BC%9A%E5%8D%B8%E8%BD%BD%E7%9B%B8%E5%85%B3%E7%A8%8B%E5%BA%8F"><span class="nav-number">6.</span> <span class="nav-text">第六步：卸载相关程序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pcbind"><span class="nav-number">6.1.</span> <span class="nav-text">pcbind</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oracle-cloud-agent"><span class="nav-number">6.2.</span> <span class="nav-text">oracle-cloud-agent</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%83%E6%AD%A5%EF%BC%9AOracle-Cloud-VPS-CentOS-7-%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%B9%B6%E5%BC%80%E5%90%AF%E5%AE%98%E6%96%B9%E5%8E%9F%E7%89%88Bottleneck-Bandwidth-and-RTT"><span class="nav-number">7.</span> <span class="nav-text">第七步：Oracle Cloud VPS CentOS 7 升级内核并开启官方原版Bottleneck Bandwidth and RTT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%85%AB%E6%AD%A5%EF%BC%9A%E5%BB%BA%E7%AB%99%E7%AD%89%E7%AD%89%E6%93%8D%E4%BD%9C%EF%BC%8C%E6%8C%89%E7%85%A7%E4%B8%AA%E4%BA%BA%E9%9C%80%E6%B1%82%E8%BF%9B%E8%A1%8C%EF%BC%88%E4%BD%A0%E6%87%82%E7%9A%84%EF%BC%89"><span class="nav-number">8.</span> <span class="nav-text">第八步：建站等等操作，按照个人需求进行（你懂的）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B9%9D%E6%AD%A5%EF%BC%9A%E9%98%B2%E7%81%AB%E5%A2%99%E8%A7%84%E5%88%99"><span class="nav-number">9.</span> <span class="nav-text">第九步：防火墙规则</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -195,16 +208,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/06/Oracle%20Cloud%20%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -217,9 +231,9 @@
       <meta itemprop="name" content="Blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/11/06/Oracle%20Cloud%20%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">Oracle Cloud 折腾记录</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Oracle Cloud 折腾记录
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -260,7 +274,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>PS：想问一下oracle cloud shell咋用？？会用的请评论</p>
+        <p>PS：想问一下oracle cloud shell咋用？？会用的请评论</p>
 <p>PS：oracle cloud的官方文档写的不咋地，有些错误，请小心</p>
 <p>PS：下述脚本已经github备份，如果wget链接失效可以评论</p>
 <p>—正文开始—</p>
@@ -324,7 +338,6 @@
 <p>由于目前本人需求只需要打开一个端口，所以我只开一个端口和ssh的22端口，其他2个官方自带规则没有动，对于我的需求来说，已经够用了。</p>
 <p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/12.jpeg" alt="image"></p>
 
-      
     </div>
 
     
@@ -332,280 +345,23 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E8%83%BD/" rel="tag"># 计算机技能</a>
+              <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag"># 云服务器</a>
+              <a href="/tags/BREAK/" rel="tag"># BREAK</a>
+          </div>
 
+        
 
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/31/%E8%BD%A6%E4%BD%8D%E7%A7%81%E4%B8%8B%E8%BD%AC%E8%AE%A9%E6%B3%95%E5%BE%8B%E9%A3%8E%E9%99%A9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Shaw Lee">
-      <meta itemprop="description" content="Die Luft der Freiheit weht.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/10/31/%E8%BD%A6%E4%BD%8D%E7%A7%81%E4%B8%8B%E8%BD%AC%E8%AE%A9%E6%B3%95%E5%BE%8B%E9%A3%8E%E9%99%A9/" class="post-title-link" itemprop="url">车位私下转让法律风险</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-10-31 14:00:00 / Modified: 14:15:32" itemprop="dateCreated datePublished" datetime="2021-10-31T14:00:00+08:00">2021-10-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Law/" itemprop="url" rel="index"><span itemprop="name">Law</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Law/Chinese-law/" itemprop="url" rel="index"><span itemprop="name">Chinese law</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Legal-practice/" itemprop="url" rel="index"><span itemprop="name">Legal practice</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>最近有一个朋友向我咨询了一个问题，他想在小区里买一个车位，经过了解发现车位过户需要向物业缴纳3万元过户手续费，所以他与卖方合计，不通知物业，双方私下交易订立合同，这样做是否有法律风险呢？</p>
-<p>我认为认为如果不和物业这边打招呼是有风险的，但是物业3万的过户手续费的收取也是没有任何法律依据的。（政府房产管理部门没有出具产权登记证书，何来过户费用）</p>
-<p><strong>首先不和物业打招呼存在的风险有以下几条：</strong></p>
-<p>1.目前的车位所有人可以在把车位卖给你后，再将车位卖给其他人。</p>
-<p>2.如果目前的车位所有人之前将房产和车位一起抵押，资不抵债后会被法院查封。</p>
-<hr>
-<p>如果出现上述情况，你如果要维护自己的权益就必须进行案外人执行异议，很麻烦。</p>
-<p>所以在物业公司处办理了其公司级别的相应手续相当于对自己购买的车位多了一层保护。</p>
-<p>建议和物业商议过户费用问题，3万肯定是离谱了，可以找找人商量解决一下。总之一定要让物业知道你未来购买后拥有这个车位。</p>
-<p><strong>注意1:</strong></p>
-<p>目前的车位所有人可以在把车位卖给你后，再将车位卖给其他人。——我和他签一个买卖合同可以避免此风险吗？或者去公证处做个公正。——可以在买卖合同上添加违约条款，比如“合同签订后，甲方（车位目前所有者）不得再将此车位（写上车位号码）以任意形式处置，包括但不限于出卖、出租给其他任意第三人，否则乙方有权单方面解除本合同，甲方应返还乙方支付的车位购买款项，同时甲方应支付乙方违约金XXX元，如乙方因此遭受的损失超过该违约金数额的，甲方还应将差额部分支付给乙方”。</p>
-<p>对于公证，我认为意义不大，公证后的合同确实可以当成证据，但是所花的时间与精力过大。</p>
-<p><strong>注意2:</strong></p>
-<p>如果目前的车位所有人之前将房产和车位一起抵押，资不抵债后会被法院查封。——车位没有产权，只有使用权（合同上也是使用权出售协议），可以用于抵押吗？——抵押只是一种情况，只要当前车位所有者被列为被执行人后，法院就会查封他的一切资产，你已经支付了款项，但是没有相关登记（物业公司的），那么车位就有风险。</p>
-<p><strong>注意3:</strong></p>
-<p>买卖车位后把目前的车位所有人与开发商签订的合同原件收回。</p>
-<p><strong>注意4:</strong></p>
-<p>建议两条腿走路，一方面在与当前车位所有人的买卖合同中加入违约条款，另一方面和物业公司沟通，3万元的过户费用如果没有物价局的相关规定，那么就不是师出有名。</p>
-<p><strong>注意5:</strong></p>
-<p>建议再增加一个违约条款“甲方保证，甲方对该车位享有的权利不存在任何瑕疵，乙方购买该车位后不受其他任意第三方权利的追索。否则，甲方应向乙方支付 元违约金，如因此给乙方造成的损失高于违约金数额的，甲方还应将差额部分支付给乙方”，这样可以确保他卖给你的车位在卖给你之前不存在抵押等情况。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/09/MAC%E4%B8%8BHexo-Github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E5%AD%A6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Shaw Lee">
-      <meta itemprop="description" content="Die Luft der Freiheit weht.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/10/09/MAC%E4%B8%8BHexo-Github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E5%AD%A6/" class="post-title-link" itemprop="url">MAC下Hexo+Github博客搭建教学</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-10-09 19:53:33" itemprop="dateCreated datePublished" datetime="2021-10-09T19:53:33+08:00">2021-10-09</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-10-31 14:16:24" itemprop="dateModified" datetime="2021-10-31T14:16:24+08:00">2021-10-31</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer/Building-Website/" itemprop="url" rel="index"><span itemprop="name">Building Website</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer/Building-Website/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>参考1:<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000038373795">https://segmentfault.com/a/1190000038373795</a></p>
-<p>参考2:<a target="_blank" rel="noopener" href="https://godweiyang.com/2018/04/13/hexo-blog/">https://godweiyang.com/2018/04/13/hexo-blog/</a></p>
-<p>开始之前需要在电脑上安装好Git和node.js，Mac上可以使用Homebrew命令行工具来安装Git和node.js</p>
-<h1 id="安装Homebrew"><a href="#安装Homebrew" class="headerlink" title="安装Homebrew"></a>安装Homebrew</h1><p>在命令行工具输入以下命令，如果已经安装过Homebrew可以忽略</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure>
-
-<h1 id="Homebrew-安装-node-js"><a href="#Homebrew-安装-node-js" class="headerlink" title="Homebrew 安装 node.js"></a>Homebrew 安装 node.js</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
-
-
-<p>安装后可以使用命令来检查是否安装成功</p>
-<p>检查node</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v12.14.1</span><br></pre></td></tr></table></figure>
-
-
-<p>检查npm是否安装成功，npm是node.js的包管理工具，用它来安装hexo</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
-<p>输出结果:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6.13.4</span><br></pre></td></tr></table></figure>
-
-<h1 id="Homebrew-安装git"><a href="#Homebrew-安装git" class="headerlink" title="Homebrew 安装git"></a>Homebrew 安装git</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
-
-<p>检查git是否安装成功</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git -v</span><br></pre></td></tr></table></figure>
-
-<p>输出结果:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git version 2.24.3 (Apple Git-128)</span><br></pre></td></tr></table></figure>
-
-<h1 id="使用-npm-安装-hexo"><a href="#使用-npm-安装-hexo" class="headerlink" title="使用 npm 安装 hexo"></a>使用 npm 安装 hexo</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>安装完成后，在Desktop创建一个blog文件夹，在该文件夹下初始化我们的博客</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Desktop &amp;&amp; mkdir blog &amp;&amp; cd blog</span><br></pre></td></tr></table></figure>
-
-
-<p>在该文件件目录下执行博客初始化操作</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 会下载一些node.js的依赖文件</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
-<p>初始化成功后，在blog目录下执行预览操作</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>当看到如下输出就可以预览我们创建的博客了</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-
-<p>预览效果如下</p>
-<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/1.jpeg" alt="image"></p>
-<h1 id="配置客户端git-添加SSH-Key到github"><a href="#配置客户端git-添加SSH-Key到github" class="headerlink" title="配置客户端git 添加SSH Key到github"></a>配置客户端git 添加SSH Key到github</h1><p>如果已经配置过，该步骤可以忽略<br>在命令行输入配置用户名和账号的命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
-
-<p>其中 username 是你的用户名，<a href="mailto:&#101;&#x6d;&#x61;&#105;&#x6c;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#101;&#x6d;&#x61;&#105;&#x6c;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
-
-<p>如果已经创建过会出现 Overwrite (y/n)? n提示可以输入 n，如果没有创建过会要求我们输入密码，然后一路回车下去就行，执行完成后会在~/.ssh/id_rsa.pub目录下生成 需要使用的 key。</p>
-<p>可以使用命令行输出key并复制</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-
-<p>或者可以找到这个文件并打开它，复制里面的内容。</p>
-<p>登录github账号-》找到 setting-》选择所创建的项目-》Deploy keys-》将公钥信息粘贴上去</p>
-<h1 id="注册github账号"><a href="#注册github账号" class="headerlink" title="注册github账号"></a>注册github账号</h1><p>打开<a target="_blank" rel="noopener" href="https://github.com/%EF%BC%8C%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%A6%82%E4%B8%8B%E6%89%80%E7%A4%BA%EF%BC%9A">https://github.com/，新建一个项目，如下所示：</a><br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/2.png" alt="image"></p>
-<p>然后如下图所示，输入自己的项目名字，后面一定要加.github.io后缀，README初始化也要勾上。名称一定要和你的github名字完全一样，比如你github名字叫abc，那么仓库名字一定要是abc.github.io。</p>
-<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/3.png" alt="image"></p>
-<p>这里要特别注意，后面有用<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/4.png" alt="image"></p>
-<p>然后项目就建成了，点击Settings，向下拉到最后有个GitHub Pages，点击Choose a theme选择一个主题。然后等一会儿，再回到GitHub Pages，会变成下面这样：</p>
-<p>++【请一定要注意这里的source,这里的source才会在page中显示出来】<br>++<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5.png" alt="image"></p>
-<h1 id="本地博客关联到Github主页"><a href="#本地博客关联到Github主页" class="headerlink" title="本地博客关联到Github主页"></a>本地博客关联到Github主页</h1><p>然后命令行切换到本地blog目录下 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Desktop/blog</span><br></pre></td></tr></table></figure>
-
-<p>执行命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>然后开始修改配置文件 ~/Desktop/blog/_config.yml<br>修改 deploy部分为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:username/username.github.io.git</span><br><span class="line">  branch: gh-pages</span><br></pre></td></tr></table></figure>
-<p>branch看上图的source是什么就写什么</p>
-<p>然后就可以把博客push到github了<br>在命令行执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#生成我们想要的博客文件</span><br><span class="line">hexo g</span><br><span class="line">#将本地的博客文件push到github</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>hexo d 执行成功后，就可以查看我们的Blog了</p>
-<h1 id="开始写博客"><a href="#开始写博客" class="headerlink" title="开始写博客"></a>开始写博客</h1><p>在命令行执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new firstPage.md</span><br></pre></td></tr></table></figure>
-<p>会在 ~/Desktop/blog/source/_post目录下生成 firstPage.md 打开这个文件就可以开心的写博客了<br>写完后重新执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>就可以同步博客到github</p>
-<p>附 hexo常用命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;博客名称&quot;  =&gt; hexo new &quot;博客名称&quot;   #这两个都是创建新文章，前者是简写模式</span><br><span class="line">hexo p  =&gt; hexo publish</span><br><span class="line">hexo g  =&gt; hexo generate  #生成</span><br><span class="line">hexo s  =&gt; hexo server  #启动服务预览</span><br><span class="line">hexo d  =&gt; hexo deploy  #部署  </span><br><span class="line"></span><br><span class="line">hexo server   #Hexo 会监视文件变动并自动更新，无须重启服务器。</span><br><span class="line">hexo server -s   #静态模式</span><br><span class="line">hexo server -p 5000   #更改端口</span><br><span class="line">hexo server -i 192.168.1.1   #自定义IP</span><br><span class="line">hexo clean   #清除缓存，网页正常情况下可以忽略此条命令</span><br><span class="line">hexo g   #生成静态网页</span><br><span class="line">hexo d   #开始部署</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/10/31/%E8%BD%A6%E4%BD%8D%E7%A7%81%E4%B8%8B%E8%BD%AC%E8%AE%A9%E6%B3%95%E5%BE%8B%E9%A3%8E%E9%99%A9/" rel="prev" title="车位私下转让法律风险">
+                  <i class="fa fa-chevron-left"></i> 车位私下转让法律风险
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -614,6 +370,12 @@
 
 
 
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
 </div>
   </main>
 
