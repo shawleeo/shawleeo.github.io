@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Excel 工作表密码保护的解除方法</title>
+    <url>/2021/11/19/Excel%20%E5%B7%A5%E4%BD%9C%E8%A1%A8%E5%AF%86%E7%A0%81%E4%BF%9D%E6%8A%A4%E7%9A%84%E8%A7%A3%E9%99%A4%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>PS:长密码不太好用<br>PS:克服的是”校阅”选项的”保护工作表”</p>
+<p>利用 VBA 巨集程式破解法</p>
+<p><em><strong>只适用2016版Excel及之前版本</strong></em></p>
+<p><strong>Excel 工作表密码保护的解除方法</strong></p>
+<p>当开启一个 Excel工作表，进入后要看工作表上的公式如何运作，才发现工作表受到密码保护，上网搜寻了一下破解方法，试过很多种方法都太麻烦，最后终于找到最简单的破解方法，借此分享，希望用的到的人不必再一一去试。</p>
+<p>Excel 工作表密码保护的解除方法</p>
+<p>利用 VBA 巨集程式破解法：</p>
+<p>1：打开该文件，切换到“检视”选项，点击“巨集”→“录制巨集”，出现“录制巨集”窗口，在“巨集名称”随意输入一名称(假设：ABC)，点击“确定”退出；</p>
+<p>2：再点击“巨集”→“检视巨集”，选择“巨集名称”下的“ABC”并点击右边的“编辑”，会自动打开“Microsoft Visual Basic”编辑器，用以下的内容完全替换右侧窗口中的所有编码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Sub  ABC( )</span><br><span class="line"></span><br><span class="line">   Dim i As Integer, j As Integer, k As Integer</span><br><span class="line">   Dim l As Integer, m As Integer, n As Integer</span><br><span class="line">   Dim i1 As Integer, i2 As Integer, i3 As Integer</span><br><span class="line">   Dim i4 As Integer, i5 As Integer, i6 As Integer</span><br><span class="line"></span><br><span class="line">   On Error Resume Next</span><br><span class="line"></span><br><span class="line">   For i = 65 To 66: For j = 65 To 66: For k = 65 To 66</span><br><span class="line">      For l = 65 To 66: For m = 65 To 66: For i1 = 65 To 66</span><br><span class="line">         For i2 = 65 To 66: For i3 = 65 To 66: For i4 = 65 To 66</span><br><span class="line">            For i5 = 65 To 66: For i6 = 65 To 66: For n = 32 To 126</span><br><span class="line">               ActiveSheet.Unprotect Chr(i) &amp; Chr(j) &amp; Chr(k) &amp; _</span><br><span class="line">               Chr(l) &amp; Chr(m) &amp; Chr(i1) &amp; Chr(i2) &amp; Chr(i3) &amp; _</span><br><span class="line">               Chr(i4) &amp; Chr(i5) &amp; Chr(i6) &amp; Chr(n)</span><br><span class="line"></span><br><span class="line">               If ActiveSheet.ProtectContents = False Then</span><br><span class="line">                  MsgBox &quot;One usable password is &quot; &amp; Chr(i) &amp; Chr(j) &amp; _</span><br><span class="line">                  Chr(k) &amp; Chr(l) &amp; Chr(m) &amp; Chr(i1) &amp; Chr(i2) &amp; _</span><br><span class="line">                  Chr(i3) &amp; Chr(i4) &amp; Chr(i5) &amp; Chr(i6) &amp; Chr(n)</span><br><span class="line">                  ActiveWorkbook.Sheets(1).Select</span><br><span class="line">                  Range(&quot;a1&quot;).FormulaR1C1 = Chr(i) &amp; Chr(j) &amp; _</span><br><span class="line">                  Chr(k) &amp; Chr(l) &amp; Chr(m) &amp; Chr(i1) &amp; Chr(i2) &amp; _</span><br><span class="line">                  Chr(i3) &amp; Chr(i4) &amp; Chr(i5) &amp; Chr(i6) &amp; Chr(n)</span><br><span class="line">                  Exit Sub</span><br><span class="line">               End If</span><br><span class="line"></span><br><span class="line">   Next: Next: Next: Next: Next: Next</span><br><span class="line">   Next: Next: Next: Next: Next: Next</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<p>3：再点击“巨集”→“检视巨集”，选择“巨集名称”下的“ABC”并点击“执行”，密码就现形了。</p>
+<p>4：切换“校阅”选项，点击“保护工作表”，然后输入密码即可解除锁定。</p>
+<hr>
+<p>上述方法仅适用工作表被密码保护的档案，若是档案被密码锁住，则必须利用破解工具，搜寻网路会发现许多破解工具，其中试过 Password Recovery 还不错！</p>
+<hr>
+<p>解析:<br>这段VBA代码，主要使用【For Next循环】和【Chr函数】</p>
+<p>循环组成各种可能出现的字符串组合，来破解出正确的密码。</p>
+<p>其中，除了变量n，其他变量的结果较为固定，Chr(65)结果是A，Chr(66)结果是B。</p>
+<p>大致的代码说明如下，仅供参考。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">Sub ABC()    </span><br><span class="line">Dim i As Integer, j As Integer, k As Integer    </span><br><span class="line">Dim l As Integer, m As Integer, n As Integer    </span><br><span class="line">Dim i1 As Integer, i2 As Integer, i3 As Integer    </span><br><span class="line">Dim i4 As Integer, i5 As Integer, i6 As Integer    </span><br><span class="line">&#x27;出错自动跳过    </span><br><span class="line">On Error Resume Next    &#x27;变量n之外,在AB之间循环;变量n在大小写字母及各种符号之间循环    </span><br><span class="line">For i = 65 To 66: For j = 65 To 66: For k = 65 To 66        </span><br><span class="line">For l = 65 To 66: For m = 65 To 66: For i1 = 65 To 66        </span><br><span class="line">For i2 = 65 To 66: For i3 = 65 To 66: For i4 = 65 To 66        </span><br><span class="line">For i5 = 65 To 66: For i6 = 65 To 66: For n = 32 To 126        </span><br><span class="line">&#x27;使用以下排列方式进行破解当前工作表        </span><br><span class="line">ActiveSheet.Unprotect Chr(i) &amp; Chr(j) &amp; Chr(k) &amp; Chr(l) &amp; Chr(m) &amp; Chr(i1) &amp; Chr(i2) &amp; Chr(i3) &amp; Chr(i4) &amp; Chr(i5) &amp; Chr(i6) &amp; Chr(n)        </span><br><span class="line">&#x27;如果当前工作表为未保护        </span><br><span class="line">If ActiveSheet.ProtectContents = False Then</span><br><span class="line">&#x27;信息框显示可用密码            </span><br><span class="line">MsgBox &quot;One usable password is &quot; &amp; Chr(i) &amp; Chr(j) &amp; Chr(k) &amp; Chr(l) &amp; Chr(m) &amp; Chr(i1) &amp; Chr(i2) &amp; Chr(i3) &amp; Chr(i4) &amp; Chr(i5) &amp; Chr(i6) &amp; Chr(n)           </span><br><span class="line">&#x27;选择当前工作簿的首个工作表            </span><br><span class="line">ActiveWorkbook.Sheets(1).Select           </span><br><span class="line">&#x27;首个工作表的A1单元格写入密码            </span><br><span class="line">Range(&quot;a1&quot;).FormulaR1C1 = Chr(i) &amp; Chr(j) &amp; Chr(k) &amp; Chr(l) &amp; Chr(m) &amp; Chr(i1) &amp; Chr(i2) &amp; Chr(i3) &amp; Chr(i4) &amp; Chr(i5) &amp; Chr(i6) &amp; Chr(n)            </span><br><span class="line">Exit Sub        </span><br><span class="line">End If        </span><br><span class="line">Next: Next: Next: Next: Next: Next    </span><br><span class="line">Next: Next: Next: Next: Next: Next</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Computer</category>
+        <category>Software</category>
+        <category>Excel</category>
+      </categories>
+      <tags>
+        <tag>计算机技能</tag>
+        <tag>Excel</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MAC下Hexo+Github博客搭建教学</title>
     <url>/2021/10/09/MAC%E4%B8%8BHexo-Github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E5%AD%A6/</url>
     <content><![CDATA[<p>参考1:<a href="https://segmentfault.com/a/1190000038373795">https://segmentfault.com/a/1190000038373795</a></p>
@@ -54,7 +89,7 @@
 <h1 id="配置客户端git-添加SSH-Key到github"><a href="#配置客户端git-添加SSH-Key到github" class="headerlink" title="配置客户端git 添加SSH Key到github"></a>配置客户端git 添加SSH Key到github</h1><p>如果已经配置过，该步骤可以忽略<br>在命令行输入配置用户名和账号的命令</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
-<p>其中 username 是你的用户名，<a href="mailto:&#x65;&#109;&#x61;&#105;&#x6c;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;">&#x65;&#109;&#x61;&#105;&#x6c;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
+<p>其中 username 是你的用户名，<a href="mailto:&#101;&#109;&#97;&#x69;&#108;&#64;&#x67;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;">&#101;&#109;&#97;&#x69;&#108;&#64;&#x67;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
 <p>如果已经创建过会出现 Overwrite (y/n)? n提示可以输入 n，如果没有创建过会要求我们输入密码，然后一路回车下去就行，执行完成后会在~/.ssh/id_rsa.pub目录下生成 需要使用的 key。</p>
@@ -96,6 +131,39 @@
       <tags>
         <tag>计算机技能</tag>
         <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>车位私下转让法律风险</title>
+    <url>/2021/10/31/%E8%BD%A6%E4%BD%8D%E7%A7%81%E4%B8%8B%E8%BD%AC%E8%AE%A9%E6%B3%95%E5%BE%8B%E9%A3%8E%E9%99%A9/</url>
+    <content><![CDATA[<p>最近有一个朋友向我咨询了一个问题，他想在小区里买一个车位，经过了解发现车位过户需要向物业缴纳3万元过户手续费，所以他与卖方合计，不通知物业，双方私下交易订立合同，这样做是否有法律风险呢？</p>
+<p>我认为认为如果不和物业这边打招呼是有风险的，但是物业3万的过户手续费的收取也是没有任何法律依据的。（政府房产管理部门没有出具产权登记证书，何来过户费用）</p>
+<p><strong>首先不和物业打招呼存在的风险有以下几条：</strong></p>
+<p>1.目前的车位所有人可以在把车位卖给你后，再将车位卖给其他人。</p>
+<p>2.如果目前的车位所有人之前将房产和车位一起抵押，资不抵债后会被法院查封。</p>
+<hr>
+<p>如果出现上述情况，你如果要维护自己的权益就必须进行案外人执行异议，很麻烦。</p>
+<p>所以在物业公司处办理了其公司级别的相应手续相当于对自己购买的车位多了一层保护。</p>
+<p>建议和物业商议过户费用问题，3万肯定是离谱了，可以找找人商量解决一下。总之一定要让物业知道你未来购买后拥有这个车位。</p>
+<p><strong>注意1:</strong></p>
+<p>目前的车位所有人可以在把车位卖给你后，再将车位卖给其他人。——我和他签一个买卖合同可以避免此风险吗？或者去公证处做个公正。——可以在买卖合同上添加违约条款，比如“合同签订后，甲方（车位目前所有者）不得再将此车位（写上车位号码）以任意形式处置，包括但不限于出卖、出租给其他任意第三人，否则乙方有权单方面解除本合同，甲方应返还乙方支付的车位购买款项，同时甲方应支付乙方违约金XXX元，如乙方因此遭受的损失超过该违约金数额的，甲方还应将差额部分支付给乙方”。</p>
+<p>对于公证，我认为意义不大，公证后的合同确实可以当成证据，但是所花的时间与精力过大。</p>
+<p><strong>注意2:</strong></p>
+<p>如果目前的车位所有人之前将房产和车位一起抵押，资不抵债后会被法院查封。——车位没有产权，只有使用权（合同上也是使用权出售协议），可以用于抵押吗？——抵押只是一种情况，只要当前车位所有者被列为被执行人后，法院就会查封他的一切资产，你已经支付了款项，但是没有相关登记（物业公司的），那么车位就有风险。</p>
+<p><strong>注意3:</strong></p>
+<p>买卖车位后把目前的车位所有人与开发商签订的合同原件收回。</p>
+<p><strong>注意4:</strong></p>
+<p>建议两条腿走路，一方面在与当前车位所有人的买卖合同中加入违约条款，另一方面和物业公司沟通，3万元的过户费用如果没有物价局的相关规定，那么就不是师出有名。</p>
+<p><strong>注意5:</strong></p>
+<p>建议再增加一个违约条款“甲方保证，甲方对该车位享有的权利不存在任何瑕疵，乙方购买该车位后不受其他任意第三方权利的追索。否则，甲方应向乙方支付 元违约金，如因此给乙方造成的损失高于违约金数额的，甲方还应将差额部分支付给乙方”，这样可以确保他卖给你的车位在卖给你之前不存在抵押等情况。</p>
+]]></content>
+      <categories>
+        <category>Law</category>
+        <category>Chinese law</category>
+        <category>Legal practice</category>
+      </categories>
+      <tags>
+        <tag>法律笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -174,39 +242,6 @@
         <tag>计算机技能</tag>
         <tag>云服务器</tag>
         <tag>BREAK</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>车位私下转让法律风险</title>
-    <url>/2021/10/31/%E8%BD%A6%E4%BD%8D%E7%A7%81%E4%B8%8B%E8%BD%AC%E8%AE%A9%E6%B3%95%E5%BE%8B%E9%A3%8E%E9%99%A9/</url>
-    <content><![CDATA[<p>最近有一个朋友向我咨询了一个问题，他想在小区里买一个车位，经过了解发现车位过户需要向物业缴纳3万元过户手续费，所以他与卖方合计，不通知物业，双方私下交易订立合同，这样做是否有法律风险呢？</p>
-<p>我认为认为如果不和物业这边打招呼是有风险的，但是物业3万的过户手续费的收取也是没有任何法律依据的。（政府房产管理部门没有出具产权登记证书，何来过户费用）</p>
-<p><strong>首先不和物业打招呼存在的风险有以下几条：</strong></p>
-<p>1.目前的车位所有人可以在把车位卖给你后，再将车位卖给其他人。</p>
-<p>2.如果目前的车位所有人之前将房产和车位一起抵押，资不抵债后会被法院查封。</p>
-<hr>
-<p>如果出现上述情况，你如果要维护自己的权益就必须进行案外人执行异议，很麻烦。</p>
-<p>所以在物业公司处办理了其公司级别的相应手续相当于对自己购买的车位多了一层保护。</p>
-<p>建议和物业商议过户费用问题，3万肯定是离谱了，可以找找人商量解决一下。总之一定要让物业知道你未来购买后拥有这个车位。</p>
-<p><strong>注意1:</strong></p>
-<p>目前的车位所有人可以在把车位卖给你后，再将车位卖给其他人。——我和他签一个买卖合同可以避免此风险吗？或者去公证处做个公正。——可以在买卖合同上添加违约条款，比如“合同签订后，甲方（车位目前所有者）不得再将此车位（写上车位号码）以任意形式处置，包括但不限于出卖、出租给其他任意第三人，否则乙方有权单方面解除本合同，甲方应返还乙方支付的车位购买款项，同时甲方应支付乙方违约金XXX元，如乙方因此遭受的损失超过该违约金数额的，甲方还应将差额部分支付给乙方”。</p>
-<p>对于公证，我认为意义不大，公证后的合同确实可以当成证据，但是所花的时间与精力过大。</p>
-<p><strong>注意2:</strong></p>
-<p>如果目前的车位所有人之前将房产和车位一起抵押，资不抵债后会被法院查封。——车位没有产权，只有使用权（合同上也是使用权出售协议），可以用于抵押吗？——抵押只是一种情况，只要当前车位所有者被列为被执行人后，法院就会查封他的一切资产，你已经支付了款项，但是没有相关登记（物业公司的），那么车位就有风险。</p>
-<p><strong>注意3:</strong></p>
-<p>买卖车位后把目前的车位所有人与开发商签订的合同原件收回。</p>
-<p><strong>注意4:</strong></p>
-<p>建议两条腿走路，一方面在与当前车位所有人的买卖合同中加入违约条款，另一方面和物业公司沟通，3万元的过户费用如果没有物价局的相关规定，那么就不是师出有名。</p>
-<p><strong>注意5:</strong></p>
-<p>建议再增加一个违约条款“甲方保证，甲方对该车位享有的权利不存在任何瑕疵，乙方购买该车位后不受其他任意第三方权利的追索。否则，甲方应向乙方支付 元违约金，如因此给乙方造成的损失高于违约金数额的，甲方还应将差额部分支付给乙方”，这样可以确保他卖给你的车位在卖给你之前不存在抵押等情况。</p>
-]]></content>
-      <categories>
-        <category>Law</category>
-        <category>Chinese law</category>
-        <category>Legal practice</category>
-      </categories>
-      <tags>
-        <tag>法律笔记</tag>
       </tags>
   </entry>
 </search>
