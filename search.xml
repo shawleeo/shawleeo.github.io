@@ -89,7 +89,7 @@
 <h1 id="配置客户端git-添加SSH-Key到github"><a href="#配置客户端git-添加SSH-Key到github" class="headerlink" title="配置客户端git 添加SSH Key到github"></a>配置客户端git 添加SSH Key到github</h1><p>如果已经配置过，该步骤可以忽略<br>在命令行输入配置用户名和账号的命令</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
-<p>其中 username 是你的用户名，<a href="mailto:&#101;&#109;&#97;&#x69;&#108;&#64;&#x67;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;">&#101;&#109;&#97;&#x69;&#108;&#64;&#x67;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
+<p>其中 username 是你的用户名，<a href="mailto:&#x65;&#109;&#97;&#x69;&#x6c;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;">&#x65;&#109;&#97;&#x69;&#x6c;&#64;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
 <p>如果已经创建过会出现 Overwrite (y/n)? n提示可以输入 n，如果没有创建过会要求我们输入密码，然后一路回车下去就行，执行完成后会在~/.ssh/id_rsa.pub目录下生成 需要使用的 key。</p>
@@ -134,36 +134,43 @@
       </tags>
   </entry>
   <entry>
-    <title>车位私下转让法律风险</title>
-    <url>/2021/10/31/%E8%BD%A6%E4%BD%8D%E7%A7%81%E4%B8%8B%E8%BD%AC%E8%AE%A9%E6%B3%95%E5%BE%8B%E9%A3%8E%E9%99%A9/</url>
-    <content><![CDATA[<p>最近有一个朋友向我咨询了一个问题，他想在小区里买一个车位，经过了解发现车位过户需要向物业缴纳3万元过户手续费，所以他与卖方合计，不通知物业，双方私下交易订立合同，这样做是否有法律风险呢？</p>
-<p>我认为认为如果不和物业这边打招呼是有风险的，但是物业3万的过户手续费的收取也是没有任何法律依据的。（政府房产管理部门没有出具产权登记证书，何来过户费用）</p>
-<p><strong>首先不和物业打招呼存在的风险有以下几条：</strong></p>
-<p>1.目前的车位所有人可以在把车位卖给你后，再将车位卖给其他人。</p>
-<p>2.如果目前的车位所有人之前将房产和车位一起抵押，资不抵债后会被法院查封。</p>
-<hr>
-<p>如果出现上述情况，你如果要维护自己的权益就必须进行案外人执行异议，很麻烦。</p>
-<p>所以在物业公司处办理了其公司级别的相应手续相当于对自己购买的车位多了一层保护。</p>
-<p>建议和物业商议过户费用问题，3万肯定是离谱了，可以找找人商量解决一下。总之一定要让物业知道你未来购买后拥有这个车位。</p>
-<p><strong>注意1:</strong></p>
-<p>目前的车位所有人可以在把车位卖给你后，再将车位卖给其他人。——我和他签一个买卖合同可以避免此风险吗？或者去公证处做个公正。——可以在买卖合同上添加违约条款，比如“合同签订后，甲方（车位目前所有者）不得再将此车位（写上车位号码）以任意形式处置，包括但不限于出卖、出租给其他任意第三人，否则乙方有权单方面解除本合同，甲方应返还乙方支付的车位购买款项，同时甲方应支付乙方违约金XXX元，如乙方因此遭受的损失超过该违约金数额的，甲方还应将差额部分支付给乙方”。</p>
-<p>对于公证，我认为意义不大，公证后的合同确实可以当成证据，但是所花的时间与精力过大。</p>
-<p><strong>注意2:</strong></p>
-<p>如果目前的车位所有人之前将房产和车位一起抵押，资不抵债后会被法院查封。——车位没有产权，只有使用权（合同上也是使用权出售协议），可以用于抵押吗？——抵押只是一种情况，只要当前车位所有者被列为被执行人后，法院就会查封他的一切资产，你已经支付了款项，但是没有相关登记（物业公司的），那么车位就有风险。</p>
-<p><strong>注意3:</strong></p>
-<p>买卖车位后把目前的车位所有人与开发商签订的合同原件收回。</p>
-<p><strong>注意4:</strong></p>
-<p>建议两条腿走路，一方面在与当前车位所有人的买卖合同中加入违约条款，另一方面和物业公司沟通，3万元的过户费用如果没有物价局的相关规定，那么就不是师出有名。</p>
-<p><strong>注意5:</strong></p>
-<p>建议再增加一个违约条款“甲方保证，甲方对该车位享有的权利不存在任何瑕疵，乙方购买该车位后不受其他任意第三方权利的追索。否则，甲方应向乙方支付 元违约金，如因此给乙方造成的损失高于违约金数额的，甲方还应将差额部分支付给乙方”，这样可以确保他卖给你的车位在卖给你之前不存在抵押等情况。</p>
+    <title>Mac下移动硬盘的分区以及TimeMachine的备份，公用盘首选NTFS，不建议Exfat</title>
+    <url>/2021/11/20/Mac%E4%B8%8B%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E7%9A%84%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8ATimeMachine%E7%9A%84%E5%A4%87%E4%BB%BD%EF%BC%8C%E5%85%AC%E7%94%A8%E7%9B%98%E9%A6%96%E9%80%89NTFS%EF%BC%8C%E4%B8%8D%E5%BB%BA%E8%AE%AEExfat/</url>
+    <content><![CDATA[<p>参考：<a href="%E6%9D%A5%E6%BA%90%EF%BC%9Ahttps://www.jianshu.com/p/5f8b4d9a8">https://www.jianshu.com/p/5f8b4d9a8</a></p>
+<p>TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。</p>
+<h1 id="磁盘抹除及资料转移"><a href="#磁盘抹除及资料转移" class="headerlink" title="磁盘抹除及资料转移"></a>磁盘抹除及资料转移</h1><p>刚买的移动硬盘大部分都是NTFS格式的，比如我的希捷1TB移动硬盘，首先NTFS格式在Mac上是可读不可写的。希捷提供官方工具Paragon驱动程序兼容，但是在抹除之前要关掉该工具，否则会提示抹除失败。另外不要用exFAT格式，不稳定。</p>
+<p>首先问题是这样子的，1TB的移动硬盘现在为NTFS格式，而我需要TimeMachine来对我的电脑进行备份，Time Machine 备份磁盘最常见的格式是“Mac OS 扩展”格式，但Time Machine还支持“Mac OS 扩展（区分大小写，日志式）”和XSan格式。所以首先我们要做的是：</p>
+<p>1.将移动硬盘里面所存储的内容转移到其他硬盘中，比如Windows的D盘F盘，也可以转移到其他的移动硬盘中，具体迁移到哪里，根据你数据的大小选择最恰当的存储地方。</p>
+<p>2.将移动硬盘抹掉，变成Mac OS X 格式。首先打开commmand+空格打开你的Spotlight，搜索disk Utility.app,也就是苹果的磁盘工具，我这里以xiaomi这个磁盘作为演示。点击抹掉，这样你的硬盘则被格式化为MAC OS X 格式了。</p>
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-1.jpeg" alt="image"></p>
+<h1 id="分区建议及操作"><a href="#分区建议及操作" class="headerlink" title="分区建议及操作"></a>分区建议及操作</h1><p>再来说说分区的建议，1TB的移动硬盘我建议分成两个区，300GB的MAC OS X格式作为经常使用Mac的你作为TimeMacine备份使用，700GB的另一个分区NTFS格式的作为你穿插在windows和Mac之间存储一些照片或者影音文件之类的，大部分情况下很够用，根据你硬盘的大小选择最适当的分区数以及大小。</p>
+<p><strong>Notes</strong>：exfat32适用于U盘闪存 单个文件限制不能突破4GB 而且数据恢复也较为困难 如果你存储的是影音或者游戏安装包 NTFS也是不错的选择</p>
+<p><strong>分区操作</strong></p>
+<p>左侧点击你的移动硬盘，上面有急救，分区抹掉等等选项，点击分区，划分大小，因为在MAC系统下不能直接格式化为NTFS格式的，我们将300GB的格式化为MAC OS X 格式，然后将700GB的分区格式化为ExFat格式，如果你想要知道不同的格式之间有什么不同，谷歌一下，会得到你想要的一切。</p>
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-2.jpeg" alt="image"></p>
+<p>上述操作做完之后，效果会是每次当你的移动硬盘连接到你的电脑时，会为两部分，300GB以及700GB，且为MAC OS X格式，以及ExFat格式，现在我们只需要将移动硬盘连接到一台Windows电脑上，将ExFat这个硬盘格式化为NTFS格式就好了。现在你要做的只不过花费一些时间把刚刚拷贝过去的你的资料转移回来就可以了。<br>现在我们就拥有了两个分区的移动硬盘，可以应付不同的操作系统，进行所需要的操作。</p>
+<p>其实目前mac也可以直接转换NTFS格式</p>
+<h1 id="TimeMachine备份"><a href="#TimeMachine备份" class="headerlink" title="TimeMachine备份"></a>TimeMachine备份</h1><p>很简单，打开系统偏好设置，点击TimeMachine，选择那个你刚刚分区成功容量为300GB格式为MAC OS X的硬盘，经过蛮久的等待，就备份成功喽，很容易操作以及理解，Apple的支持文档也做了详细的步骤解释 <a href="https://support.apple.com/zh-cn/HT201250">Apple支持</a></p>
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-3.jpeg" alt="image"></p>
+<h1 id="移动硬盘保养及使用实测"><a href="#移动硬盘保养及使用实测" class="headerlink" title="移动硬盘保养及使用实测"></a>移动硬盘保养及使用实测</h1><p>1、防止硬盘非正常情况下拔出 以及剧烈碰撞</p>
+<p>2、买一些知名的 硬盘比如希捷 西部数据的</p>
+<p>3、在读写中避免震动</p>
+<p>到这里，TimeMachine的备份以及我们移动硬盘的分区就全部搞定了，yeah~</p>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>要手动启动备份，请从菜单栏的“时间机器”</p>
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-4.png" alt="image"></p>
+<p>菜单中选取“立即备份”。使用这个菜单，还可以查看某一备份的状态或跳过正在进行的某一备份。</p>
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-5.jpeg" alt="image"></p>
 ]]></content>
       <categories>
-        <category>Law</category>
-        <category>Chinese law</category>
-        <category>Legal practice</category>
+        <category>Computer</category>
+        <category>Hardware</category>
+        <category>Storage</category>
       </categories>
       <tags>
-        <tag>法律笔记</tag>
+        <tag>计算机技能</tag>
+        <tag>TimeMachine</tag>
+        <tag>MacOS</tag>
+        <tag>移动硬盘</tag>
       </tags>
   </entry>
   <entry>
@@ -242,6 +249,39 @@
         <tag>计算机技能</tag>
         <tag>云服务器</tag>
         <tag>BREAK</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>车位私下转让法律风险</title>
+    <url>/2021/10/31/%E8%BD%A6%E4%BD%8D%E7%A7%81%E4%B8%8B%E8%BD%AC%E8%AE%A9%E6%B3%95%E5%BE%8B%E9%A3%8E%E9%99%A9/</url>
+    <content><![CDATA[<p>最近有一个朋友向我咨询了一个问题，他想在小区里买一个车位，经过了解发现车位过户需要向物业缴纳3万元过户手续费，所以他与卖方合计，不通知物业，双方私下交易订立合同，这样做是否有法律风险呢？</p>
+<p>我认为认为如果不和物业这边打招呼是有风险的，但是物业3万的过户手续费的收取也是没有任何法律依据的。（政府房产管理部门没有出具产权登记证书，何来过户费用）</p>
+<p><strong>首先不和物业打招呼存在的风险有以下几条：</strong></p>
+<p>1.目前的车位所有人可以在把车位卖给你后，再将车位卖给其他人。</p>
+<p>2.如果目前的车位所有人之前将房产和车位一起抵押，资不抵债后会被法院查封。</p>
+<hr>
+<p>如果出现上述情况，你如果要维护自己的权益就必须进行案外人执行异议，很麻烦。</p>
+<p>所以在物业公司处办理了其公司级别的相应手续相当于对自己购买的车位多了一层保护。</p>
+<p>建议和物业商议过户费用问题，3万肯定是离谱了，可以找找人商量解决一下。总之一定要让物业知道你未来购买后拥有这个车位。</p>
+<p><strong>注意1:</strong></p>
+<p>目前的车位所有人可以在把车位卖给你后，再将车位卖给其他人。——我和他签一个买卖合同可以避免此风险吗？或者去公证处做个公正。——可以在买卖合同上添加违约条款，比如“合同签订后，甲方（车位目前所有者）不得再将此车位（写上车位号码）以任意形式处置，包括但不限于出卖、出租给其他任意第三人，否则乙方有权单方面解除本合同，甲方应返还乙方支付的车位购买款项，同时甲方应支付乙方违约金XXX元，如乙方因此遭受的损失超过该违约金数额的，甲方还应将差额部分支付给乙方”。</p>
+<p>对于公证，我认为意义不大，公证后的合同确实可以当成证据，但是所花的时间与精力过大。</p>
+<p><strong>注意2:</strong></p>
+<p>如果目前的车位所有人之前将房产和车位一起抵押，资不抵债后会被法院查封。——车位没有产权，只有使用权（合同上也是使用权出售协议），可以用于抵押吗？——抵押只是一种情况，只要当前车位所有者被列为被执行人后，法院就会查封他的一切资产，你已经支付了款项，但是没有相关登记（物业公司的），那么车位就有风险。</p>
+<p><strong>注意3:</strong></p>
+<p>买卖车位后把目前的车位所有人与开发商签订的合同原件收回。</p>
+<p><strong>注意4:</strong></p>
+<p>建议两条腿走路，一方面在与当前车位所有人的买卖合同中加入违约条款，另一方面和物业公司沟通，3万元的过户费用如果没有物价局的相关规定，那么就不是师出有名。</p>
+<p><strong>注意5:</strong></p>
+<p>建议再增加一个违约条款“甲方保证，甲方对该车位享有的权利不存在任何瑕疵，乙方购买该车位后不受其他任意第三方权利的追索。否则，甲方应向乙方支付 元违约金，如因此给乙方造成的损失高于违约金数额的，甲方还应将差额部分支付给乙方”，这样可以确保他卖给你的车位在卖给你之前不存在抵押等情况。</p>
+]]></content>
+      <categories>
+        <category>Law</category>
+        <category>Chinese law</category>
+        <category>Legal practice</category>
+      </categories>
+      <tags>
+        <tag>法律笔记</tag>
       </tags>
   </entry>
 </search>
