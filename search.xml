@@ -89,7 +89,7 @@
 <h1 id="配置客户端git-添加SSH-Key到github"><a href="#配置客户端git-添加SSH-Key到github" class="headerlink" title="配置客户端git 添加SSH Key到github"></a>配置客户端git 添加SSH Key到github</h1><p>如果已经配置过，该步骤可以忽略<br>在命令行输入配置用户名和账号的命令</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
-<p>其中 username 是你的用户名，<a href="mailto:&#101;&#x6d;&#97;&#105;&#108;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#109;">&#101;&#x6d;&#97;&#105;&#108;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#109;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
+<p>其中 username 是你的用户名，<a href="mailto:&#x65;&#x6d;&#x61;&#x69;&#x6c;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#x65;&#x6d;&#x61;&#x69;&#x6c;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
 <p>如果已经创建过会出现 Overwrite (y/n)? n提示可以输入 n，如果没有创建过会要求我们输入密码，然后一路回车下去就行，执行完成后会在~/.ssh/id_rsa.pub目录下生成 需要使用的 key。</p>
@@ -249,6 +249,58 @@
         <tag>计算机技能</tag>
         <tag>云服务器</tag>
         <tag>BREAK</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>利用Automator和Python下载数据</title>
+    <url>/2021/11/24/%E5%88%A9%E7%94%A8Automator%E5%92%8CPython%E4%B8%8B%E8%BD%BD%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<h1 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h1><p>1.从某个网站下载更新的数据，周二至周六更新前一天数据</p>
+<p>2.将数据归类到相应路径文件夹</p>
+<p>3.将文件按照日期重命名</p>
+<p>参考文档：<a href="https://learnku.com/articles/57325">Python 搭配 Automator 上传文件到 Github</a></p>
+<h1 id="Python脚本（脱敏）"><a href="#Python脚本（脱敏）" class="headerlink" title="Python脚本（脱敏）"></a>Python脚本（脱敏）</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># -*- coding:utf8 -*-</span><br><span class="line">#上一行是为了解决python中识别中文注释问题</span><br><span class="line"></span><br><span class="line">import requests</span><br><span class="line">import datetime</span><br><span class="line"></span><br><span class="line">DATA_URL_ARKK_PDF = &#x27;&#x27;</span><br><span class="line">DATA_URL_ARKK_CSV = &#x27;&#x27;</span><br><span class="line"></span><br><span class="line">DATA_MAINPATH = &#x27;/Users/shawleo/Desktop/ARK/Data&#x27;</span><br><span class="line">USER_AGENT = &#x27;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36&#x27;</span><br><span class="line"></span><br><span class="line"># 北京时间每周二至周六晚上9点执行</span><br><span class="line"></span><br><span class="line">theHeader = &#123;&#x27;User-Agent&#x27;: USER_AGENT&#125;</span><br><span class="line">today = datetime.date.today()</span><br><span class="line">formatted_today=today.strftime(&#x27;%y%m%d&#x27;)</span><br><span class="line">yesterday=int(formatted_today)-1</span><br><span class="line"></span><br><span class="line">path_ARKK_PDF = DATA_MAINPATH + &#x27;/ARKK/&#x27; + &#x27;ARKK&#x27; + &#x27;20&#x27; + str(yesterday) + &#x27;.pdf&#x27;</span><br><span class="line">path_ARKK_CSV = DATA_MAINPATH + &#x27;/ARKK/&#x27; + &#x27;ARKK&#x27; + &#x27;20&#x27; + str(yesterday) + &#x27;.csv&#x27;</span><br><span class="line"></span><br><span class="line">response = requests.get(DATA_URL_ARKK_PDF, headers=theHeader, stream=True)</span><br><span class="line"></span><br><span class="line">with open(path_ARKK_PDF, &quot;wb&quot;) as f:</span><br><span class="line">    for chunk in response.iter_content(chunk_size=512):</span><br><span class="line">        f.write(chunk)</span><br><span class="line">        </span><br><span class="line">response = requests.get(DATA_URL_ARKK_CSV, headers=theHeader, stream=True)</span><br><span class="line"></span><br><span class="line">with open(path_ARKK_CSV, &quot;wb&quot;) as f:</span><br><span class="line">    for chunk in response.iter_content(chunk_size=512):</span><br><span class="line">        f.write(chunk)</span><br></pre></td></tr></table></figure>
+<h1 id="搭配-Automator-使用"><a href="#搭配-Automator-使用" class="headerlink" title="搭配 Automator 使用"></a>搭配 Automator 使用</h1><p>上面的脚本已经可以使用了，但是每次跑命令行依然很麻烦，苹果电脑提供了一个叫做 Automator (自动操作) 的软件，可以帮助我们建立工作流程，我们可以借助它来帮我们跑脚本。</p>
+<h2 id="1-新建一个日历提醒："><a href="#1-新建一个日历提醒：" class="headerlink" title="1.新建一个日历提醒："></a>1.新建一个日历提醒：</h2><p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/6-1.jpeg" alt="image"></p>
+<h2 id="2-插入工作日判断"><a href="#2-插入工作日判断" class="headerlink" title="2.插入工作日判断"></a>2.插入工作日判断</h2><p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/6-2.jpeg" alt="image"></p>
+<p>搜索applescript，拖进去，输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">on run</span><br><span class="line">	</span><br><span class="line">#判断日期，周日和周一不运行</span><br><span class="line">	</span><br><span class="line">    set currentDay to weekday of (get current date)</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">    if currentDay ≠ Sunday and currentDay ≠ Monday then</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">    return true</span><br><span class="line">		</span><br><span class="line">	</span><br><span class="line">    end if</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">    error number -128</span><br><span class="line">	#中止执行该workflow，</span><br><span class="line">end run</span><br></pre></td></tr></table></figure>
+<p>参考：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">display dialog &quot;Do you want to exit this workflow?&quot; with icon note buttons &#123;&quot;Exit&quot;, &quot;Continue&quot;&#125;</span><br><span class="line">if the button returned of the result is &quot;Exit&quot; then</span><br><span class="line">	error number -128</span><br><span class="line">end if</span><br></pre></td></tr></table></figure>
+<p>参考来源：</p>
+<p><a href="https://discussions.apple.com/thread/426376">Determine if today is [day of week], then run action?</a></p>
+<p><a href="https://cloud.tencent.com/developer/ask/114226">如何告诉Applescript停止执行？</a></p>
+<p><a href="https://stackoverflow.com/questions/8621290/how-to-tell-an-applescript-to-stop-executing">How to tell an Applescript to stop executing</a></p>
+<h2 id="3-插入提示"><a href="#3-插入提示" class="headerlink" title="3.插入提示"></a>3.插入提示</h2><p>这一步的目的是让 AppleScript 弹出一个提示。</p>
+<p>添加一个运行 AppleScript 脚本：<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/6-3.jpeg" alt="image"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">on run &#123;input, parameters&#125;</span><br><span class="line">    display notification &quot;⬆️ 开始上传&quot;</span><br><span class="line">    return input</span><br><span class="line">end run</span><br></pre></td></tr></table></figure>
+<h2 id="4-配置-shell-脚本"><a href="#4-配置-shell-脚本" class="headerlink" title="4.配置 shell 脚本"></a>4.配置 shell 脚本</h2><p>增加一个运行 Shell 脚本 (注意使用bash来执行脚本)：【zsh与bash兼容】<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/6-4.jpeg" alt="image"></p>
+<p>在其中写上：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/usr/local/bin/python3 &lt;&lt;EOF</span><br><span class="line"></span><br><span class="line">把上一步中配置好的 Python 脚本复制到这里</span><br><span class="line"></span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<p>其中的 /usr/local/bin/python3 &lt;&lt;EOF 和 EOF 写法是一个 Hack，如果直接选择使用 python 执行，会出现找不到 Python 第三方库的情况，所以用了这个 Hack 的办法。</p>
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/6-5.jpeg" alt="image"></p>
+<h2 id="5-结果图"><a href="#5-结果图" class="headerlink" title="5.结果图"></a>5.结果图</h2><p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/6-6.jpeg" alt="image"></p>
+<h2 id="6-保存"><a href="#6-保存" class="headerlink" title="6.保存"></a>6.保存</h2><p>参考：<a href="https://faichou.com/automator/">Mac下自动化神器–扛炮</a></p>
+<p>Command+S 保存这个动作, 起一个名字, 之后会弹出日历.</p>
+<p>将事件拖放到未来某一天, 双击事件, 在弹出框里点击日期栏会展开, 然后选择 repeat 栏目下的重复周期, 可以设置每周执行一次, 每月执行一次等.</p>
+<p>每日执行一次</p>
+<p>重复-每天</p>
+<p>结束日期时间不要动，都选择9点即可</p>
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/6-7.jpeg" alt="image"></p>
+<p>上述操作不知道为什么，对于我的电脑无效，只能采取其他方式了：</p>
+<p>按住command 多选复制 再粘贴</p>
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/6-8.jpeg" alt="image"></p>
+<p>附：该application所在路径：</p>
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/6-9.jpeg" alt="image"></p>
+]]></content>
+      <categories>
+        <category>Computer</category>
+        <category>Software</category>
+        <category>Automator</category>
+      </categories>
+      <tags>
+        <tag>计算机技能</tag>
+        <tag>Automator</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
