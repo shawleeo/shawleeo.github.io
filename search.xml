@@ -89,7 +89,7 @@
 <h1 id="配置客户端git-添加SSH-Key到github"><a href="#配置客户端git-添加SSH-Key到github" class="headerlink" title="配置客户端git 添加SSH Key到github"></a>配置客户端git 添加SSH Key到github</h1><p>如果已经配置过，该步骤可以忽略<br>在命令行输入配置用户名和账号的命令</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
-<p>其中 username 是你的用户名，<a href="mailto:&#101;&#x6d;&#97;&#105;&#x6c;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#46;&#99;&#111;&#109;">&#101;&#x6d;&#97;&#105;&#x6c;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#46;&#99;&#111;&#109;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
+<p>其中 username 是你的用户名，<a href="mailto:&#101;&#x6d;&#97;&#105;&#x6c;&#64;&#103;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#111;&#109;">&#101;&#x6d;&#97;&#105;&#x6c;&#64;&#103;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#111;&#109;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
 <p>如果已经创建过会出现 Overwrite (y/n)? n提示可以输入 n，如果没有创建过会要求我们输入密码，然后一路回车下去就行，执行完成后会在~/.ssh/id_rsa.pub目录下生成 需要使用的 key。</p>
@@ -252,12 +252,104 @@
       </tags>
   </entry>
   <entry>
+    <title>centos7的默认防火墙firewall与ipstable</title>
+    <url>/2022/01/15/centos7%E7%9A%84%E9%BB%98%E8%AE%A4%E9%98%B2%E7%81%AB%E5%A2%99firewall%E4%B8%8Eipstable/</url>
+    <content><![CDATA[<p><strong>1、默认防火墙firewall</strong></p>
+<p>CentOS 7查看所有已开放端口命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --list-ports</span><br></pre></td></tr></table></figure>
+
+
+<p>查看所有开启的端口号。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">netstat -aptn</span><br></pre></td></tr></table></figure>
+
+<p>查看系统中所有使用 udp协议 的端口号。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">netstat -nupl</span><br></pre></td></tr></table></figure>
+
+<p>查看系统中使用 tcp协议 的端口号信息。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">netstat -ntpl</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>开放centos7防火墙的端口：<br>-添加开放端口号</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=5672/tcp --permanent   # 开放5672端口</span><br><span class="line"></span><br><span class="line">firewall-cmd --zone=public --remove-port=5672/tcp --permanent  #关闭5672端口</span><br><span class="line"></span><br><span class="line">firewall-cmd --reload   # 配置立即生效</span><br></pre></td></tr></table></figure>
+
+<p>-重启firewall</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd —reload</span><br></pre></td></tr></table></figure>
+
+<p>-检查是否生效</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd —zone=public —query-port=8080/tcp</span><br></pre></td></tr></table></figure>
+
+<p>-停止firewall</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld.service</span><br></pre></td></tr></table></figure>
+
+<p>-禁止firewall开机启动</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure>
+
+
+<p>命令含义：</p>
+<p>–zone #作用域</p>
+<p>–add-port=80/tcp #添加端口，格式为：端口/通讯协议</p>
+<p>–permanent #永久生效，没有此参数重启后失效( —permanent放在前面与后面都行)</p>
+<hr>
+<p><strong>2、防火墙ipstable</strong></p>
+<p>（1）Linux防火墙(Iptables)重启系统生效</p>
+<p>开启：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root@S1 core]# chkconfig iptables on</span><br></pre></td></tr></table></figure>
+<p>关闭：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root@S1 core]# chkconfig iptables off</span><br></pre></td></tr></table></figure>
+<p>（2）Linux防火墙(Iptables) 即时生效，重启后失效<br>开启：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root@S1 core]# service iptables start  </span><br><span class="line"># CentOS7</span><br><span class="line">[root@S1 core]# systemctl start  iptables.service</span><br></pre></td></tr></table></figure>
+
+<p>关闭：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root@S1 core]# service iptables stop </span><br><span class="line"># CentOS7</span><br><span class="line">[root@S1 core]# systemctl stop  iptables.service</span><br></pre></td></tr></table></figure>
+
+<p>（3）查看iptables规则</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root@S1 core]#  iptables -L -n</span><br></pre></td></tr></table></figure>
+<p>（4）开放1333端口（tcp）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iptables -A INPUT -p tcp --dport 1333 -j ACCEPT</span><br></pre></td></tr></table></figure>
+<p>（5）例子</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iptables -I INPUT 6 -m state --state NEW -p tcp --dport 80 -j ACCEPT</span><br></pre></td></tr></table></figure>
+<p>添加此规则至第6行规则（规则先后顺序有优先性）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">问题：</span><br><span class="line">提前在子网做好了 security lists ，增加了一个 List 用于 tcp 5201 。</span><br><span class="line">创建的 instance 使用的是 oracle linux 7</span><br><span class="line">新机登陆后，禁用了 firewalld ，安装并启用 iptables-services 。</span><br><span class="line">添加一条规则允许入站 TCP 5201 端口</span><br><span class="line">service iptables save</span><br><span class="line">service iptables restart</span><br><span class="line">然而，测试发现 5201 端口依然不通。</span><br><span class="line"></span><br><span class="line">哪位兄弟对 oracle cloud 比较熟悉，麻烦指点一下，谢谢。</span><br><span class="line"></span><br><span class="line">解答：</span><br><span class="line">1、要在 Subnet 的 Security List 中先放行</span><br><span class="line">2、检查下规则顺序，需要插入在前面，所以插到第6行，在reject-with icmp-host-prohibited前面</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>补充：<br>CentOS7出现</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Unit iptables.service could not be found</span><br></pre></td></tr></table></figure>
+<p>CentOS7默认的防火墙不是iptables，而是firewalle.</p>
+<p>出现此情况可能是iptables防火墙未安装。</p>
+<p>#停止firewalld服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br></pre></td></tr></table></figure>
+
+<p>#禁用firewalld服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl mask firewalld</span><br></pre></td></tr></table></figure>
+
+<p>#-开启-非步骤，仅备注</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl unmask firewalld</span><br></pre></td></tr></table></figure>
+
+<p>安装iptables-services：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install iptables-services</span><br></pre></td></tr></table></figure>
+
+<p>设置开机启动：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl enable iptables</span><br><span class="line"></span><br><span class="line">systemctl [stop|start|restart] iptables</span><br><span class="line">#or</span><br><span class="line">service iptables [stop|start|restart]</span><br><span class="line"></span><br><span class="line">service iptables save</span><br><span class="line">#or</span><br><span class="line">/usr/libexec/iptables/iptables.init save</span><br></pre></td></tr></table></figure>
+
+<p>然后</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">service iptables status</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Computer</category>
+        <category>Building Website</category>
+        <category>Server</category>
+      </categories>
+      <tags>
+        <tag>计算机技能</tag>
+        <tag>云服务器</tag>
+        <tag>BREAK</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ip失效后 Oracle Cloud更换ip 并重新配置agent</title>
     <url>/2022/01/13/ip%E5%A4%B1%E6%95%88%E5%90%8E%20Oracle%20Cloud%E6%9B%B4%E6%8D%A2ip%20%E5%B9%B6%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEagent/</url>
     <content><![CDATA[<h1 id="更换IP"><a href="#更换IP" class="headerlink" title="更换IP"></a>更换IP</h1><p>点击相应的实例详情 – 【附加的 VNIC】- 点击VNIC详情 – 【IP地址】 – 【…】- 点击编辑<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-1.png" alt="image"><br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-2.png" alt="image"><br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-3.png" alt="image"><br>然后点击右边的三个点，选择编辑<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-4.png" alt="image"><br>选择没有公共IP，点击更新！再次点击编辑，选择临时公共IP 或者 预留公共IP 点击更新即可！<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-5.png" alt="image"><br>再次点击编辑，选择临时公共IP 或者 预留公共IP 点击更新即可<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-6.png" alt="image"><br>预留IP怎么选？菜单 — 网络 — 公共IP，直接申请IP</p>
-<p>IP要测试可用性<br><a href="https://www.vpsgo.com/ip-check-tools.html">https://www.vpsgo.com/ip-check-tools.html</a></p>
-<p>合格IP<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-9.png" alt="image"></p>
-<p>不合格IP<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-10.png" alt="image"></p>
 <h1 id="重新配置agent"><a href="#重新配置agent" class="headerlink" title="重新配置agent"></a>重新配置agent</h1><p>此时，如果直接将新IP复制到Agent IP处，会发现是可以连接使用的（起码S家是这样的）。但是最好不要这样。</p>
 <p>其次换完IP后一定记得“重新引导”<br>重新引导相当于重启<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-8.png" alt="image"><br>否则root登陆不了</p>
 <p>但是如果reboot服务器会发现，不能继续连接使用了。</p>
@@ -271,6 +363,15 @@
 <p>选择1安装，并配置。</p>
 <h1 id="BBR状态检查-甲骨文不要用BBR会被封锁"><a href="#BBR状态检查-甲骨文不要用BBR会被封锁" class="headerlink" title="BBR状态检查-甲骨文不要用BBR会被封锁"></a>BBR状态检查-甲骨文不要用BBR会被封锁</h1><p><a href="https://shawleeo.github.io/2021/11/06/Oracle%20Cloud%20%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/#%E7%AC%AC%E4%B8%83%E6%AD%A5%EF%BC%9AOracle-Cloud-VPS-CentOS-7-%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E5%B9%B6%E5%BC%80%E5%90%AF%E5%AE%98%E6%96%B9%E5%8E%9F%E7%89%88Bottleneck-Bandwidth-and-RTT">参考此步骤的最后一步</a></p>
 <p>测速：YouTube 视频统计信息<br>网页端就是点开一个YouTube 视频，然后在视频窗口单击右键，选择“统计资料”。 然后查看Connection Speed 。</p>
+<h1 id="IP要测试可用性"><a href="#IP要测试可用性" class="headerlink" title="IP要测试可用性"></a>IP要测试可用性</h1><p>注意此测试要在ssr已经安装完毕后再测<br>否则无论怎么打开端口，测试都是不合格的</p>
+<p>一种测试方法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nc -vz -w 2 xxx.xxx.xxx.xxx(ip) 2333</span><br><span class="line">检测2333端口tcp是否打开</span><br></pre></td></tr></table></figure>
+
+
+<p>另一种测试方法</p>
+<p><a href="https://www.vpsgo.com/ip-check-tools.html">https://www.vpsgo.com/ip-check-tools.html</a></p>
+<p>合格IP<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-9.png" alt="image"></p>
+<p>不合格IP<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-10.png" alt="image"></p>
 ]]></content>
       <categories>
         <category>Computer</category>
