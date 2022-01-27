@@ -38,35 +38,6 @@
       </tags>
   </entry>
   <entry>
-    <title>GoogleAd申请加添加到blog</title>
-    <url>/2022/01/25/GoogleAd%E7%94%B3%E8%AF%B7%E5%8A%A0%E6%B7%BB%E5%8A%A0%E5%88%B0blog/</url>
-    <content><![CDATA[<h1 id="注册-Google-AdSense"><a href="#注册-Google-AdSense" class="headerlink" title="注册 Google AdSense"></a>注册 Google AdSense</h1><p>只说一句，注册地区不能改，要能接收纸质挂号信</p>
-<span id="more"></span>
-<h1 id="添加-AdSense-代码"><a href="#添加-AdSense-代码" class="headerlink" title="添加 AdSense 代码"></a>添加 AdSense 代码</h1><p>在注册完成后，AdSense 会给你一串代码，并要求你把这串代码放在 </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;head&gt;&lt;/head&gt;</span><br></pre></td></tr></table></figure>
-<p>同时再次提醒确认你的 NexT 主题的版本是不是 v6.0.2 或后续版本。如果不是的话，你要么考虑升级，要么可以点❌关闭了。</p>
-<p>先找到 themes/next/_config.yml 将 head 这一行注释取消掉，让它生效。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span><br><span class="line">custom_file_path:</span><br><span class="line">  head: source/_data/head.njk</span><br><span class="line">  #header: source/_data/header.njk</span><br><span class="line">  #sidebar: source/_data/sidebar.njk</span><br><span class="line">  #postMeta: source/_data/post-meta.njk</span><br><span class="line">  #postBodyEnd: source/_data/post-body-end.njk</span><br><span class="line">  #footer: source/_data/footer.njk</span><br><span class="line">  #bodyEnd: source/_data/body-end.njk</span><br><span class="line">  #variable: source/_data/variables.styl</span><br><span class="line">  #mixin: source/_data/mixins.styl</span><br><span class="line">  #style: source/_data/styles.styl</span><br></pre></td></tr></table></figure>
-
-
-<p>然后在项目的根目录下面的 source 下面创建文件夹和文件：source/_data/head.njk，注意，这里的 source 指的是项目根目录下面的 source ，不是 themes/next/source。</p>
-<p>并把 AdSense 给我们的那串代码放在 head.njk 里面，只放这一句即可：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script data-ad-client=&quot;██████████&quot; async src=&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>然后可以重新启动一下本地的 Hexo 环境，检查 <head></head> 标记中有没有出现刚才添加的代码。检查没有问题之后，就可以部署到生产环境使上面的修改生效了。为了保险起见，在生产环境上也要检查一下 <head></head> 标记中有没有出现刚才添加的代码。确认没有问题之后，就可以回到 AdSense 页面中点击验证按钮了。</p>
-<p>注意，如果 AdSense 告诉你检查不通过，你一定不要频繁点击再次检查，一定要先确定检查不通过的原因，并在排除问题之后再重新检查，因为每天检查次数是有限制的，如果超过限制，就只能等 24 小时之后再检查了</p>
-<p>然后 AdSense 会开始审核阶段，这期间我们静静等待审核结果的邮件就好了。</p>
-]]></content>
-      <categories>
-        <category>Computer</category>
-        <category>Building Website</category>
-        <category>Advertisement</category>
-      </categories>
-      <tags>
-        <tag>Google AdSense</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MAC下Hexo+Github博客搭建教学</title>
     <url>/2021/10/09/MAC%E4%B8%8BHexo-Github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E5%AD%A6/</url>
     <content><![CDATA[<p>参考1:<a href="https://segmentfault.com/a/1190000038373795">https://segmentfault.com/a/1190000038373795</a></p>
@@ -122,7 +93,7 @@
 <h1 id="配置客户端git-添加SSH-Key到github"><a href="#配置客户端git-添加SSH-Key到github" class="headerlink" title="配置客户端git 添加SSH Key到github"></a>配置客户端git 添加SSH Key到github</h1><p>如果已经配置过，该步骤可以忽略<br>在命令行输入配置用户名和账号的命令</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
-<p>其中 username 是你的用户名，<a href="mailto:&#x65;&#x6d;&#97;&#105;&#x6c;&#64;&#103;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;">&#x65;&#x6d;&#97;&#105;&#x6c;&#64;&#103;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
+<p>其中 username 是你的用户名，<a href="mailto:&#101;&#x6d;&#x61;&#105;&#108;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#109;">&#101;&#x6d;&#x61;&#105;&#108;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#109;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
 <p>如果已经创建过会出现 Overwrite (y/n)? n提示可以输入 n，如果没有创建过会要求我们输入密码，然后一路回车下去就行，执行完成后会在~/.ssh/id_rsa.pub目录下生成 需要使用的 key。</p>
@@ -164,6 +135,35 @@
       <tags>
         <tag>计算机技能</tag>
         <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GoogleAd申请加添加到blog</title>
+    <url>/2022/01/25/GoogleAd%E7%94%B3%E8%AF%B7%E5%8A%A0%E6%B7%BB%E5%8A%A0%E5%88%B0blog/</url>
+    <content><![CDATA[<h1 id="注册-Google-AdSense"><a href="#注册-Google-AdSense" class="headerlink" title="注册 Google AdSense"></a>注册 Google AdSense</h1><p>只说一句，注册地区不能改，要能接收纸质挂号信</p>
+<span id="more"></span>
+<h1 id="添加-AdSense-代码"><a href="#添加-AdSense-代码" class="headerlink" title="添加 AdSense 代码"></a>添加 AdSense 代码</h1><p>在注册完成后，AdSense 会给你一串代码，并要求你把这串代码放在 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;head&gt;&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+<p>同时再次提醒确认你的 NexT 主题的版本是不是 v6.0.2 或后续版本。如果不是的话，你要么考虑升级，要么可以点❌关闭了。</p>
+<p>先找到 themes/next/_config.yml 将 head 这一行注释取消掉，让它生效。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span><br><span class="line">custom_file_path:</span><br><span class="line">  head: source/_data/head.njk</span><br><span class="line">  #header: source/_data/header.njk</span><br><span class="line">  #sidebar: source/_data/sidebar.njk</span><br><span class="line">  #postMeta: source/_data/post-meta.njk</span><br><span class="line">  #postBodyEnd: source/_data/post-body-end.njk</span><br><span class="line">  #footer: source/_data/footer.njk</span><br><span class="line">  #bodyEnd: source/_data/body-end.njk</span><br><span class="line">  #variable: source/_data/variables.styl</span><br><span class="line">  #mixin: source/_data/mixins.styl</span><br><span class="line">  #style: source/_data/styles.styl</span><br></pre></td></tr></table></figure>
+
+
+<p>然后在项目的根目录下面的 source 下面创建文件夹和文件：source/_data/head.njk，注意，这里的 source 指的是项目根目录下面的 source ，不是 themes/next/source。</p>
+<p>并把 AdSense 给我们的那串代码放在 head.njk 里面，只放这一句即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script data-ad-client=&quot;██████████&quot; async src=&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然后可以重新启动一下本地的 Hexo 环境，检查 <head></head> 标记中有没有出现刚才添加的代码。检查没有问题之后，就可以部署到生产环境使上面的修改生效了。为了保险起见，在生产环境上也要检查一下 <head></head> 标记中有没有出现刚才添加的代码。确认没有问题之后，就可以回到 AdSense 页面中点击验证按钮了。</p>
+<p>注意，如果 AdSense 告诉你检查不通过，你一定不要频繁点击再次检查，一定要先确定检查不通过的原因，并在排除问题之后再重新检查，因为每天检查次数是有限制的，如果超过限制，就只能等 24 小时之后再检查了</p>
+<p>然后 AdSense 会开始审核阶段，这期间我们静静等待审核结果的邮件就好了。</p>
+]]></content>
+      <categories>
+        <category>Computer</category>
+        <category>Building Website</category>
+        <category>Advertisement</category>
+      </categories>
+      <tags>
+        <tag>Google AdSense</tag>
       </tags>
   </entry>
   <entry>
@@ -289,6 +289,24 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo 下Next主题新增打赏支持</title>
+    <url>/2022/01/27/hexo%20%E4%B8%8BNext%E4%B8%BB%E9%A2%98%E6%96%B0%E5%A2%9E%E6%89%93%E8%B5%8F%E6%94%AF%E6%8C%81/</url>
+    <content><![CDATA[<p>PS：制作透明二维码图片可以用草料</p>
+<p>编辑文件themes/next/_config.yml， 找到Reward部分的内容进行修改，参考如下：</p>
+<span id="more"></span>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Reward (Donate)</span><br><span class="line"># Front-matter variable (unsupport animation).</span><br><span class="line">reward_settings:</span><br><span class="line">  # If true, reward will be displayed in every article by default.</span><br><span class="line">  enable: true</span><br><span class="line">  animation: false</span><br><span class="line">  comment: 坚持原创分享，您的支持将鼓励我继续创作更多优质内容！</span><br><span class="line"></span><br><span class="line">reward:</span><br><span class="line">  wechatpay: /images/wechatpay.jpg</span><br><span class="line">  #alipay: /images/alipay.png</span><br><span class="line">  #paypal: /images/paypal.png</span><br><span class="line">  #bitcoin: /images/bitcoin.png</span><br></pre></td></tr></table></figure>
+<p>  其中wechatpay就是微信支付了。 把第二步获取的图片放到themes/next/source/images目录下，并改名为wechatpay.jpg</p>
+]]></content>
+      <categories>
+        <category>Computer</category>
+        <category>Building Website</category>
+        <category>Advertisement</category>
+      </categories>
+      <tags>
+        <tag>二维码赞赏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>centos7的默认防火墙firewall与ipstable</title>
     <url>/2022/01/15/centos7%E7%9A%84%E9%BB%98%E8%AE%A4%E9%98%B2%E7%81%AB%E5%A2%99firewall%E4%B8%8Eipstable/</url>
     <content><![CDATA[<p><strong>1、默认防火墙firewall</strong></p>
@@ -386,21 +404,24 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo 下Next主题新增打赏支持</title>
-    <url>/2022/01/27/hexo%20%E4%B8%8BNext%E4%B8%BB%E9%A2%98%E6%96%B0%E5%A2%9E%E6%89%93%E8%B5%8F%E6%94%AF%E6%8C%81/</url>
-    <content><![CDATA[<p>PS：制作透明二维码图片可以用草料</p>
-<p>编辑文件themes/next/_config.yml， 找到Reward部分的内容进行修改，参考如下：</p>
+    <title>mac系统，如何截取固定尺寸的图片？</title>
+    <url>/2021/12/13/mac%E7%B3%BB%E7%BB%9F%EF%BC%8C%E5%A6%82%E4%BD%95%E6%88%AA%E5%8F%96%E5%9B%BA%E5%AE%9A%E5%B0%BA%E5%AF%B8%E7%9A%84%E5%9B%BE%E7%89%87%EF%BC%9F/</url>
+    <content><![CDATA[<p>Mac自带截图即可实现</p>
 <span id="more"></span>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Reward (Donate)</span><br><span class="line"># Front-matter variable (unsupport animation).</span><br><span class="line">reward_settings:</span><br><span class="line">  # If true, reward will be displayed in every article by default.</span><br><span class="line">  enable: true</span><br><span class="line">  animation: false</span><br><span class="line">  comment: 坚持原创分享，您的支持将鼓励我继续创作更多优质内容！</span><br><span class="line"></span><br><span class="line">reward:</span><br><span class="line">  wechatpay: /images/wechatpay.jpg</span><br><span class="line">  #alipay: /images/alipay.png</span><br><span class="line">  #paypal: /images/paypal.png</span><br><span class="line">  #bitcoin: /images/bitcoin.png</span><br></pre></td></tr></table></figure>
-<p>  其中wechatpay就是微信支付了。 把第二步获取的图片放到themes/next/source/images目录下，并改名为wechatpay.jpg</p>
+
+<p>在 macOS Mojave 上，按下 Shift-Command-5 后，调整你要截图的尺寸大小，然后点击选项，记住上一次选择，然后下次截图就会按照同样的尺寸去执行。<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/8-1.png" alt="image"><br>但是请注意此记忆只在Shift-Command-5下记忆，在Shift-Command-4下不会记忆</p>
+<p>参考：<a href="https://newsn.net/say/mac-capture-fixed-size.html">https://newsn.net/say/mac-capture-fixed-size.html
+</a></p>
 ]]></content>
       <categories>
         <category>Computer</category>
-        <category>Building Website</category>
-        <category>Advertisement</category>
+        <category>Software</category>
+        <category>Screenshot</category>
       </categories>
       <tags>
-        <tag>二维码赞赏</tag>
+        <tag>计算机技能</tag>
+        <tag>MacOS</tag>
+        <tag>截图</tag>
       </tags>
   </entry>
   <entry>
@@ -442,27 +463,6 @@
         <tag>计算机技能</tag>
         <tag>云服务器</tag>
         <tag>BREAK</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mac系统，如何截取固定尺寸的图片？</title>
-    <url>/2021/12/13/mac%E7%B3%BB%E7%BB%9F%EF%BC%8C%E5%A6%82%E4%BD%95%E6%88%AA%E5%8F%96%E5%9B%BA%E5%AE%9A%E5%B0%BA%E5%AF%B8%E7%9A%84%E5%9B%BE%E7%89%87%EF%BC%9F/</url>
-    <content><![CDATA[<p>Mac自带截图即可实现</p>
-<span id="more"></span>
-
-<p>在 macOS Mojave 上，按下 Shift-Command-5 后，调整你要截图的尺寸大小，然后点击选项，记住上一次选择，然后下次截图就会按照同样的尺寸去执行。<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/8-1.png" alt="image"><br>但是请注意此记忆只在Shift-Command-5下记忆，在Shift-Command-4下不会记忆</p>
-<p>参考：<a href="https://newsn.net/say/mac-capture-fixed-size.html">https://newsn.net/say/mac-capture-fixed-size.html
-</a></p>
-]]></content>
-      <categories>
-        <category>Computer</category>
-        <category>Software</category>
-        <category>Screenshot</category>
-      </categories>
-      <tags>
-        <tag>计算机技能</tag>
-        <tag>MacOS</tag>
-        <tag>截图</tag>
       </tags>
   </entry>
   <entry>
@@ -520,30 +520,6 @@
       </tags>
   </entry>
   <entry>
-    <title>条约法下Signature ad referendum与Signature的区别</title>
-    <url>/2021/11/23/%E6%9D%A1%E7%BA%A6%E6%B3%95%E4%B8%8BSignature%20ad%20referendum%E4%B8%8ESignature%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="Signature-ad-referendum-暂签）"><a href="#Signature-ad-referendum-暂签）" class="headerlink" title="Signature ad referendum(暂签）"></a>Signature ad referendum(暂签）</h1><p>Where the signature is subject to ratification, acceptance or approval, the signature does not establish the consent to be bound. However, it is a means of authentication and expresses the willingness of the signatory state to continue the treaty-making process. The signature qualifies the signatory state to proceed to ratification, acceptance or approval. It representative may sign a treaty “ad referendum”, i.e., under the condition that the signature is confirmed by his state.  In this case, the signature becomes definitive once it is confirmed by the responsible organ.</p>
-<span id="more"></span>
-
-<p>[Art.12 (2) (b), Vienna Convention on the Law of Treaties 1969]</p>
-<h1 id="Signature-Subject-to-Ratification-Acceptance-or-Approval"><a href="#Signature-Subject-to-Ratification-Acceptance-or-Approval" class="headerlink" title="Signature Subject to Ratification, Acceptance or Approval"></a>Signature Subject to Ratification, Acceptance or Approval</h1><p>Where the signature is subject to ratification, acceptance or approval, the signature does not establish the consent to be bound. However, it is a means of authentication and expresses the willingness of the signatory state to continue the treaty-making process. The signature qualifies the signatory state to proceed to ratification, acceptance or approval. It also creates an obligation to refrain, in good faith, from acts that would defeat the object and the purpose of the treaty.</p>
-<p>[Arts.10 and 18, Vienna Convention on the Law of Treaties 1969]</p>
-<h1 id="Ratification"><a href="#Ratification" class="headerlink" title="Ratification"></a>Ratification</h1><p>A reservation is a declaration made by a state by which it purports to exclude or alter the legal effect of certain provisions of the treaty in their application to that state. A reservation enables a state to accept a multilateral treaty as a whole by giving it the possibility not to apply certain provisions with which it does not want to comply. Reservations can be made when the treaty is signed, ratified, accepted, approved or acceded to. Reservations must not be incompatible with the object and the purpose of the treaty. Furthermore, a treaty might prohibit reservations or only allow for certain reservations to be made.</p>
-<p>[Arts.2 (1) (d) and 19-23, Vienna Convention of the Law of Treaties 1969]</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>1、Confirmed by the responsible organ后Signature ad referendum变成Signature<br>2、暂签是签约的一个前置程序，但非必需<br>3、解释: 有时候外交官还没有拿到本国相关机构的批准，所以先自己签名，此时没有对于国家的效力，等国家授权以后才相当于国家签署。国家签署了以后，此文件的有关目标和宗旨的条款对国家就有约束力了。然后继续进行，比方说我国的话，等全国人大表决通过此条约以后，此条约中我国接受的明细条款对我国产生效力。</p>
-<p>参考:<a href="https://treaties.un.org/pages/Overview.aspx?path=overview/glossary/page1_en.xml">https://treaties.un.org/pages/Overview.aspx?path=overview/glossary/page1_en.xml</a></p>
-]]></content>
-      <categories>
-        <category>Law</category>
-        <category>International Law</category>
-      </categories>
-      <tags>
-        <tag>法律笔记</tag>
-        <tag>国际法</tag>
-        <tag>条约法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>甲骨文云通过Cloud Shell以控制台连接的方式连接实例</title>
     <url>/2022/01/13/%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%91%E9%80%9A%E8%BF%87Cloud%20Shell%E4%BB%A5%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%96%B9%E5%BC%8F%E8%BF%9E%E6%8E%A5%E5%AE%9E%E4%BE%8B/</url>
     <content><![CDATA[<p>1、打开Cloud Shell</p>
@@ -570,6 +546,30 @@
         <tag>计算机技能</tag>
         <tag>云服务器</tag>
         <tag>BREAK</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>条约法下Signature ad referendum与Signature的区别</title>
+    <url>/2021/11/23/%E6%9D%A1%E7%BA%A6%E6%B3%95%E4%B8%8BSignature%20ad%20referendum%E4%B8%8ESignature%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="Signature-ad-referendum-暂签）"><a href="#Signature-ad-referendum-暂签）" class="headerlink" title="Signature ad referendum(暂签）"></a>Signature ad referendum(暂签）</h1><p>Where the signature is subject to ratification, acceptance or approval, the signature does not establish the consent to be bound. However, it is a means of authentication and expresses the willingness of the signatory state to continue the treaty-making process. The signature qualifies the signatory state to proceed to ratification, acceptance or approval. It representative may sign a treaty “ad referendum”, i.e., under the condition that the signature is confirmed by his state.  In this case, the signature becomes definitive once it is confirmed by the responsible organ.</p>
+<span id="more"></span>
+
+<p>[Art.12 (2) (b), Vienna Convention on the Law of Treaties 1969]</p>
+<h1 id="Signature-Subject-to-Ratification-Acceptance-or-Approval"><a href="#Signature-Subject-to-Ratification-Acceptance-or-Approval" class="headerlink" title="Signature Subject to Ratification, Acceptance or Approval"></a>Signature Subject to Ratification, Acceptance or Approval</h1><p>Where the signature is subject to ratification, acceptance or approval, the signature does not establish the consent to be bound. However, it is a means of authentication and expresses the willingness of the signatory state to continue the treaty-making process. The signature qualifies the signatory state to proceed to ratification, acceptance or approval. It also creates an obligation to refrain, in good faith, from acts that would defeat the object and the purpose of the treaty.</p>
+<p>[Arts.10 and 18, Vienna Convention on the Law of Treaties 1969]</p>
+<h1 id="Ratification"><a href="#Ratification" class="headerlink" title="Ratification"></a>Ratification</h1><p>A reservation is a declaration made by a state by which it purports to exclude or alter the legal effect of certain provisions of the treaty in their application to that state. A reservation enables a state to accept a multilateral treaty as a whole by giving it the possibility not to apply certain provisions with which it does not want to comply. Reservations can be made when the treaty is signed, ratified, accepted, approved or acceded to. Reservations must not be incompatible with the object and the purpose of the treaty. Furthermore, a treaty might prohibit reservations or only allow for certain reservations to be made.</p>
+<p>[Arts.2 (1) (d) and 19-23, Vienna Convention of the Law of Treaties 1969]</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>1、Confirmed by the responsible organ后Signature ad referendum变成Signature<br>2、暂签是签约的一个前置程序，但非必需<br>3、解释: 有时候外交官还没有拿到本国相关机构的批准，所以先自己签名，此时没有对于国家的效力，等国家授权以后才相当于国家签署。国家签署了以后，此文件的有关目标和宗旨的条款对国家就有约束力了。然后继续进行，比方说我国的话，等全国人大表决通过此条约以后，此条约中我国接受的明细条款对我国产生效力。</p>
+<p>参考:<a href="https://treaties.un.org/pages/Overview.aspx?path=overview/glossary/page1_en.xml">https://treaties.un.org/pages/Overview.aspx?path=overview/glossary/page1_en.xml</a></p>
+]]></content>
+      <categories>
+        <category>Law</category>
+        <category>International Law</category>
+      </categories>
+      <tags>
+        <tag>法律笔记</tag>
+        <tag>国际法</tag>
+        <tag>条约法</tag>
       </tags>
   </entry>
   <entry>
