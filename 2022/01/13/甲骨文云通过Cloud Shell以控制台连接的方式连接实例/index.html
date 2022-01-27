@@ -21,17 +21,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="1、打开Cloud Shell 2、在下方出现的Cloud Shell中输入以下命令生成密钥对 1ssh-keygen -t rsa 3、输出公钥 1cat $HOME&#x2F;.ssh&#x2F;id_rsa.pub  4、在计算-&gt;实例-&gt;实例详细信息-&gt;控制台连接中点击“创建控制台连接” 5、将第3步输出的公钥复制进去并创建 6、当状态变为“活动”时，点击右边的三个小点，并点击“复制 Lin">
+<meta name="description" content="1、打开Cloud Shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="甲骨文云通过Cloud Shell以控制台连接的方式连接实例">
 <meta property="og:url" content="http://example.com/2022/01/13/%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%91%E9%80%9A%E8%BF%87Cloud%20Shell%E4%BB%A5%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%96%B9%E5%BC%8F%E8%BF%9E%E6%8E%A5%E5%AE%9E%E4%BE%8B/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="1、打开Cloud Shell 2、在下方出现的Cloud Shell中输入以下命令生成密钥对 1ssh-keygen -t rsa 3、输出公钥 1cat $HOME&#x2F;.ssh&#x2F;id_rsa.pub  4、在计算-&gt;实例-&gt;实例详细信息-&gt;控制台连接中点击“创建控制台连接” 5、将第3步输出的公钥复制进去并创建 6、当状态变为“活动”时，点击右边的三个小点，并点击“复制 Lin">
+<meta property="og:description" content="1、打开Cloud Shell">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/9-1.png">
 <meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/9-2.png">
 <meta property="article:published_time" content="2022-01-13T11:33:33.000Z">
-<meta property="article:modified_time" content="2022-01-13T13:20:22.387Z">
+<meta property="article:modified_time" content="2022-01-27T03:52:47.301Z">
 <meta property="article:author" content="Shaw Lee">
 <meta property="article:tag" content="计算机技能">
 <meta property="article:tag" content="云服务器">
@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -176,7 +176,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -238,10 +238,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-01-13 19:33:33 / Modified: 21:20:22" itemprop="dateCreated datePublished" datetime="2022-01-13T19:33:33+08:00">2022-01-13</time>
+      <time title="Created: 2022-01-13 19:33:33" itemprop="dateCreated datePublished" datetime="2022-01-13T19:33:33+08:00">2022-01-13</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-01-27 11:52:47" itemprop="dateModified" datetime="2022-01-27T11:52:47+08:00">2022-01-27</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -270,7 +276,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>1、打开Cloud Shell<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/9-1.png" alt="image"></p>
+        <p>1、打开Cloud Shell</p>
+<span id="more"></span>
+
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/9-1.png" alt="image"></p>
 <p>2、在下方出现的Cloud Shell中输入以下命令生成密钥对</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
 <p>3、输出公钥</p>

@@ -5,6 +5,8 @@
     <url>/2021/11/19/Excel%20%E5%B7%A5%E4%BD%9C%E8%A1%A8%E5%AF%86%E7%A0%81%E4%BF%9D%E6%8A%A4%E7%9A%84%E8%A7%A3%E9%99%A4%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<p>PS:长密码不太好用<br>PS:克服的是”校阅”选项的”保护工作表”</p>
 <p>利用 VBA 巨集程式破解法</p>
+<span id="more"></span>
+
 <p><em><strong>只适用2016版Excel及之前版本</strong></em></p>
 <p><strong>Excel 工作表密码保护的解除方法</strong></p>
 <p>当开启一个 Excel工作表，进入后要看工作表上的公式如何运作，才发现工作表受到密码保护，上网搜寻了一下破解方法，试过很多种方法都太麻烦，最后终于找到最简单的破解方法，借此分享，希望用的到的人不必再一一去试。</p>
@@ -39,6 +41,7 @@
     <title>GoogleAd申请加添加到blog</title>
     <url>/2022/01/25/GoogleAd%E7%94%B3%E8%AF%B7%E5%8A%A0%E6%B7%BB%E5%8A%A0%E5%88%B0blog/</url>
     <content><![CDATA[<h1 id="注册-Google-AdSense"><a href="#注册-Google-AdSense" class="headerlink" title="注册 Google AdSense"></a>注册 Google AdSense</h1><p>只说一句，注册地区不能改，要能接收纸质挂号信</p>
+<span id="more"></span>
 <h1 id="添加-AdSense-代码"><a href="#添加-AdSense-代码" class="headerlink" title="添加 AdSense 代码"></a>添加 AdSense 代码</h1><p>在注册完成后，AdSense 会给你一串代码，并要求你把这串代码放在 </p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;head&gt;&lt;/head&gt;</span><br></pre></td></tr></table></figure>
 <p>同时再次提醒确认你的 NexT 主题的版本是不是 v6.0.2 或后续版本。如果不是的话，你要么考虑升级，要么可以点❌关闭了。</p>
@@ -69,6 +72,8 @@
     <content><![CDATA[<p>参考1:<a href="https://segmentfault.com/a/1190000038373795">https://segmentfault.com/a/1190000038373795</a></p>
 <p>参考2:<a href="https://godweiyang.com/2018/04/13/hexo-blog/">https://godweiyang.com/2018/04/13/hexo-blog/</a></p>
 <p>开始之前需要在电脑上安装好Git和node.js，Mac上可以使用Homebrew命令行工具来安装Git和node.js</p>
+<span id="more"></span>
+
 <h1 id="安装Homebrew"><a href="#安装Homebrew" class="headerlink" title="安装Homebrew"></a>安装Homebrew</h1><p>在命令行工具输入以下命令，如果已经安装过Homebrew可以忽略</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure>
 
@@ -117,7 +122,7 @@
 <h1 id="配置客户端git-添加SSH-Key到github"><a href="#配置客户端git-添加SSH-Key到github" class="headerlink" title="配置客户端git 添加SSH Key到github"></a>配置客户端git 添加SSH Key到github</h1><p>如果已经配置过，该步骤可以忽略<br>在命令行输入配置用户名和账号的命令</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
-<p>其中 username 是你的用户名，<a href="mailto:&#x65;&#x6d;&#97;&#105;&#108;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#x65;&#x6d;&#97;&#105;&#108;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
+<p>其中 username 是你的用户名，<a href="mailto:&#x65;&#x6d;&#97;&#105;&#x6c;&#64;&#103;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;">&#x65;&#x6d;&#97;&#105;&#x6c;&#64;&#103;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
 <p>如果已经创建过会出现 Overwrite (y/n)? n提示可以输入 n，如果没有创建过会要求我们输入密码，然后一路回车下去就行，执行完成后会在~/.ssh/id_rsa.pub目录下生成 需要使用的 key。</p>
@@ -166,6 +171,8 @@
     <url>/2021/11/20/Mac%E4%B8%8B%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E7%9A%84%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8ATimeMachine%E7%9A%84%E5%A4%87%E4%BB%BD%EF%BC%8C%E5%85%AC%E7%94%A8%E7%9B%98%E9%A6%96%E9%80%89NTFS%EF%BC%8C%E4%B8%8D%E5%BB%BA%E8%AE%AEExfat/</url>
     <content><![CDATA[<p>参考：<a href="%E6%9D%A5%E6%BA%90%EF%BC%9Ahttps://www.jianshu.com/p/5f8b4d9a8">https://www.jianshu.com/p/5f8b4d9a8</a></p>
 <p>TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。</p>
+<span id="more"></span>
+
 <h1 id="磁盘抹除及资料转移"><a href="#磁盘抹除及资料转移" class="headerlink" title="磁盘抹除及资料转移"></a>磁盘抹除及资料转移</h1><p>刚买的移动硬盘大部分都是NTFS格式的，比如我的希捷1TB移动硬盘，首先NTFS格式在Mac上是可读不可写的。希捷提供官方工具Paragon驱动程序兼容，但是在抹除之前要关掉该工具，否则会提示抹除失败。另外不要用exFAT格式，不稳定。</p>
 <p>首先问题是这样子的，1TB的移动硬盘现在为NTFS格式，而我需要TimeMachine来对我的电脑进行备份，Time Machine 备份磁盘最常见的格式是“Mac OS 扩展”格式，但Time Machine还支持“Mac OS 扩展（区分大小写，日志式）”和XSan格式。所以首先我们要做的是：</p>
 <p>1.将移动硬盘里面所存储的内容转移到其他硬盘中，比如Windows的D盘F盘，也可以转移到其他的移动硬盘中，具体迁移到哪里，根据你数据的大小选择最恰当的存储地方。</p>
@@ -207,6 +214,8 @@
     <content><![CDATA[<p>PS：想问一下oracle cloud shell咋用？？会用的请评论</p>
 <p>PS：oracle cloud的官方文档写的不咋地，有些错误，请小心</p>
 <p>PS：下述脚本已经github备份，如果wget链接失效可以评论</p>
+<span id="more"></span>
+
 <p>—正文开始—</p>
 <p>注册Oracle Cloud就不赘述了，最好手机开4G注册。</p>
 <h1 id="第一步，开一台云服务器实例，平台映像我选的是CentOS7。"><a href="#第一步，开一台云服务器实例，平台映像我选的是CentOS7。" class="headerlink" title="第一步，开一台云服务器实例，平台映像我选的是CentOS7。"></a><strong>第一步，开一台云服务器实例，平台映像我选的是CentOS7。</strong></h1><h1 id="第二步，本机生成ssh公钥私钥（见之前文章），并上传公钥。引导卷大小不用变，但是合计超100G会收费，所以删服务器时一定要记得删去引导卷，数据传输是否选择加密看个人需求。"><a href="#第二步，本机生成ssh公钥私钥（见之前文章），并上传公钥。引导卷大小不用变，但是合计超100G会收费，所以删服务器时一定要记得删去引导卷，数据传输是否选择加密看个人需求。" class="headerlink" title="第二步，本机生成ssh公钥私钥（见之前文章），并上传公钥。引导卷大小不用变，但是合计超100G会收费，所以删服务器时一定要记得删去引导卷，数据传输是否选择加密看个人需求。"></a><strong>第二步，本机生成ssh公钥私钥（见之前文章），并上传公钥。引导卷大小不用变，但是合计超100G会收费，所以删服务器时一定要记得删去引导卷，数据传输是否选择加密看个人需求。</strong></h1><h1 id="第三步，利用脚本开启root登陆。"><a href="#第三步，利用脚本开启root登陆。" class="headerlink" title="第三步，利用脚本开启root登陆。"></a><strong>第三步，利用脚本开启root登陆。</strong></h1><p>Oracle 实例和G家一样，默认没有开启 ssh 密码登录功能，而且也没有提供网页 ssh，仅提供 ssh 密钥的方式建立连接，对于mac不太友好，在探索后发现可以在创建实例的时候利用 cloud-init 脚本就可以了。(此方法也适合 gcp，功能和原理都是一样的)</p>
@@ -284,6 +293,8 @@
     <url>/2022/01/15/centos7%E7%9A%84%E9%BB%98%E8%AE%A4%E9%98%B2%E7%81%AB%E5%A2%99firewall%E4%B8%8Eipstable/</url>
     <content><![CDATA[<p><strong>1、默认防火墙firewall</strong></p>
 <p>CentOS 7查看所有已开放端口命令：</p>
+<span id="more"></span>
+
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --list-ports</span><br></pre></td></tr></table></figure>
 
 
@@ -375,27 +386,30 @@
       </tags>
   </entry>
   <entry>
-    <title>mac系统，如何截取固定尺寸的图片？</title>
-    <url>/2021/12/13/mac%E7%B3%BB%E7%BB%9F%EF%BC%8C%E5%A6%82%E4%BD%95%E6%88%AA%E5%8F%96%E5%9B%BA%E5%AE%9A%E5%B0%BA%E5%AF%B8%E7%9A%84%E5%9B%BE%E7%89%87%EF%BC%9F/</url>
-    <content><![CDATA[<p>Mac自带截图即可实现<br>在 macOS Mojave 上，按下 Shift-Command-5 后，调整你要截图的尺寸大小，然后点击选项，记住上一次选择，然后下次截图就会按照同样的尺寸去执行。<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/8-1.png" alt="image"><br>但是请注意此记忆只在Shift-Command-5下记忆，在Shift-Command-4下不会记忆</p>
-<p>参考：<a href="https://newsn.net/say/mac-capture-fixed-size.html">https://newsn.net/say/mac-capture-fixed-size.html
-</a></p>
+    <title>hexo 下Next主题新增打赏支持</title>
+    <url>/2022/01/27/hexo%20%E4%B8%8BNext%E4%B8%BB%E9%A2%98%E6%96%B0%E5%A2%9E%E6%89%93%E8%B5%8F%E6%94%AF%E6%8C%81/</url>
+    <content><![CDATA[<p>PS：制作透明二维码图片可以用草料</p>
+<p>编辑文件themes/next/_config.yml， 找到Reward部分的内容进行修改，参考如下：</p>
+<span id="more"></span>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Reward (Donate)</span><br><span class="line"># Front-matter variable (unsupport animation).</span><br><span class="line">reward_settings:</span><br><span class="line">  # If true, reward will be displayed in every article by default.</span><br><span class="line">  enable: true</span><br><span class="line">  animation: false</span><br><span class="line">  comment: 坚持原创分享，您的支持将鼓励我继续创作更多优质内容！</span><br><span class="line"></span><br><span class="line">reward:</span><br><span class="line">  wechatpay: /images/wechatpay.jpg</span><br><span class="line">  #alipay: /images/alipay.png</span><br><span class="line">  #paypal: /images/paypal.png</span><br><span class="line">  #bitcoin: /images/bitcoin.png</span><br></pre></td></tr></table></figure>
+<p>  其中wechatpay就是微信支付了。 把第二步获取的图片放到themes/next/source/images目录下，并改名为wechatpay.jpg</p>
 ]]></content>
       <categories>
         <category>Computer</category>
-        <category>Software</category>
-        <category>Screenshot</category>
+        <category>Building Website</category>
+        <category>Advertisement</category>
       </categories>
       <tags>
-        <tag>计算机技能</tag>
-        <tag>MacOS</tag>
-        <tag>截图</tag>
+        <tag>二维码赞赏</tag>
       </tags>
   </entry>
   <entry>
     <title>ip失效后 Oracle Cloud更换ip 并重新配置agent</title>
     <url>/2022/01/13/ip%E5%A4%B1%E6%95%88%E5%90%8E%20Oracle%20Cloud%E6%9B%B4%E6%8D%A2ip%20%E5%B9%B6%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEagent/</url>
-    <content><![CDATA[<h1 id="更换IP"><a href="#更换IP" class="headerlink" title="更换IP"></a>更换IP</h1><p>点击相应的实例详情 – 【附加的 VNIC】- 点击VNIC详情 – 【IP地址】 – 【…】- 点击编辑<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-1.png" alt="image"><br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-2.png" alt="image"><br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-3.png" alt="image"><br>然后点击右边的三个点，选择编辑<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-4.png" alt="image"><br>选择没有公共IP，点击更新！再次点击编辑，选择临时公共IP 或者 预留公共IP 点击更新即可！<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-5.png" alt="image"><br>再次点击编辑，选择临时公共IP 或者 预留公共IP 点击更新即可<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-6.png" alt="image"><br>预留IP怎么选？菜单 — 网络 — 公共IP，直接申请IP</p>
+    <content><![CDATA[<h1 id="更换IP"><a href="#更换IP" class="headerlink" title="更换IP"></a>更换IP</h1><p>点击相应的实例详情 – 【附加的 VNIC】- 点击VNIC详情 – 【IP地址】 – 【…】- 点击编辑</p>
+<span id="more"></span>
+
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-1.png" alt="image"><br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-2.png" alt="image"><br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-3.png" alt="image"><br>然后点击右边的三个点，选择编辑<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-4.png" alt="image"><br>选择没有公共IP，点击更新！再次点击编辑，选择临时公共IP 或者 预留公共IP 点击更新即可！<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-5.png" alt="image"><br>再次点击编辑，选择临时公共IP 或者 预留公共IP 点击更新即可<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-6.png" alt="image"><br>预留IP怎么选？菜单 — 网络 — 公共IP，直接申请IP</p>
 <h1 id="重新配置agent"><a href="#重新配置agent" class="headerlink" title="重新配置agent"></a>重新配置agent</h1><p>此时，如果直接将新IP复制到Agent IP处，会发现是可以连接使用的（起码S家是这样的）。但是最好不要这样。</p>
 <p>其次换完IP后一定记得“重新引导”<br>重新引导相当于重启<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7-8.png" alt="image"><br>否则root登陆不了</p>
 <p>但是如果reboot服务器会发现，不能继续连接使用了。</p>
@@ -431,11 +445,34 @@
       </tags>
   </entry>
   <entry>
+    <title>mac系统，如何截取固定尺寸的图片？</title>
+    <url>/2021/12/13/mac%E7%B3%BB%E7%BB%9F%EF%BC%8C%E5%A6%82%E4%BD%95%E6%88%AA%E5%8F%96%E5%9B%BA%E5%AE%9A%E5%B0%BA%E5%AF%B8%E7%9A%84%E5%9B%BE%E7%89%87%EF%BC%9F/</url>
+    <content><![CDATA[<p>Mac自带截图即可实现</p>
+<span id="more"></span>
+
+<p>在 macOS Mojave 上，按下 Shift-Command-5 后，调整你要截图的尺寸大小，然后点击选项，记住上一次选择，然后下次截图就会按照同样的尺寸去执行。<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/8-1.png" alt="image"><br>但是请注意此记忆只在Shift-Command-5下记忆，在Shift-Command-4下不会记忆</p>
+<p>参考：<a href="https://newsn.net/say/mac-capture-fixed-size.html">https://newsn.net/say/mac-capture-fixed-size.html
+</a></p>
+]]></content>
+      <categories>
+        <category>Computer</category>
+        <category>Software</category>
+        <category>Screenshot</category>
+      </categories>
+      <tags>
+        <tag>计算机技能</tag>
+        <tag>MacOS</tag>
+        <tag>截图</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>利用Automator和Python下载数据</title>
     <url>/2021/11/24/%E5%88%A9%E7%94%A8Automator%E5%92%8CPython%E4%B8%8B%E8%BD%BD%E6%95%B0%E6%8D%AE/</url>
     <content><![CDATA[<h1 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h1><p>1.从某个网站下载更新的数据，周二至周六更新前一天数据</p>
 <p>2.将数据归类到相应路径文件夹</p>
 <p>3.将文件按照日期重命名</p>
+<span id="more"></span>
+
 <p>参考文档：<a href="https://learnku.com/articles/57325">Python 搭配 Automator 上传文件到 Github</a></p>
 <h1 id="Python脚本（脱敏）"><a href="#Python脚本（脱敏）" class="headerlink" title="Python脚本（脱敏）"></a>Python脚本（脱敏）</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># -*- coding:utf8 -*-</span><br><span class="line">#上一行是为了解决python中识别中文注释问题</span><br><span class="line"></span><br><span class="line">import requests</span><br><span class="line">import datetime</span><br><span class="line"></span><br><span class="line">DATA_URL_ARKK_PDF = &#x27;&#x27;</span><br><span class="line">DATA_URL_ARKK_CSV = &#x27;&#x27;</span><br><span class="line"></span><br><span class="line">DATA_MAINPATH = &#x27;/Users/shawleo/Desktop/ARK/Data&#x27;</span><br><span class="line">USER_AGENT = &#x27;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36&#x27;</span><br><span class="line"></span><br><span class="line"># 北京时间每周二至周六晚上9点执行</span><br><span class="line"></span><br><span class="line">theHeader = &#123;&#x27;User-Agent&#x27;: USER_AGENT&#125;</span><br><span class="line">today = datetime.date.today()</span><br><span class="line">formatted_today=today.strftime(&#x27;%y%m%d&#x27;)</span><br><span class="line">yesterday=int(formatted_today)-1</span><br><span class="line"></span><br><span class="line">path_ARKK_PDF = DATA_MAINPATH + &#x27;/ARKK/&#x27; + &#x27;ARKK&#x27; + &#x27;20&#x27; + str(yesterday) + &#x27;.pdf&#x27;</span><br><span class="line">path_ARKK_CSV = DATA_MAINPATH + &#x27;/ARKK/&#x27; + &#x27;ARKK&#x27; + &#x27;20&#x27; + str(yesterday) + &#x27;.csv&#x27;</span><br><span class="line"></span><br><span class="line">response = requests.get(DATA_URL_ARKK_PDF, headers=theHeader, stream=True)</span><br><span class="line"></span><br><span class="line">with open(path_ARKK_PDF, &quot;wb&quot;) as f:</span><br><span class="line">    for chunk in response.iter_content(chunk_size=512):</span><br><span class="line">        f.write(chunk)</span><br><span class="line">        </span><br><span class="line">response = requests.get(DATA_URL_ARKK_CSV, headers=theHeader, stream=True)</span><br><span class="line"></span><br><span class="line">with open(path_ARKK_CSV, &quot;wb&quot;) as f:</span><br><span class="line">    for chunk in response.iter_content(chunk_size=512):</span><br><span class="line">        f.write(chunk)</span><br></pre></td></tr></table></figure>
 <h1 id="搭配-Automator-使用"><a href="#搭配-Automator-使用" class="headerlink" title="搭配 Automator 使用"></a>搭配 Automator 使用</h1><p>上面的脚本已经可以使用了，但是每次跑命令行依然很麻烦，苹果电脑提供了一个叫做 Automator (自动操作) 的软件，可以帮助我们建立工作流程，我们可以借助它来帮我们跑脚本。</p>
@@ -486,6 +523,8 @@
     <title>条约法下Signature ad referendum与Signature的区别</title>
     <url>/2021/11/23/%E6%9D%A1%E7%BA%A6%E6%B3%95%E4%B8%8BSignature%20ad%20referendum%E4%B8%8ESignature%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[<h1 id="Signature-ad-referendum-暂签）"><a href="#Signature-ad-referendum-暂签）" class="headerlink" title="Signature ad referendum(暂签）"></a>Signature ad referendum(暂签）</h1><p>Where the signature is subject to ratification, acceptance or approval, the signature does not establish the consent to be bound. However, it is a means of authentication and expresses the willingness of the signatory state to continue the treaty-making process. The signature qualifies the signatory state to proceed to ratification, acceptance or approval. It representative may sign a treaty “ad referendum”, i.e., under the condition that the signature is confirmed by his state.  In this case, the signature becomes definitive once it is confirmed by the responsible organ.</p>
+<span id="more"></span>
+
 <p>[Art.12 (2) (b), Vienna Convention on the Law of Treaties 1969]</p>
 <h1 id="Signature-Subject-to-Ratification-Acceptance-or-Approval"><a href="#Signature-Subject-to-Ratification-Acceptance-or-Approval" class="headerlink" title="Signature Subject to Ratification, Acceptance or Approval"></a>Signature Subject to Ratification, Acceptance or Approval</h1><p>Where the signature is subject to ratification, acceptance or approval, the signature does not establish the consent to be bound. However, it is a means of authentication and expresses the willingness of the signatory state to continue the treaty-making process. The signature qualifies the signatory state to proceed to ratification, acceptance or approval. It also creates an obligation to refrain, in good faith, from acts that would defeat the object and the purpose of the treaty.</p>
 <p>[Arts.10 and 18, Vienna Convention on the Law of Treaties 1969]</p>
@@ -505,9 +544,40 @@
       </tags>
   </entry>
   <entry>
+    <title>甲骨文云通过Cloud Shell以控制台连接的方式连接实例</title>
+    <url>/2022/01/13/%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%91%E9%80%9A%E8%BF%87Cloud%20Shell%E4%BB%A5%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%96%B9%E5%BC%8F%E8%BF%9E%E6%8E%A5%E5%AE%9E%E4%BE%8B/</url>
+    <content><![CDATA[<p>1、打开Cloud Shell</p>
+<span id="more"></span>
+
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/9-1.png" alt="image"></p>
+<p>2、在下方出现的Cloud Shell中输入以下命令生成密钥对</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+<p>3、输出公钥</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat $HOME/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>4、在计算-&gt;实例-&gt;实例详细信息-&gt;控制台连接中点击“创建控制台连接”</p>
+<p>5、将第3步输出的公钥复制进去并创建</p>
+<p>6、当状态变为“活动”时，点击右边的三个小点，并点击“复制 Linux/Mac 的串行控制台连接”<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/9-2.png" alt="image"></p>
+<p>7、粘贴到Cloud Shell中并回车即可连接到实例</p>
+<p>8、输入账户和密码 例如root</p>
+]]></content>
+      <categories>
+        <category>Computer</category>
+        <category>Building Website</category>
+        <category>Server</category>
+      </categories>
+      <tags>
+        <tag>计算机技能</tag>
+        <tag>云服务器</tag>
+        <tag>BREAK</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>车位私下转让法律风险</title>
     <url>/2021/10/31/%E8%BD%A6%E4%BD%8D%E7%A7%81%E4%B8%8B%E8%BD%AC%E8%AE%A9%E6%B3%95%E5%BE%8B%E9%A3%8E%E9%99%A9/</url>
     <content><![CDATA[<p>最近有一个朋友向我咨询了一个问题，他想在小区里买一个车位，经过了解发现车位过户需要向物业缴纳3万元过户手续费，所以他与卖方合计，不通知物业，双方私下交易订立合同，这样做是否有法律风险呢？</p>
+<span id="more"></span>
+
 <p>我认为认为如果不和物业这边打招呼是有风险的，但是物业3万的过户手续费的收取也是没有任何法律依据的。（政府房产管理部门没有出具产权登记证书，何来过户费用）</p>
 <p><strong>首先不和物业打招呼存在的风险有以下几条：</strong></p>
 <p>1.目前的车位所有人可以在把车位卖给你后，再将车位卖给其他人。</p>
@@ -535,32 +605,6 @@
       </categories>
       <tags>
         <tag>法律笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>甲骨文云通过Cloud Shell以控制台连接的方式连接实例</title>
-    <url>/2022/01/13/%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%91%E9%80%9A%E8%BF%87Cloud%20Shell%E4%BB%A5%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%96%B9%E5%BC%8F%E8%BF%9E%E6%8E%A5%E5%AE%9E%E4%BE%8B/</url>
-    <content><![CDATA[<p>1、打开Cloud Shell<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/9-1.png" alt="image"></p>
-<p>2、在下方出现的Cloud Shell中输入以下命令生成密钥对</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
-<p>3、输出公钥</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat $HOME/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-
-<p>4、在计算-&gt;实例-&gt;实例详细信息-&gt;控制台连接中点击“创建控制台连接”</p>
-<p>5、将第3步输出的公钥复制进去并创建</p>
-<p>6、当状态变为“活动”时，点击右边的三个小点，并点击“复制 Linux/Mac 的串行控制台连接”<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/9-2.png" alt="image"></p>
-<p>7、粘贴到Cloud Shell中并回车即可连接到实例</p>
-<p>8、输入账户和密码 例如root</p>
-]]></content>
-      <categories>
-        <category>Computer</category>
-        <category>Building Website</category>
-        <category>Server</category>
-      </categories>
-      <tags>
-        <tag>计算机技能</tag>
-        <tag>云服务器</tag>
-        <tag>BREAK</tag>
       </tags>
   </entry>
 </search>

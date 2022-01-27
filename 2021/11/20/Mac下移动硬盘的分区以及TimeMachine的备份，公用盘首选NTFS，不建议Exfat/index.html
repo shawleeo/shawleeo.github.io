@@ -21,12 +21,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="参考：https:&#x2F;&#x2F;www.jianshu.com&#x2F;p&#x2F;5f8b4d9a8 TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。 磁盘抹除及资料转移刚买的移动硬盘大部分都是NTFS格式的，比如我的希捷1TB移动硬盘，首先NTFS格式在Ma">
+<meta name="description" content="参考：https:&#x2F;&#x2F;www.jianshu.com&#x2F;p&#x2F;5f8b4d9a8 TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac下移动硬盘的分区以及TimeMachine的备份，公用盘首选NTFS，不建议Exfat">
 <meta property="og:url" content="http://example.com/2021/11/20/Mac%E4%B8%8B%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E7%9A%84%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8ATimeMachine%E7%9A%84%E5%A4%87%E4%BB%BD%EF%BC%8C%E5%85%AC%E7%94%A8%E7%9B%98%E9%A6%96%E9%80%89NTFS%EF%BC%8C%E4%B8%8D%E5%BB%BA%E8%AE%AEExfat/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="参考：https:&#x2F;&#x2F;www.jianshu.com&#x2F;p&#x2F;5f8b4d9a8 TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。 磁盘抹除及资料转移刚买的移动硬盘大部分都是NTFS格式的，比如我的希捷1TB移动硬盘，首先NTFS格式在Ma">
+<meta property="og:description" content="参考：https:&#x2F;&#x2F;www.jianshu.com&#x2F;p&#x2F;5f8b4d9a8 TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-1.jpeg">
 <meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-2.jpeg">
@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-4.png">
 <meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-5.jpeg">
 <meta property="article:published_time" content="2021-11-20T01:53:33.000Z">
-<meta property="article:modified_time" content="2021-11-20T03:00:51.764Z">
+<meta property="article:modified_time" content="2022-01-27T03:52:07.160Z">
 <meta property="article:author" content="Shaw Lee">
 <meta property="article:tag" content="计算机技能">
 <meta property="article:tag" content="TimeMachine">
@@ -170,7 +170,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -181,7 +181,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -243,10 +243,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-11-20 09:53:33 / Modified: 11:00:51" itemprop="dateCreated datePublished" datetime="2021-11-20T09:53:33+08:00">2021-11-20</time>
+      <time title="Created: 2021-11-20 09:53:33" itemprop="dateCreated datePublished" datetime="2021-11-20T09:53:33+08:00">2021-11-20</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-01-27 11:52:07" itemprop="dateModified" datetime="2022-01-27T11:52:07+08:00">2022-01-27</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -277,6 +283,8 @@
     <div class="post-body" itemprop="articleBody">
         <p>参考：<a href="%E6%9D%A5%E6%BA%90%EF%BC%9Ahttps://www.jianshu.com/p/5f8b4d9a8">https://www.jianshu.com/p/5f8b4d9a8</a></p>
 <p>TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。</p>
+<span id="more"></span>
+
 <h1 id="磁盘抹除及资料转移"><a href="#磁盘抹除及资料转移" class="headerlink" title="磁盘抹除及资料转移"></a>磁盘抹除及资料转移</h1><p>刚买的移动硬盘大部分都是NTFS格式的，比如我的希捷1TB移动硬盘，首先NTFS格式在Mac上是可读不可写的。希捷提供官方工具Paragon驱动程序兼容，但是在抹除之前要关掉该工具，否则会提示抹除失败。另外不要用exFAT格式，不稳定。</p>
 <p>首先问题是这样子的，1TB的移动硬盘现在为NTFS格式，而我需要TimeMachine来对我的电脑进行备份，Time Machine 备份磁盘最常见的格式是“Mac OS 扩展”格式，但Time Machine还支持“Mac OS 扩展（区分大小写，日志式）”和XSan格式。所以首先我们要做的是：</p>
 <p>1.将移动硬盘里面所存储的内容转移到其他硬盘中，比如Windows的D盘F盘，也可以转移到其他的移动硬盘中，具体迁移到哪里，根据你数据的大小选择最恰当的存储地方。</p>

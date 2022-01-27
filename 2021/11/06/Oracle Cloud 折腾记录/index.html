@@ -21,12 +21,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="PS：想问一下oracle cloud shell咋用？？会用的请评论 PS：oracle cloud的官方文档写的不咋地，有些错误，请小心 PS：下述脚本已经github备份，如果wget链接失效可以评论 —正文开始— 注册Oracle Cloud就不赘述了，最好手机开4G注册。 第一步，开一台云服务器实例，平台映像我选的是CentOS7。第二步，本机生成ssh公钥私钥（见之前文章），并上传公钥">
+<meta name="description" content="PS：想问一下oracle cloud shell咋用？？会用的请评论 PS：oracle cloud的官方文档写的不咋地，有些错误，请小心 PS：下述脚本已经github备份，如果wget链接失效可以评论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oracle Cloud 折腾记录">
 <meta property="og:url" content="http://example.com/2021/11/06/Oracle%20Cloud%20%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="PS：想问一下oracle cloud shell咋用？？会用的请评论 PS：oracle cloud的官方文档写的不咋地，有些错误，请小心 PS：下述脚本已经github备份，如果wget链接失效可以评论 —正文开始— 注册Oracle Cloud就不赘述了，最好手机开4G注册。 第一步，开一台云服务器实例，平台映像我选的是CentOS7。第二步，本机生成ssh公钥私钥（见之前文章），并上传公钥">
+<meta property="og:description" content="PS：想问一下oracle cloud shell咋用？？会用的请评论 PS：oracle cloud的官方文档写的不咋地，有些错误，请小心 PS：下述脚本已经github备份，如果wget链接失效可以评论">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/6.jpeg">
 <meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/7.jpeg">
@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/10.jpeg">
 <meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/12.jpeg">
 <meta property="article:published_time" content="2021-11-06T09:53:33.000Z">
-<meta property="article:modified_time" content="2021-11-06T10:35:43.142Z">
+<meta property="article:modified_time" content="2022-01-27T03:51:38.708Z">
 <meta property="article:author" content="Shaw Lee">
 <meta property="article:tag" content="计算机技能">
 <meta property="article:tag" content="云服务器">
@@ -170,7 +170,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -181,7 +181,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -243,10 +243,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-11-06 17:53:33 / Modified: 18:35:43" itemprop="dateCreated datePublished" datetime="2021-11-06T17:53:33+08:00">2021-11-06</time>
+      <time title="Created: 2021-11-06 17:53:33" itemprop="dateCreated datePublished" datetime="2021-11-06T17:53:33+08:00">2021-11-06</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-01-27 11:51:38" itemprop="dateModified" datetime="2022-01-27T11:51:38+08:00">2022-01-27</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -278,6 +284,8 @@
         <p>PS：想问一下oracle cloud shell咋用？？会用的请评论</p>
 <p>PS：oracle cloud的官方文档写的不咋地，有些错误，请小心</p>
 <p>PS：下述脚本已经github备份，如果wget链接失效可以评论</p>
+<span id="more"></span>
+
 <p>—正文开始—</p>
 <p>注册Oracle Cloud就不赘述了，最好手机开4G注册。</p>
 <h1 id="第一步，开一台云服务器实例，平台映像我选的是CentOS7。"><a href="#第一步，开一台云服务器实例，平台映像我选的是CentOS7。" class="headerlink" title="第一步，开一台云服务器实例，平台映像我选的是CentOS7。"></a><strong>第一步，开一台云服务器实例，平台映像我选的是CentOS7。</strong></h1><h1 id="第二步，本机生成ssh公钥私钥（见之前文章），并上传公钥。引导卷大小不用变，但是合计超100G会收费，所以删服务器时一定要记得删去引导卷，数据传输是否选择加密看个人需求。"><a href="#第二步，本机生成ssh公钥私钥（见之前文章），并上传公钥。引导卷大小不用变，但是合计超100G会收费，所以删服务器时一定要记得删去引导卷，数据传输是否选择加密看个人需求。" class="headerlink" title="第二步，本机生成ssh公钥私钥（见之前文章），并上传公钥。引导卷大小不用变，但是合计超100G会收费，所以删服务器时一定要记得删去引导卷，数据传输是否选择加密看个人需求。"></a><strong>第二步，本机生成ssh公钥私钥（见之前文章），并上传公钥。引导卷大小不用变，但是合计超100G会收费，所以删服务器时一定要记得删去引导卷，数据传输是否选择加密看个人需求。</strong></h1><h1 id="第三步，利用脚本开启root登陆。"><a href="#第三步，利用脚本开启root登陆。" class="headerlink" title="第三步，利用脚本开启root登陆。"></a><strong>第三步，利用脚本开启root登陆。</strong></h1><p>Oracle 实例和G家一样，默认没有开启 ssh 密码登录功能，而且也没有提供网页 ssh，仅提供 ssh 密钥的方式建立连接，对于mac不太友好，在探索后发现可以在创建实例的时候利用 cloud-init 脚本就可以了。(此方法也适合 gcp，功能和原理都是一样的)</p>
