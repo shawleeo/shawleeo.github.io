@@ -38,33 +38,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo博客文章加密</title>
-    <url>/2022/01/27/Hexo%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86/</url>
-    <content><![CDATA[<p>本文适用于Hexo博客<br>测试的主题是Next 没有问题</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一款名为 Hexo-Blog-Encrypt 的插件可以实现Hexo博客文章加密。</p>
-<span id="more"></span>
-
-<p>为了防止以下的修改可能出现版本差异，这里我先声明我使用的 Hexo 版本信息：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo: 5.4.0</span><br><span class="line">hexo-cli: 4.3.0</span><br><span class="line">hexo-theme-next-version: 8.8.0</span><br></pre></td></tr></table></figure>
-
-<h1 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h1><p>先cd到本地blog的目录，再安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /Users/shawleo/Desktop/blog</span><br><span class="line">npm install --save hexo-blog-encrypt</span><br></pre></td></tr></table></figure>
-<h1 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h1><p>该插件的使用也很方便，这里我仅作简单介绍，详细的可以查看官方文档。</p>
-<p><a href="https://github.com/D0n9X1n/hexo-blog-encrypt">https://github.com/D0n9X1n/hexo-blog-encrypt</a></p>
-<p>要为一篇文章添加密码查看功能，只需要在文章信息头部添加 password 字段即可：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">date: 2021-04-13 21:18:02</span><br><span class="line">password: hello</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>参考：<a href="https://www.itfanr.cc/2021/04/16/hexo-blog-article-encryption/">https://www.itfanr.cc/2021/04/16/hexo-blog-article-encryption/</a></p>
-]]></content>
-      <categories>
-        <category>Computer</category>
-        <category>Building Website</category>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>加密</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GoogleAd申请加添加到blog</title>
     <url>/2022/01/25/GoogleAd%E7%94%B3%E8%AF%B7%E5%8A%A0%E6%B7%BB%E5%8A%A0%E5%88%B0blog/</url>
     <content><![CDATA[<h1 id="注册-Google-AdSense"><a href="#注册-Google-AdSense" class="headerlink" title="注册 Google AdSense"></a>注册 Google AdSense</h1><p>只说一句，注册地区不能改，要能接收纸质挂号信</p>
@@ -91,6 +64,33 @@
       </categories>
       <tags>
         <tag>Google AdSense</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo博客文章加密</title>
+    <url>/2022/01/27/Hexo%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86/</url>
+    <content><![CDATA[<p>本文适用于Hexo博客<br>测试的主题是Next 没有问题</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一款名为 Hexo-Blog-Encrypt 的插件可以实现Hexo博客文章加密。</p>
+<span id="more"></span>
+
+<p>为了防止以下的修改可能出现版本差异，这里我先声明我使用的 Hexo 版本信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo: 5.4.0</span><br><span class="line">hexo-cli: 4.3.0</span><br><span class="line">hexo-theme-next-version: 8.8.0</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h1><p>先cd到本地blog的目录，再安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /Users/shawleo/Desktop/blog</span><br><span class="line">npm install --save hexo-blog-encrypt</span><br></pre></td></tr></table></figure>
+<h1 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h1><p>该插件的使用也很方便，这里我仅作简单介绍，详细的可以查看官方文档。</p>
+<p><a href="https://github.com/D0n9X1n/hexo-blog-encrypt">https://github.com/D0n9X1n/hexo-blog-encrypt</a></p>
+<p>要为一篇文章添加密码查看功能，只需要在文章信息头部添加 password 字段即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">date: 2021-04-13 21:18:02</span><br><span class="line">password: hello</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>参考：<a href="https://www.itfanr.cc/2021/04/16/hexo-blog-article-encryption/">https://www.itfanr.cc/2021/04/16/hexo-blog-article-encryption/</a></p>
+]]></content>
+      <categories>
+        <category>Computer</category>
+        <category>Building Website</category>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>加密</tag>
       </tags>
   </entry>
   <entry>
@@ -149,7 +149,7 @@
 <h1 id="配置客户端git-添加SSH-Key到github"><a href="#配置客户端git-添加SSH-Key到github" class="headerlink" title="配置客户端git 添加SSH Key到github"></a>配置客户端git 添加SSH Key到github</h1><p>如果已经配置过，该步骤可以忽略<br>在命令行输入配置用户名和账号的命令</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
-<p>其中 username 是你的用户名，<a href="mailto:&#x65;&#109;&#x61;&#105;&#108;&#64;&#103;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#111;&#x6d;">&#x65;&#109;&#x61;&#105;&#108;&#64;&#103;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#111;&#x6d;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
+<p>其中 username 是你的用户名，<a href="mailto:&#x65;&#x6d;&#97;&#105;&#108;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#x65;&#x6d;&#97;&#105;&#108;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
 <p>如果已经创建过会出现 Overwrite (y/n)? n提示可以输入 n，如果没有创建过会要求我们输入密码，然后一路回车下去就行，执行完成后会在~/.ssh/id_rsa.pub目录下生成 需要使用的 key。</p>
@@ -316,6 +316,24 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo 下Next主题新增打赏支持</title>
+    <url>/2022/01/27/hexo%20%E4%B8%8BNext%E4%B8%BB%E9%A2%98%E6%96%B0%E5%A2%9E%E6%89%93%E8%B5%8F%E6%94%AF%E6%8C%81/</url>
+    <content><![CDATA[<p>PS：制作透明二维码图片可以用草料</p>
+<p>编辑文件themes/next/_config.yml， 找到Reward部分的内容进行修改，参考如下：</p>
+<span id="more"></span>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Reward (Donate)</span><br><span class="line"># Front-matter variable (unsupport animation).</span><br><span class="line">reward_settings:</span><br><span class="line">  # If true, reward will be displayed in every article by default.</span><br><span class="line">  enable: true</span><br><span class="line">  animation: false</span><br><span class="line">  comment: 坚持原创分享，您的支持将鼓励我继续创作更多优质内容！</span><br><span class="line"></span><br><span class="line">reward:</span><br><span class="line">  wechatpay: /images/wechatpay.jpg</span><br><span class="line">  #alipay: /images/alipay.png</span><br><span class="line">  #paypal: /images/paypal.png</span><br><span class="line">  #bitcoin: /images/bitcoin.png</span><br></pre></td></tr></table></figure>
+<p>  其中wechatpay就是微信支付了。 把第二步获取的图片放到themes/next/source/images目录下，并改名为wechatpay.jpg</p>
+]]></content>
+      <categories>
+        <category>Computer</category>
+        <category>Building Website</category>
+        <category>Advertisement</category>
+      </categories>
+      <tags>
+        <tag>二维码赞赏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>centos7的默认防火墙firewall与ipstable</title>
     <url>/2022/01/15/centos7%E7%9A%84%E9%BB%98%E8%AE%A4%E9%98%B2%E7%81%AB%E5%A2%99firewall%E4%B8%8Eipstable/</url>
     <content><![CDATA[<p><strong>1、默认防火墙firewall</strong></p>
@@ -413,24 +431,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo 下Next主题新增打赏支持</title>
-    <url>/2022/01/27/hexo%20%E4%B8%8BNext%E4%B8%BB%E9%A2%98%E6%96%B0%E5%A2%9E%E6%89%93%E8%B5%8F%E6%94%AF%E6%8C%81/</url>
-    <content><![CDATA[<p>PS：制作透明二维码图片可以用草料</p>
-<p>编辑文件themes/next/_config.yml， 找到Reward部分的内容进行修改，参考如下：</p>
-<span id="more"></span>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Reward (Donate)</span><br><span class="line"># Front-matter variable (unsupport animation).</span><br><span class="line">reward_settings:</span><br><span class="line">  # If true, reward will be displayed in every article by default.</span><br><span class="line">  enable: true</span><br><span class="line">  animation: false</span><br><span class="line">  comment: 坚持原创分享，您的支持将鼓励我继续创作更多优质内容！</span><br><span class="line"></span><br><span class="line">reward:</span><br><span class="line">  wechatpay: /images/wechatpay.jpg</span><br><span class="line">  #alipay: /images/alipay.png</span><br><span class="line">  #paypal: /images/paypal.png</span><br><span class="line">  #bitcoin: /images/bitcoin.png</span><br></pre></td></tr></table></figure>
-<p>  其中wechatpay就是微信支付了。 把第二步获取的图片放到themes/next/source/images目录下，并改名为wechatpay.jpg</p>
-]]></content>
-      <categories>
-        <category>Computer</category>
-        <category>Building Website</category>
-        <category>Advertisement</category>
-      </categories>
-      <tags>
-        <tag>二维码赞赏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ip失效后 Oracle Cloud更换ip 并重新配置agent</title>
     <url>/2022/01/13/ip%E5%A4%B1%E6%95%88%E5%90%8E%20Oracle%20Cloud%E6%9B%B4%E6%8D%A2ip%20%E5%B9%B6%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEagent/</url>
     <content><![CDATA[<h1 id="更换IP"><a href="#更换IP" class="headerlink" title="更换IP"></a>更换IP</h1><p>点击相应的实例详情 – 【附加的 VNIC】- 点击VNIC详情 – 【IP地址】 – 【…】- 点击编辑</p>
@@ -490,6 +490,27 @@
         <tag>计算机技能</tag>
         <tag>MacOS</tag>
         <tag>截图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何将Chrome插件打包以及再安装</title>
+    <url>/2022/01/28/%E5%A6%82%E4%BD%95%E5%B0%86Chrome%E6%8F%92%E4%BB%B6%E6%89%93%E5%8C%85%E4%BB%A5%E5%8F%8A%E5%86%8D%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h1 id="打包chrome插件"><a href="#打包chrome插件" class="headerlink" title="打包chrome插件"></a>打包chrome插件</h1><p>在chrome的扩展程序页签，勾选开发者模式，点击打包程序，拓展程序根目录选择要打包的程序，秘钥空着就行，再点击打包拓展程序即可。</p>
+<span id="more"></span>
+
+<p>1、密钥文件无用可删除<br>2、如何获取拓展程序根目录：<br>chrome浏览器输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chrome://version/</span><br><span class="line">个人资料路径	/Users/shawleo/Library/Application Support/Google/Chrome/Default</span><br></pre></td></tr></table></figure>
+<p>在个人资料路径里找到Extensions文件夹同时找到extension的ID方便找到相应文件夹</p>
+<h1 id="手动安装chrome插件"><a href="#手动安装chrome插件" class="headerlink" title="手动安装chrome插件"></a>手动安装chrome插件</h1><p>首先在 Chrome 設置 -&gt; 更多工具 -&gt; 擴充 (chrome://extensions/)，將右上角開發人員模式給啟用，以目前情況來說直接把 crx 文件檔案拖曳過去，會出現<br><code>CRX_HEADER_INVALID </code><br>或<br><code>crx required proof missing</code></p>
+<p>將網路下載來的 CRX 外掛擴充功能，將副檔名由 .crx 改為 .zip，並且直接拖曳到擴充功能頁籤就可以順利執行運作了。<br>参考<br><a href="https://zh.vpnclub.cc/chrome-browser-crx-install/">https://zh.vpnclub.cc/chrome-browser-crx-install/</a></p>
+]]></content>
+      <categories>
+        <category>Computer</category>
+        <category>Software</category>
+        <category>Chrome</category>
+      </categories>
+      <tags>
+        <tag>Chrome</tag>
       </tags>
   </entry>
   <entry>
@@ -597,6 +618,28 @@
         <tag>计算机技能</tag>
         <tag>云服务器</tag>
         <tag>BREAK</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网页图片批量下载的方法和工具</title>
+    <url>/2022/01/28/%E7%BD%91%E9%A1%B5%E5%9B%BE%E7%89%87%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%96%B9%E6%B3%95%E5%92%8C%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<p>chrome插件Fatkun图片批量下载-非常好用<br>适用于微信文章的链接</p>
+<span id="more"></span>
+
+<p>官方连接：<br><a href="https://chrome.google.com/webstore/detail/fatkun-batch-download-ima/nnjjahlikiabnchcpehcpkdeckfgnohf">Fatkun图片批量下载</a></p>
+<p>以防作者以后不再更新或者chrome版本不对，记录一下目前的使用版本：</p>
+<p><code>Chrome:版本 97.0.4692.99（正式版本） (x86_64)</code></p>
+<p>Fatkun图片批量下载版本：<br><code>版本5.7.7 上次更新日期2021年12月10日 大小 2.07MiB </code><br>此版本Faktun备份链接：<br><a href="https://pan.baidu.com/s/1-gIYKC5AvJiPxHItMuU0ew">https://pan.baidu.com/s/1-gIYKC5AvJiPxHItMuU0ew</a></p>
+<p>提取码：加law-offer微信获得</p>
+<p>如何将Chrome插件打包以及如何将crx完整在下一篇文章讲述。</p>
+]]></content>
+      <categories>
+        <category>Computer</category>
+        <category>Software</category>
+        <category>Chrome</category>
+      </categories>
+      <tags>
+        <tag>Chrome</tag>
       </tags>
   </entry>
   <entry>
