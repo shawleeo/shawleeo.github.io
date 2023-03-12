@@ -667,4 +667,30 @@
         <tag>encryptPassage</tag>
       </tags>
   </entry>
+  <entry>
+    <title>MAC下Hexo+Github博客搭建教学</title>
+    <url>/2023/03/12/%E5%88%A0%E9%99%A4%20mac%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E7%9A%84DS_Store%20%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>参考1:<a href="https://zhuanlan.zhihu.com/p/439868892">https://zhuanlan.zhihu.com/p/439868892</a></p>
+<p>删除 DS_Store 文件完全是安全的操作，它不会损害电脑，也不会造成个人数据丢失。删除后，「访达」在打开文件夹是会以默认显示模式显示文件夹。在你进行某些「访达」操作后，系统又会在后台自动创建 DS_Store 文件。</p>
+<span id="more"></span>
+
+<p>如果你想删除 DS_Store 文件，可以通过「终端」App 进行删除。</p>
+<ol>
+<li>   在「访达」中打开「应用程序」&gt; 「实用工具」 &gt; 「终端」。</li>
+<li>   定位到你要删除 .DS_Store 文件的文件夹目录下。</li>
+<li>   在「终端」里输入<code>cd</code>命令，跟上你的目录文件夹路径，例如： <code>cd /Users/username/pictures</code>。</li>
+<li>   回车。</li>
+<li>   输入命令 <code>find . -name &#39;.DS_Store&#39; -type f -delete</code>。</li>
+<li>   再次回车。</li>
+</ol>
+<p>对于本项目：进入项目根目录cd /Users/shawleo/Documents/GitHub/lhh<br>即可删除项目中的所有ds store文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">shawleo@ShawdeMacBook-Pro lawarticles % cd /Users/shawleo/Documents/GitHub/lhh</span><br><span class="line">shawleo@ShawdeMacBook-Pro lhh % find . -name &#x27;.DS_Store&#x27; -type f -delete</span><br><span class="line">shawleo@ShawdeMacBook-Pro lhh % </span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Computer</category>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>计算机技能</tag>
+      </tags>
+  </entry>
 </search>
