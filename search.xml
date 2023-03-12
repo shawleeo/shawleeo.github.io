@@ -668,7 +668,7 @@
       </tags>
   </entry>
   <entry>
-    <title>MAC下Hexo+Github博客搭建教学</title>
+    <title>删除 mac某个文件夹中的DS_Store 文件</title>
     <url>/2023/03/12/%E5%88%A0%E9%99%A4%20mac%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E7%9A%84DS_Store%20%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<p>参考1:<a href="https://zhuanlan.zhihu.com/p/439868892">https://zhuanlan.zhihu.com/p/439868892</a></p>
 <p>删除 DS_Store 文件完全是安全的操作，它不会损害电脑，也不会造成个人数据丢失。删除后，「访达」在打开文件夹是会以默认显示模式显示文件夹。在你进行某些「访达」操作后，系统又会在后台自动创建 DS_Store 文件。</p>
