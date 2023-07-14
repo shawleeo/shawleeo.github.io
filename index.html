@@ -162,13 +162,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -211,6 +211,101 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/13/%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E6%96%87%E6%A1%A3%E9%87%8C%E7%9A%84%E6%89%80%E6%9C%89%E4%B8%AD%E6%96%87%E5%92%8C%E6%A0%87%E7%82%B9-%E9%80%82%E7%94%A8%E4%BA%8E%E4%B8%AD%E6%96%87%E4%B8%8D%E5%A4%B9%E6%9D%82%E5%9C%A8%E8%8B%B1%E6%96%87%E9%87%8C%E7%9A%84%E6%83%85%E5%86%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shaw Lee">
+      <meta itemprop="description" content="Die Luft der Freiheit weht.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/07/13/%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E6%96%87%E6%A1%A3%E9%87%8C%E7%9A%84%E6%89%80%E6%9C%89%E4%B8%AD%E6%96%87%E5%92%8C%E6%A0%87%E7%82%B9-%E9%80%82%E7%94%A8%E4%BA%8E%E4%B8%AD%E6%96%87%E4%B8%8D%E5%A4%B9%E6%9D%82%E5%9C%A8%E8%8B%B1%E6%96%87%E9%87%8C%E7%9A%84%E6%83%85%E5%86%B5/" class="post-title-link" itemprop="url">删除一个文档里的所有中文和标点-适用于中文不夹杂在英文里的情况</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-07-13 22:43:53" itemprop="dateCreated datePublished" datetime="2023-07-13T22:43:53+10:00">2023-07-13</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2023-07-14 17:42:52" itemprop="dateModified" datetime="2023-07-14T17:42:52+10:00">2023-07-14</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer/Software/" itemprop="url" rel="index"><span itemprop="name">Software</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer/Software/Word/" itemprop="url" rel="index"><span itemprop="name">Word</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>虽然word文档里可以使用替换通配符方法将中文字符替换，但是有时候会将空格去掉，并不保险。所以本文采用的逻辑是—如果一行包含中文字符则将此行删掉，最终得出的版本与原版在word上利用审阅按钮下的compare功能进行比较，算法实现的python代码可以用gpt得到，特别适合中英文双语翻译的文档删除中文或英文获取单语版本的使用场景。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/07/13/%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E6%96%87%E6%A1%A3%E9%87%8C%E7%9A%84%E6%89%80%E6%9C%89%E4%B8%AD%E6%96%87%E5%92%8C%E6%A0%87%E7%82%B9-%E9%80%82%E7%94%A8%E4%BA%8E%E4%B8%AD%E6%96%87%E4%B8%8D%E5%A4%B9%E6%9D%82%E5%9C%A8%E8%8B%B1%E6%96%87%E9%87%8C%E7%9A%84%E6%83%85%E5%86%B5/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/12/%E5%88%A0%E9%99%A4%20mac%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E7%9A%84DS_Store%20%E6%96%87%E4%BB%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -236,7 +331,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2023-03-12 16:43:53 / Modified: 18:24:17" itemprop="dateCreated datePublished" datetime="2023-03-12T16:43:53+08:00">2023-03-12</time>
+      <time title="Created: 2023-03-12 19:43:53 / Modified: 21:24:17" itemprop="dateCreated datePublished" datetime="2023-03-12T19:43:53+11:00">2023-03-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -321,14 +416,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2022-01-28 12:13:33" itemprop="dateCreated datePublished" datetime="2022-01-28T12:13:33+08:00">2022-01-28</time>
+      <time title="Created: 2022-01-28 15:13:33" itemprop="dateCreated datePublished" datetime="2022-01-28T15:13:33+11:00">2022-01-28</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-01-29 15:46:53" itemprop="dateModified" datetime="2022-01-29T15:46:53+08:00">2022-01-29</time>
+        <time title="Modified: 2022-01-29 18:46:53" itemprop="dateModified" datetime="2022-01-29T18:46:53+11:00">2022-01-29</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -416,14 +511,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2022-01-28 12:03:33" itemprop="dateCreated datePublished" datetime="2022-01-28T12:03:33+08:00">2022-01-28</time>
+      <time title="Created: 2022-01-28 15:03:33" itemprop="dateCreated datePublished" datetime="2022-01-28T15:03:33+11:00">2022-01-28</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-01-29 15:46:36" itemprop="dateModified" datetime="2022-01-29T15:46:36+08:00">2022-01-29</time>
+        <time title="Modified: 2022-01-29 18:46:36" itemprop="dateModified" datetime="2022-01-29T18:46:36+11:00">2022-01-29</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -512,7 +607,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-01-27 15:33:33 / Modified: 15:28:18" itemprop="dateCreated datePublished" datetime="2022-01-27T15:33:33+08:00">2022-01-27</time>
+      <time title="Created: 2022-01-27 18:33:33 / Modified: 18:28:18" itemprop="dateCreated datePublished" datetime="2022-01-27T18:33:33+11:00">2022-01-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -602,7 +697,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-01-27 11:33:33 / Modified: 11:53:26" itemprop="dateCreated datePublished" datetime="2022-01-27T11:33:33+08:00">2022-01-27</time>
+      <time title="Created: 2022-01-27 14:33:33 / Modified: 14:53:26" itemprop="dateCreated datePublished" datetime="2022-01-27T14:33:33+11:00">2022-01-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -691,14 +786,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2022-01-25 15:33:33" itemprop="dateCreated datePublished" datetime="2022-01-25T15:33:33+08:00">2022-01-25</time>
+      <time title="Created: 2022-01-25 18:33:33" itemprop="dateCreated datePublished" datetime="2022-01-25T18:33:33+11:00">2022-01-25</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-01-27 11:53:18" itemprop="dateModified" datetime="2022-01-27T11:53:18+08:00">2022-01-27</time>
+        <time title="Modified: 2022-01-27 14:53:18" itemprop="dateModified" datetime="2022-01-27T14:53:18+11:00">2022-01-27</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -786,14 +881,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2022-01-15 19:33:33" itemprop="dateCreated datePublished" datetime="2022-01-15T19:33:33+08:00">2022-01-15</time>
+      <time title="Created: 2022-01-15 22:33:33" itemprop="dateCreated datePublished" datetime="2022-01-15T22:33:33+11:00">2022-01-15</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-01-27 11:52:58" itemprop="dateModified" datetime="2022-01-27T11:52:58+08:00">2022-01-27</time>
+        <time title="Modified: 2022-01-27 14:52:58" itemprop="dateModified" datetime="2022-01-27T14:52:58+11:00">2022-01-27</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -882,14 +977,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2022-01-13 19:33:33" itemprop="dateCreated datePublished" datetime="2022-01-13T19:33:33+08:00">2022-01-13</time>
+      <time title="Created: 2022-01-13 22:33:33" itemprop="dateCreated datePublished" datetime="2022-01-13T22:33:33+11:00">2022-01-13</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-01-27 11:52:47" itemprop="dateModified" datetime="2022-01-27T11:52:47+08:00">2022-01-27</time>
+        <time title="Modified: 2022-01-27 14:52:47" itemprop="dateModified" datetime="2022-01-27T14:52:47+11:00">2022-01-27</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -977,14 +1072,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2022-01-13 17:33:33" itemprop="dateCreated datePublished" datetime="2022-01-13T17:33:33+08:00">2022-01-13</time>
+      <time title="Created: 2022-01-13 20:33:33" itemprop="dateCreated datePublished" datetime="2022-01-13T20:33:33+11:00">2022-01-13</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-01-27 11:53:08" itemprop="dateModified" datetime="2022-01-27T11:53:08+08:00">2022-01-27</time>
+        <time title="Modified: 2022-01-27 14:53:08" itemprop="dateModified" datetime="2022-01-27T14:53:08+11:00">2022-01-27</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1018,101 +1113,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/01/13/ip%E5%A4%B1%E6%95%88%E5%90%8E%20Oracle%20Cloud%E6%9B%B4%E6%8D%A2ip%20%E5%B9%B6%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEagent/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/13/mac%E7%B3%BB%E7%BB%9F%EF%BC%8C%E5%A6%82%E4%BD%95%E6%88%AA%E5%8F%96%E5%9B%BA%E5%AE%9A%E5%B0%BA%E5%AF%B8%E7%9A%84%E5%9B%BE%E7%89%87%EF%BC%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Shaw Lee">
-      <meta itemprop="description" content="Die Luft der Freiheit weht.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/12/13/mac%E7%B3%BB%E7%BB%9F%EF%BC%8C%E5%A6%82%E4%BD%95%E6%88%AA%E5%8F%96%E5%9B%BA%E5%AE%9A%E5%B0%BA%E5%AF%B8%E7%9A%84%E5%9B%BE%E7%89%87%EF%BC%9F/" class="post-title-link" itemprop="url">mac系统，如何截取固定尺寸的图片？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-12-13 12:12:33" itemprop="dateCreated datePublished" datetime="2021-12-13T12:12:33+08:00">2021-12-13</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-01-27 11:52:35" itemprop="dateModified" datetime="2022-01-27T11:52:35+08:00">2022-01-27</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer/Software/" itemprop="url" rel="index"><span itemprop="name">Software</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer/Software/Screenshot/" itemprop="url" rel="index"><span itemprop="name">Screenshot</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Mac自带截图即可实现</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/12/13/mac%E7%B3%BB%E7%BB%9F%EF%BC%8C%E5%A6%82%E4%BD%95%E6%88%AA%E5%8F%96%E5%9B%BA%E5%AE%9A%E5%B0%BA%E5%AF%B8%E7%9A%84%E5%9B%BE%E7%89%87%EF%BC%9F/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

@@ -21,37 +21,31 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="参考：https:&#x2F;&#x2F;www.jianshu.com&#x2F;p&#x2F;5f8b4d9a8 TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。">
+<meta name="description" content="虽然word文档里可以使用替换通配符方法将中文字符替换，但是有时候会将空格去掉，并不保险。所以本文采用的逻辑是—如果一行包含中文字符则将此行删掉，最终得出的版本与原版在word上利用审阅按钮下的compare功能进行比较，算法实现的python代码可以用gpt得到，特别适合中英文双语翻译的文档删除中文或英文获取单语版本的使用场景。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac下移动硬盘的分区以及TimeMachine的备份，公用盘首选NTFS，不建议Exfat">
-<meta property="og:url" content="http://example.com/2021/11/20/Mac%E4%B8%8B%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E7%9A%84%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8ATimeMachine%E7%9A%84%E5%A4%87%E4%BB%BD%EF%BC%8C%E5%85%AC%E7%94%A8%E7%9B%98%E9%A6%96%E9%80%89NTFS%EF%BC%8C%E4%B8%8D%E5%BB%BA%E8%AE%AEExfat/index.html">
+<meta property="og:title" content="删除一个文档里的所有中文和标点-适用于中文不夹杂在英文里的情况">
+<meta property="og:url" content="http://example.com/2023/07/13/%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E6%96%87%E6%A1%A3%E9%87%8C%E7%9A%84%E6%89%80%E6%9C%89%E4%B8%AD%E6%96%87%E5%92%8C%E6%A0%87%E7%82%B9-%E9%80%82%E7%94%A8%E4%BA%8E%E4%B8%AD%E6%96%87%E4%B8%8D%E5%A4%B9%E6%9D%82%E5%9C%A8%E8%8B%B1%E6%96%87%E9%87%8C%E7%9A%84%E6%83%85%E5%86%B5/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="参考：https:&#x2F;&#x2F;www.jianshu.com&#x2F;p&#x2F;5f8b4d9a8 TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。">
+<meta property="og:description" content="虽然word文档里可以使用替换通配符方法将中文字符替换，但是有时候会将空格去掉，并不保险。所以本文采用的逻辑是—如果一行包含中文字符则将此行删掉，最终得出的版本与原版在word上利用审阅按钮下的compare功能进行比较，算法实现的python代码可以用gpt得到，特别适合中英文双语翻译的文档删除中文或英文获取单语版本的使用场景。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-1.jpeg">
-<meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-2.jpeg">
-<meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-3.jpeg">
-<meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-4.png">
-<meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-5.jpeg">
-<meta property="article:published_time" content="2021-11-20T01:53:33.000Z">
-<meta property="article:modified_time" content="2022-01-27T03:52:07.160Z">
+<meta property="og:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/20230713-1.png">
+<meta property="article:published_time" content="2023-07-13T12:43:53.000Z">
+<meta property="article:modified_time" content="2023-07-14T07:42:52.351Z">
 <meta property="article:author" content="Shaw Lee">
 <meta property="article:tag" content="计算机技能">
-<meta property="article:tag" content="TimeMachine">
-<meta property="article:tag" content="MacOS">
-<meta property="article:tag" content="移动硬盘">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-1.jpeg">
+<meta name="twitter:image" content="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/20230713-1.png">
 
 
-<link rel="canonical" href="http://example.com/2021/11/20/Mac%E4%B8%8B%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E7%9A%84%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8ATimeMachine%E7%9A%84%E5%A4%87%E4%BB%BD%EF%BC%8C%E5%85%AC%E7%94%A8%E7%9B%98%E9%A6%96%E9%80%89NTFS%EF%BC%8C%E4%B8%8D%E5%BB%BA%E8%AE%AEExfat/">
+<link rel="canonical" href="http://example.com/2023/07/13/%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E6%96%87%E6%A1%A3%E9%87%8C%E7%9A%84%E6%89%80%E6%9C%89%E4%B8%AD%E6%96%87%E5%92%8C%E6%A0%87%E7%82%B9-%E9%80%82%E7%94%A8%E4%BA%8E%E4%B8%AD%E6%96%87%E4%B8%8D%E5%A4%B9%E6%9D%82%E5%9C%A8%E8%8B%B1%E6%96%87%E9%87%8C%E7%9A%84%E6%83%85%E5%86%B5/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2021/11/20/Mac%E4%B8%8B%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E7%9A%84%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8ATimeMachine%E7%9A%84%E5%A4%87%E4%BB%BD%EF%BC%8C%E5%85%AC%E7%94%A8%E7%9B%98%E9%A6%96%E9%80%89NTFS%EF%BC%8C%E4%B8%8D%E5%BB%BA%E8%AE%AEExfat/","path":"2021/11/20/Mac下移动硬盘的分区以及TimeMachine的备份，公用盘首选NTFS，不建议Exfat/","title":"Mac下移动硬盘的分区以及TimeMachine的备份，公用盘首选NTFS，不建议Exfat"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2023/07/13/%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E6%96%87%E6%A1%A3%E9%87%8C%E7%9A%84%E6%89%80%E6%9C%89%E4%B8%AD%E6%96%87%E5%92%8C%E6%A0%87%E7%82%B9-%E9%80%82%E7%94%A8%E4%BA%8E%E4%B8%AD%E6%96%87%E4%B8%8D%E5%A4%B9%E6%9D%82%E5%9C%A8%E8%8B%B1%E6%96%87%E9%87%8C%E7%9A%84%E6%83%85%E5%86%B5/","path":"2023/07/13/删除一个文档里的所有中文和标点-适用于中文不夹杂在英文里的情况/","title":"删除一个文档里的所有中文和标点-适用于中文不夹杂在英文里的情况"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Mac下移动硬盘的分区以及TimeMachine的备份，公用盘首选NTFS，不建议Exfat | Blog</title>
+<title>删除一个文档里的所有中文和标点-适用于中文不夹杂在英文里的情况 | Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-94CMPMLVEP"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-94CMPMLVEP","only_pageview":false}</script>
@@ -149,7 +143,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -162,7 +156,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A3%81%E7%9B%98%E6%8A%B9%E9%99%A4%E5%8F%8A%E8%B5%84%E6%96%99%E8%BD%AC%E7%A7%BB"><span class="nav-number">1.</span> <span class="nav-text">磁盘抹除及资料转移</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E5%8C%BA%E5%BB%BA%E8%AE%AE%E5%8F%8A%E6%93%8D%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">分区建议及操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TimeMachine%E5%A4%87%E4%BB%BD"><span class="nav-number">3.</span> <span class="nav-text">TimeMachine备份</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E4%BF%9D%E5%85%BB%E5%8F%8A%E4%BD%BF%E7%94%A8%E5%AE%9E%E6%B5%8B"><span class="nav-number">4.</span> <span class="nav-text">移动硬盘保养及使用实测</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F"><span class="nav-number">5.</span> <span class="nav-text">注意</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -225,7 +218,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/20/Mac%E4%B8%8B%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E7%9A%84%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8ATimeMachine%E7%9A%84%E5%A4%87%E4%BB%BD%EF%BC%8C%E5%85%AC%E7%94%A8%E7%9B%98%E9%A6%96%E9%80%89NTFS%EF%BC%8C%E4%B8%8D%E5%BB%BA%E8%AE%AEExfat/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/13/%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E6%96%87%E6%A1%A3%E9%87%8C%E7%9A%84%E6%89%80%E6%9C%89%E4%B8%AD%E6%96%87%E5%92%8C%E6%A0%87%E7%82%B9-%E9%80%82%E7%94%A8%E4%BA%8E%E4%B8%AD%E6%96%87%E4%B8%8D%E5%A4%B9%E6%9D%82%E5%9C%A8%E8%8B%B1%E6%96%87%E9%87%8C%E7%9A%84%E6%83%85%E5%86%B5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -238,7 +231,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Mac下移动硬盘的分区以及TimeMachine的备份，公用盘首选NTFS，不建议Exfat
+          删除一个文档里的所有中文和标点-适用于中文不夹杂在英文里的情况
         </h1>
 
         <div class="post-meta-container">
@@ -249,14 +242,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2021-11-20 12:53:33" itemprop="dateCreated datePublished" datetime="2021-11-20T12:53:33+11:00">2021-11-20</time>
+      <time title="Created: 2023-07-13 22:43:53" itemprop="dateCreated datePublished" datetime="2023-07-13T22:43:53+10:00">2023-07-13</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-01-27 14:52:07" itemprop="dateModified" datetime="2022-01-27T14:52:07+11:00">2022-01-27</time>
+        <time title="Modified: 2023-07-14 17:42:52" itemprop="dateModified" datetime="2023-07-14T17:42:52+10:00">2023-07-14</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -268,11 +261,11 @@
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
+          <a href="/categories/Computer/Software/" itemprop="url" rel="index"><span itemprop="name">Software</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer/Hardware/Storage/" itemprop="url" rel="index"><span itemprop="name">Storage</span></a>
+          <a href="/categories/Computer/Software/Word/" itemprop="url" rel="index"><span itemprop="name">Word</span></a>
         </span>
     </span>
 
@@ -286,32 +279,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>参考：<a href="%E6%9D%A5%E6%BA%90%EF%BC%9Ahttps://www.jianshu.com/p/5f8b4d9a8">https://www.jianshu.com/p/5f8b4d9a8</a></p>
-<p>TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。</p>
+        <p>虽然word文档里可以使用替换通配符方法将中文字符替换，但是有时候会将空格去掉，并不保险。所以本文采用的逻辑是—如果一行包含中文字符则将此行删掉，最终得出的版本与原版在word上利用审阅按钮下的compare功能进行比较，算法实现的python代码可以用gpt得到，特别适合中英文双语翻译的文档删除中文或英文获取单语版本的使用场景。</p>
 <span id="more"></span>
-
-<h1 id="磁盘抹除及资料转移"><a href="#磁盘抹除及资料转移" class="headerlink" title="磁盘抹除及资料转移"></a>磁盘抹除及资料转移</h1><p>刚买的移动硬盘大部分都是NTFS格式的，比如我的希捷1TB移动硬盘，首先NTFS格式在Mac上是可读不可写的。希捷提供官方工具Paragon驱动程序兼容，但是在抹除之前要关掉该工具，否则会提示抹除失败。另外不要用exFAT格式，不稳定。</p>
-<p>首先问题是这样子的，1TB的移动硬盘现在为NTFS格式，而我需要TimeMachine来对我的电脑进行备份，Time Machine 备份磁盘最常见的格式是“Mac OS 扩展”格式，但Time Machine还支持“Mac OS 扩展（区分大小写，日志式）”和XSan格式。所以首先我们要做的是：</p>
-<p>1.将移动硬盘里面所存储的内容转移到其他硬盘中，比如Windows的D盘F盘，也可以转移到其他的移动硬盘中，具体迁移到哪里，根据你数据的大小选择最恰当的存储地方。</p>
-<p>2.将移动硬盘抹掉，变成Mac OS X 格式。首先打开commmand+空格打开你的Spotlight，搜索disk Utility.app,也就是苹果的磁盘工具，我这里以xiaomi这个磁盘作为演示。点击抹掉，这样你的硬盘则被格式化为MAC OS X 格式了。</p>
-<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-1.jpeg" alt="image"></p>
-<h1 id="分区建议及操作"><a href="#分区建议及操作" class="headerlink" title="分区建议及操作"></a>分区建议及操作</h1><p>再来说说分区的建议，1TB的移动硬盘我建议分成两个区，300GB的MAC OS X格式作为经常使用Mac的你作为TimeMacine备份使用，700GB的另一个分区NTFS格式的作为你穿插在windows和Mac之间存储一些照片或者影音文件之类的，大部分情况下很够用，根据你硬盘的大小选择最适当的分区数以及大小。</p>
-<p><strong>Notes</strong>：exfat32适用于U盘闪存 单个文件限制不能突破4GB 而且数据恢复也较为困难 如果你存储的是影音或者游戏安装包 NTFS也是不错的选择</p>
-<p><strong>分区操作</strong></p>
-<p>左侧点击你的移动硬盘，上面有急救，分区抹掉等等选项，点击分区，划分大小，因为在MAC系统下不能直接格式化为NTFS格式的，我们将300GB的格式化为MAC OS X 格式，然后将700GB的分区格式化为ExFat格式，如果你想要知道不同的格式之间有什么不同，谷歌一下，会得到你想要的一切。</p>
-<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-2.jpeg" alt="image"></p>
-<p>上述操作做完之后，效果会是每次当你的移动硬盘连接到你的电脑时，会为两部分，300GB以及700GB，且为MAC OS X格式，以及ExFat格式，现在我们只需要将移动硬盘连接到一台Windows电脑上，将ExFat这个硬盘格式化为NTFS格式就好了。现在你要做的只不过花费一些时间把刚刚拷贝过去的你的资料转移回来就可以了。<br>现在我们就拥有了两个分区的移动硬盘，可以应付不同的操作系统，进行所需要的操作。</p>
-<p>其实目前mac也可以直接转换NTFS格式</p>
-<h1 id="TimeMachine备份"><a href="#TimeMachine备份" class="headerlink" title="TimeMachine备份"></a>TimeMachine备份</h1><p>很简单，打开系统偏好设置，点击TimeMachine，选择那个你刚刚分区成功容量为300GB格式为MAC OS X的硬盘，经过蛮久的等待，就备份成功喽，很容易操作以及理解，Apple的支持文档也做了详细的步骤解释 <a target="_blank" rel="noopener" href="https://support.apple.com/zh-cn/HT201250">Apple支持</a></p>
-<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-3.jpeg" alt="image"></p>
-<h1 id="移动硬盘保养及使用实测"><a href="#移动硬盘保养及使用实测" class="headerlink" title="移动硬盘保养及使用实测"></a>移动硬盘保养及使用实测</h1><p>1、防止硬盘非正常情况下拔出 以及剧烈碰撞</p>
-<p>2、买一些知名的 硬盘比如希捷 西部数据的</p>
-<p>3、在读写中避免震动</p>
-<p>到这里，TimeMachine的备份以及我们移动硬盘的分区就全部搞定了，yeah~</p>
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>要手动启动备份，请从菜单栏的“时间机器”</p>
-<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-4.png" alt="image"></p>
-<p>菜单中选取“立即备份”。使用这个菜单，还可以查看某一备份的状态或跳过正在进行的某一备份。</p>
-<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-5.jpeg" alt="image"></p>
+<p>1、Python实现代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import docx</span><br><span class="line"></span><br><span class="line"># Open the Word file</span><br><span class="line">doc = docx.Document(&#x27;your_file_name.docx&#x27;)</span><br><span class="line"></span><br><span class="line"># Loop through all paragraphs in the document</span><br><span class="line">for para in doc.paragraphs:</span><br><span class="line">    # Check if the paragraph contains any Chinese characters</span><br><span class="line">    if any(&#x27;\u4e00&#x27; &lt;= c &lt;= &#x27;\u9fff&#x27; for c in para.text):</span><br><span class="line">        # If it does, remove the paragraph</span><br><span class="line">        doc._element.body.remove(para._element)</span><br><span class="line"></span><br><span class="line"># Save the modified document</span><br><span class="line">doc.save(&#x27;modified_file_name.docx&#x27;)</span><br></pre></td></tr></table></figure>
+<p>2、代码解释：This script uses the python-docx library to read and modify the Word document. The any() function is used to check if any Chinese character exists in the paragraph. If it does, the paragraph is removed from the document.</p>
+<p>You need to replace ‘your_file_name.docx’ and ‘modified_file_name.docx’ with the actual names of your input and output files. Also, make sure to install the python-docx library before running the script.</p>
+<p>Note that this script only works for Chinese characters. If you want to remove paragraphs that contain any non-Latin characters, you can modify the condition in the if statement accordingly.</p>
+<p>如果未安装docx库，安装docx库，注意如果电脑安装的是python3要用pip3 install：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">shawleo@ShawdeMacBook-Pro ~ % cd /Users/shawleo/Desktop </span><br><span class="line">shawleo@ShawdeMacBook-Pro Desktop % python3 clean-chinese-character.py</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;/Users/shawleo/Desktop/clean-chinese-character.py&quot;, line 1, in &lt;module&gt;</span><br><span class="line">    import docx</span><br><span class="line">ModuleNotFoundError: No module named &#x27;docx&#x27;</span><br><span class="line">shawleo@ShawdeMacBook-Pro Desktop % pip install python-docx</span><br><span class="line">zsh: command not found: pip</span><br><span class="line">shawleo@ShawdeMacBook-Pro Desktop % pip install python-docx</span><br><span class="line">zsh: command not found: pip</span><br><span class="line">shawleo@ShawdeMacBook-Pro Desktop % pip3 install python-docx</span><br><span class="line">Collecting python-docx</span><br></pre></td></tr></table></figure>
+<p>3、使用代码消除中文，只用把python下面这行代码改写，cd目录，然后python3 clean-chinese-character.py不用加文件路径，因为已经cd到该目录，注意word文件和py文件在同一目录下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doc = docx.Document(&#x27;1.docx&#x27;)</span><br></pre></td></tr></table></figure>
+<p>4、检查，利用word的compare功能，看一看是否只删去了中文，以防万一，选项按钮如下图所示：<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/20230713-1.png" alt="image"></p>
 
     </div>
 
@@ -340,23 +319,18 @@
 
           <div class="post-tags">
               <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E8%83%BD/" rel="tag"># 计算机技能</a>
-              <a href="/tags/TimeMachine/" rel="tag"># TimeMachine</a>
-              <a href="/tags/MacOS/" rel="tag"># MacOS</a>
-              <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/" rel="tag"># 移动硬盘</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/11/19/Excel%20%E5%B7%A5%E4%BD%9C%E8%A1%A8%E5%AF%86%E7%A0%81%E4%BF%9D%E6%8A%A4%E7%9A%84%E8%A7%A3%E9%99%A4%E6%96%B9%E6%B3%95/" rel="prev" title="Excel 工作表密码保护的解除方法">
-                  <i class="fa fa-chevron-left"></i> Excel 工作表密码保护的解除方法
+                <a href="/2023/03/12/%E5%88%A0%E9%99%A4%20mac%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E7%9A%84DS_Store%20%E6%96%87%E4%BB%B6/" rel="prev" title="删除 mac某个文件夹中的DS_Store 文件">
+                  <i class="fa fa-chevron-left"></i> 删除 mac某个文件夹中的DS_Store 文件
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/11/23/%E6%9D%A1%E7%BA%A6%E6%B3%95%E4%B8%8BSignature%20ad%20referendum%E4%B8%8ESignature%E7%9A%84%E5%8C%BA%E5%88%AB/" rel="next" title="条约法下Signature ad referendum与Signature的区别">
-                  条约法下Signature ad referendum与Signature的区别 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
