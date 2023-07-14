@@ -94,6 +94,48 @@
       </tags>
   </entry>
   <entry>
+    <title>Mac下移动硬盘的分区以及TimeMachine的备份，公用盘首选NTFS，不建议Exfat</title>
+    <url>/2021/11/20/Mac%E4%B8%8B%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E7%9A%84%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8ATimeMachine%E7%9A%84%E5%A4%87%E4%BB%BD%EF%BC%8C%E5%85%AC%E7%94%A8%E7%9B%98%E9%A6%96%E9%80%89NTFS%EF%BC%8C%E4%B8%8D%E5%BB%BA%E8%AE%AEExfat/</url>
+    <content><![CDATA[<p>参考：<a href="%E6%9D%A5%E6%BA%90%EF%BC%9Ahttps://www.jianshu.com/p/5f8b4d9a8">https://www.jianshu.com/p/5f8b4d9a8</a></p>
+<p>TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。</p>
+<span id="more"></span>
+
+<h1 id="磁盘抹除及资料转移"><a href="#磁盘抹除及资料转移" class="headerlink" title="磁盘抹除及资料转移"></a>磁盘抹除及资料转移</h1><p>刚买的移动硬盘大部分都是NTFS格式的，比如我的希捷1TB移动硬盘，首先NTFS格式在Mac上是可读不可写的。希捷提供官方工具Paragon驱动程序兼容，但是在抹除之前要关掉该工具，否则会提示抹除失败。另外不要用exFAT格式，不稳定。</p>
+<p>首先问题是这样子的，1TB的移动硬盘现在为NTFS格式，而我需要TimeMachine来对我的电脑进行备份，Time Machine 备份磁盘最常见的格式是“Mac OS 扩展”格式，但Time Machine还支持“Mac OS 扩展（区分大小写，日志式）”和XSan格式。所以首先我们要做的是：</p>
+<p>1.将移动硬盘里面所存储的内容转移到其他硬盘中，比如Windows的D盘F盘，也可以转移到其他的移动硬盘中，具体迁移到哪里，根据你数据的大小选择最恰当的存储地方。</p>
+<p>2.将移动硬盘抹掉，变成Mac OS X 格式。首先打开commmand+空格打开你的Spotlight，搜索disk Utility.app,也就是苹果的磁盘工具，我这里以xiaomi这个磁盘作为演示。点击抹掉，这样你的硬盘则被格式化为MAC OS X 格式了。</p>
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-1.jpeg" alt="image"></p>
+<h1 id="分区建议及操作"><a href="#分区建议及操作" class="headerlink" title="分区建议及操作"></a>分区建议及操作</h1><p>再来说说分区的建议，1TB的移动硬盘我建议分成两个区，300GB的MAC OS X格式作为经常使用Mac的你作为TimeMacine备份使用，700GB的另一个分区NTFS格式的作为你穿插在windows和Mac之间存储一些照片或者影音文件之类的，大部分情况下很够用，根据你硬盘的大小选择最适当的分区数以及大小。</p>
+<p><strong>Notes</strong>：exfat32适用于U盘闪存 单个文件限制不能突破4GB 而且数据恢复也较为困难 如果你存储的是影音或者游戏安装包 NTFS也是不错的选择</p>
+<p><strong>分区操作</strong></p>
+<p>左侧点击你的移动硬盘，上面有急救，分区抹掉等等选项，点击分区，划分大小，因为在MAC系统下不能直接格式化为NTFS格式的，我们将300GB的格式化为MAC OS X 格式，然后将700GB的分区格式化为ExFat格式，如果你想要知道不同的格式之间有什么不同，谷歌一下，会得到你想要的一切。</p>
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-2.jpeg" alt="image"></p>
+<p>上述操作做完之后，效果会是每次当你的移动硬盘连接到你的电脑时，会为两部分，300GB以及700GB，且为MAC OS X格式，以及ExFat格式，现在我们只需要将移动硬盘连接到一台Windows电脑上，将ExFat这个硬盘格式化为NTFS格式就好了。现在你要做的只不过花费一些时间把刚刚拷贝过去的你的资料转移回来就可以了。<br>现在我们就拥有了两个分区的移动硬盘，可以应付不同的操作系统，进行所需要的操作。</p>
+<p>其实目前mac也可以直接转换NTFS格式</p>
+<h1 id="TimeMachine备份"><a href="#TimeMachine备份" class="headerlink" title="TimeMachine备份"></a>TimeMachine备份</h1><p>很简单，打开系统偏好设置，点击TimeMachine，选择那个你刚刚分区成功容量为300GB格式为MAC OS X的硬盘，经过蛮久的等待，就备份成功喽，很容易操作以及理解，Apple的支持文档也做了详细的步骤解释 <a href="https://support.apple.com/zh-cn/HT201250">Apple支持</a></p>
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-3.jpeg" alt="image"></p>
+<h1 id="移动硬盘保养及使用实测"><a href="#移动硬盘保养及使用实测" class="headerlink" title="移动硬盘保养及使用实测"></a>移动硬盘保养及使用实测</h1><p>1、防止硬盘非正常情况下拔出 以及剧烈碰撞</p>
+<p>2、买一些知名的 硬盘比如希捷 西部数据的</p>
+<p>3、在读写中避免震动</p>
+<p>到这里，TimeMachine的备份以及我们移动硬盘的分区就全部搞定了，yeah~</p>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>要手动启动备份，请从菜单栏的“时间机器”</p>
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-4.png" alt="image"></p>
+<p>菜单中选取“立即备份”。使用这个菜单，还可以查看某一备份的状态或跳过正在进行的某一备份。</p>
+<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-5.jpeg" alt="image"></p>
+]]></content>
+      <categories>
+        <category>Computer</category>
+        <category>Hardware</category>
+        <category>Storage</category>
+      </categories>
+      <tags>
+        <tag>计算机技能</tag>
+        <tag>TimeMachine</tag>
+        <tag>MacOS</tag>
+        <tag>移动硬盘</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MAC下Hexo+Github博客搭建教学</title>
     <url>/2021/10/09/MAC%E4%B8%8BHexo-Github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E5%AD%A6/</url>
     <content><![CDATA[<p>参考1:<a href="https://segmentfault.com/a/1190000038373795">https://segmentfault.com/a/1190000038373795</a></p>
@@ -149,7 +191,7 @@
 <h1 id="配置客户端git-添加SSH-Key到github"><a href="#配置客户端git-添加SSH-Key到github" class="headerlink" title="配置客户端git 添加SSH Key到github"></a>配置客户端git 添加SSH Key到github</h1><p>如果已经配置过，该步骤可以忽略<br>在命令行输入配置用户名和账号的命令</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
-<p>其中 username 是你的用户名，<a href="mailto:&#x65;&#x6d;&#97;&#105;&#108;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#x65;&#x6d;&#97;&#105;&#108;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
+<p>其中 username 是你的用户名，<a href="mailto:&#101;&#x6d;&#x61;&#x69;&#108;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#101;&#x6d;&#x61;&#x69;&#108;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a>是你github的登录邮箱<br>然后通过终端命令生成SSH Key</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email@gmail.com&quot;</span><br></pre></td></tr></table></figure>
 
 <p>如果已经创建过会出现 Overwrite (y/n)? n提示可以输入 n，如果没有创建过会要求我们输入密码，然后一路回车下去就行，执行完成后会在~/.ssh/id_rsa.pub目录下生成 需要使用的 key。</p>
@@ -191,48 +233,6 @@
       <tags>
         <tag>计算机技能</tag>
         <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mac下移动硬盘的分区以及TimeMachine的备份，公用盘首选NTFS，不建议Exfat</title>
-    <url>/2021/11/20/Mac%E4%B8%8B%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E7%9A%84%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8ATimeMachine%E7%9A%84%E5%A4%87%E4%BB%BD%EF%BC%8C%E5%85%AC%E7%94%A8%E7%9B%98%E9%A6%96%E9%80%89NTFS%EF%BC%8C%E4%B8%8D%E5%BB%BA%E8%AE%AEExfat/</url>
-    <content><![CDATA[<p>参考：<a href="%E6%9D%A5%E6%BA%90%EF%BC%9Ahttps://www.jianshu.com/p/5f8b4d9a8">https://www.jianshu.com/p/5f8b4d9a8</a></p>
-<p>TimeMachine是个好东西，也许你有好多重要的东西需要备份，或许公司给你配备了一台高大上的Mac Pro,需要资料转移，也许电脑意外丢失，需要数据恢复，TimeMachine的备份总能给我们意想不到的帮助。</p>
-<span id="more"></span>
-
-<h1 id="磁盘抹除及资料转移"><a href="#磁盘抹除及资料转移" class="headerlink" title="磁盘抹除及资料转移"></a>磁盘抹除及资料转移</h1><p>刚买的移动硬盘大部分都是NTFS格式的，比如我的希捷1TB移动硬盘，首先NTFS格式在Mac上是可读不可写的。希捷提供官方工具Paragon驱动程序兼容，但是在抹除之前要关掉该工具，否则会提示抹除失败。另外不要用exFAT格式，不稳定。</p>
-<p>首先问题是这样子的，1TB的移动硬盘现在为NTFS格式，而我需要TimeMachine来对我的电脑进行备份，Time Machine 备份磁盘最常见的格式是“Mac OS 扩展”格式，但Time Machine还支持“Mac OS 扩展（区分大小写，日志式）”和XSan格式。所以首先我们要做的是：</p>
-<p>1.将移动硬盘里面所存储的内容转移到其他硬盘中，比如Windows的D盘F盘，也可以转移到其他的移动硬盘中，具体迁移到哪里，根据你数据的大小选择最恰当的存储地方。</p>
-<p>2.将移动硬盘抹掉，变成Mac OS X 格式。首先打开commmand+空格打开你的Spotlight，搜索disk Utility.app,也就是苹果的磁盘工具，我这里以xiaomi这个磁盘作为演示。点击抹掉，这样你的硬盘则被格式化为MAC OS X 格式了。</p>
-<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-1.jpeg" alt="image"></p>
-<h1 id="分区建议及操作"><a href="#分区建议及操作" class="headerlink" title="分区建议及操作"></a>分区建议及操作</h1><p>再来说说分区的建议，1TB的移动硬盘我建议分成两个区，300GB的MAC OS X格式作为经常使用Mac的你作为TimeMacine备份使用，700GB的另一个分区NTFS格式的作为你穿插在windows和Mac之间存储一些照片或者影音文件之类的，大部分情况下很够用，根据你硬盘的大小选择最适当的分区数以及大小。</p>
-<p><strong>Notes</strong>：exfat32适用于U盘闪存 单个文件限制不能突破4GB 而且数据恢复也较为困难 如果你存储的是影音或者游戏安装包 NTFS也是不错的选择</p>
-<p><strong>分区操作</strong></p>
-<p>左侧点击你的移动硬盘，上面有急救，分区抹掉等等选项，点击分区，划分大小，因为在MAC系统下不能直接格式化为NTFS格式的，我们将300GB的格式化为MAC OS X 格式，然后将700GB的分区格式化为ExFat格式，如果你想要知道不同的格式之间有什么不同，谷歌一下，会得到你想要的一切。</p>
-<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-2.jpeg" alt="image"></p>
-<p>上述操作做完之后，效果会是每次当你的移动硬盘连接到你的电脑时，会为两部分，300GB以及700GB，且为MAC OS X格式，以及ExFat格式，现在我们只需要将移动硬盘连接到一台Windows电脑上，将ExFat这个硬盘格式化为NTFS格式就好了。现在你要做的只不过花费一些时间把刚刚拷贝过去的你的资料转移回来就可以了。<br>现在我们就拥有了两个分区的移动硬盘，可以应付不同的操作系统，进行所需要的操作。</p>
-<p>其实目前mac也可以直接转换NTFS格式</p>
-<h1 id="TimeMachine备份"><a href="#TimeMachine备份" class="headerlink" title="TimeMachine备份"></a>TimeMachine备份</h1><p>很简单，打开系统偏好设置，点击TimeMachine，选择那个你刚刚分区成功容量为300GB格式为MAC OS X的硬盘，经过蛮久的等待，就备份成功喽，很容易操作以及理解，Apple的支持文档也做了详细的步骤解释 <a href="https://support.apple.com/zh-cn/HT201250">Apple支持</a></p>
-<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-3.jpeg" alt="image"></p>
-<h1 id="移动硬盘保养及使用实测"><a href="#移动硬盘保养及使用实测" class="headerlink" title="移动硬盘保养及使用实测"></a>移动硬盘保养及使用实测</h1><p>1、防止硬盘非正常情况下拔出 以及剧烈碰撞</p>
-<p>2、买一些知名的 硬盘比如希捷 西部数据的</p>
-<p>3、在读写中避免震动</p>
-<p>到这里，TimeMachine的备份以及我们移动硬盘的分区就全部搞定了，yeah~</p>
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>要手动启动备份，请从菜单栏的“时间机器”</p>
-<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-4.png" alt="image"></p>
-<p>菜单中选取“立即备份”。使用这个菜单，还可以查看某一备份的状态或跳过正在进行的某一备份。</p>
-<p><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/5-5.jpeg" alt="image"></p>
-]]></content>
-      <categories>
-        <category>Computer</category>
-        <category>Hardware</category>
-        <category>Storage</category>
-      </categories>
-      <tags>
-        <tag>计算机技能</tag>
-        <tag>TimeMachine</tag>
-        <tag>MacOS</tag>
-        <tag>移动硬盘</tag>
       </tags>
   </entry>
   <entry>
@@ -493,24 +493,29 @@
       </tags>
   </entry>
   <entry>
-    <title>如何将Chrome插件打包以及再安装</title>
-    <url>/2022/01/28/%E5%A6%82%E4%BD%95%E5%B0%86Chrome%E6%8F%92%E4%BB%B6%E6%89%93%E5%8C%85%E4%BB%A5%E5%8F%8A%E5%86%8D%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h1 id="打包chrome插件"><a href="#打包chrome插件" class="headerlink" title="打包chrome插件"></a>打包chrome插件</h1><p>在chrome的扩展程序页签，勾选开发者模式，点击打包程序，拓展程序根目录选择要打包的程序，秘钥空着就行，再点击打包拓展程序即可。</p>
+    <title>删除一个文档里的所有中文和标点-适用于中文不夹杂在英文里的情况</title>
+    <url>/2023/07/13/%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E6%96%87%E6%A1%A3%E9%87%8C%E7%9A%84%E6%89%80%E6%9C%89%E4%B8%AD%E6%96%87%E5%92%8C%E6%A0%87%E7%82%B9-%E9%80%82%E7%94%A8%E4%BA%8E%E4%B8%AD%E6%96%87%E4%B8%8D%E5%A4%B9%E6%9D%82%E5%9C%A8%E8%8B%B1%E6%96%87%E9%87%8C%E7%9A%84%E6%83%85%E5%86%B5/</url>
+    <content><![CDATA[<p>虽然word文档里可以使用替换通配符方法将中文字符替换，但是有时候会将空格去掉，并不保险。所以本文采用的逻辑是—如果一行包含中文字符则将此行删掉，最终得出的版本与原版在word上利用审阅按钮下的compare功能进行比较，算法实现的python代码可以用gpt得到，特别适合中英文双语翻译的文档删除中文或英文获取单语版本的使用场景。</p>
 <span id="more"></span>
-
-<p>1、密钥文件无用可删除<br>2、如何获取拓展程序根目录：<br>chrome浏览器输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chrome://version/</span><br><span class="line">个人资料路径	/Users/shawleo/Library/Application Support/Google/Chrome/Default</span><br></pre></td></tr></table></figure>
-<p>在个人资料路径里找到Extensions文件夹同时找到extension的ID方便找到相应文件夹</p>
-<h1 id="手动安装chrome插件"><a href="#手动安装chrome插件" class="headerlink" title="手动安装chrome插件"></a>手动安装chrome插件</h1><p>首先在 Chrome 設置 -&gt; 更多工具 -&gt; 擴充 (chrome://extensions/)，將右上角開發人員模式給啟用，以目前情況來說直接把 crx 文件檔案拖曳過去，會出現<br><code>CRX_HEADER_INVALID </code><br>或<br><code>crx required proof missing</code></p>
-<p>將網路下載來的 CRX 外掛擴充功能，將副檔名由 .crx 改為 .zip，並且直接拖曳到擴充功能頁籤就可以順利執行運作了。<br>参考<br><a href="https://zh.vpnclub.cc/chrome-browser-crx-install/">https://zh.vpnclub.cc/chrome-browser-crx-install/</a></p>
+<p>1、Python实现代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import docx</span><br><span class="line"></span><br><span class="line"># Open the Word file</span><br><span class="line">doc = docx.Document(&#x27;your_file_name.docx&#x27;)</span><br><span class="line"></span><br><span class="line"># Loop through all paragraphs in the document</span><br><span class="line">for para in doc.paragraphs:</span><br><span class="line">    # Check if the paragraph contains any Chinese characters</span><br><span class="line">    if any(&#x27;\u4e00&#x27; &lt;= c &lt;= &#x27;\u9fff&#x27; for c in para.text):</span><br><span class="line">        # If it does, remove the paragraph</span><br><span class="line">        doc._element.body.remove(para._element)</span><br><span class="line"></span><br><span class="line"># Save the modified document</span><br><span class="line">doc.save(&#x27;modified_file_name.docx&#x27;)</span><br></pre></td></tr></table></figure>
+<p>2、代码解释：This script uses the python-docx library to read and modify the Word document. The any() function is used to check if any Chinese character exists in the paragraph. If it does, the paragraph is removed from the document.</p>
+<p>You need to replace ‘your_file_name.docx’ and ‘modified_file_name.docx’ with the actual names of your input and output files. Also, make sure to install the python-docx library before running the script.</p>
+<p>Note that this script only works for Chinese characters. If you want to remove paragraphs that contain any non-Latin characters, you can modify the condition in the if statement accordingly.</p>
+<p>如果未安装docx库，安装docx库，注意如果电脑安装的是python3要用pip3 install：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">shawleo@ShawdeMacBook-Pro ~ % cd /Users/shawleo/Desktop </span><br><span class="line">shawleo@ShawdeMacBook-Pro Desktop % python3 clean-chinese-character.py</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;/Users/shawleo/Desktop/clean-chinese-character.py&quot;, line 1, in &lt;module&gt;</span><br><span class="line">    import docx</span><br><span class="line">ModuleNotFoundError: No module named &#x27;docx&#x27;</span><br><span class="line">shawleo@ShawdeMacBook-Pro Desktop % pip install python-docx</span><br><span class="line">zsh: command not found: pip</span><br><span class="line">shawleo@ShawdeMacBook-Pro Desktop % pip install python-docx</span><br><span class="line">zsh: command not found: pip</span><br><span class="line">shawleo@ShawdeMacBook-Pro Desktop % pip3 install python-docx</span><br><span class="line">Collecting python-docx</span><br></pre></td></tr></table></figure>
+<p>3、使用代码消除中文，只用把python下面这行代码改写，cd目录，然后python3 clean-chinese-character.py不用加文件路径，因为已经cd到该目录，注意word文件和py文件在同一目录下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">doc = docx.Document(&#x27;1.docx&#x27;)</span><br></pre></td></tr></table></figure>
+<p>4、检查，利用word的compare功能，看一看是否只删去了中文，以防万一，选项按钮如下图所示：<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/20230713-1.png" alt="image"></p>
 ]]></content>
       <categories>
         <category>Computer</category>
         <category>Software</category>
-        <category>Chrome</category>
+        <category>Word</category>
       </categories>
       <tags>
-        <tag>Chrome</tag>
+        <tag>计算机技能</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -563,8 +568,8 @@
       </categories>
       <tags>
         <tag>计算机技能</tag>
-        <tag>Automator</tag>
         <tag>Python</tag>
+        <tag>Automator</tag>
       </tags>
   </entry>
   <entry>
@@ -589,6 +594,27 @@
         <tag>法律笔记</tag>
         <tag>国际法</tag>
         <tag>条约法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何将Chrome插件打包以及再安装</title>
+    <url>/2022/01/28/%E5%A6%82%E4%BD%95%E5%B0%86Chrome%E6%8F%92%E4%BB%B6%E6%89%93%E5%8C%85%E4%BB%A5%E5%8F%8A%E5%86%8D%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h1 id="打包chrome插件"><a href="#打包chrome插件" class="headerlink" title="打包chrome插件"></a>打包chrome插件</h1><p>在chrome的扩展程序页签，勾选开发者模式，点击打包程序，拓展程序根目录选择要打包的程序，秘钥空着就行，再点击打包拓展程序即可。</p>
+<span id="more"></span>
+
+<p>1、密钥文件无用可删除<br>2、如何获取拓展程序根目录：<br>chrome浏览器输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chrome://version/</span><br><span class="line">个人资料路径	/Users/shawleo/Library/Application Support/Google/Chrome/Default</span><br></pre></td></tr></table></figure>
+<p>在个人资料路径里找到Extensions文件夹同时找到extension的ID方便找到相应文件夹</p>
+<h1 id="手动安装chrome插件"><a href="#手动安装chrome插件" class="headerlink" title="手动安装chrome插件"></a>手动安装chrome插件</h1><p>首先在 Chrome 設置 -&gt; 更多工具 -&gt; 擴充 (chrome://extensions/)，將右上角開發人員模式給啟用，以目前情況來說直接把 crx 文件檔案拖曳過去，會出現<br><code>CRX_HEADER_INVALID </code><br>或<br><code>crx required proof missing</code></p>
+<p>將網路下載來的 CRX 外掛擴充功能，將副檔名由 .crx 改為 .zip，並且直接拖曳到擴充功能頁籤就可以順利執行運作了。<br>参考<br><a href="https://zh.vpnclub.cc/chrome-browser-crx-install/">https://zh.vpnclub.cc/chrome-browser-crx-install/</a></p>
+]]></content>
+      <categories>
+        <category>Computer</category>
+        <category>Software</category>
+        <category>Chrome</category>
+      </categories>
+      <tags>
+        <tag>Chrome</tag>
       </tags>
   </entry>
   <entry>
@@ -643,31 +669,6 @@
       </tags>
   </entry>
   <entry>
-    <title>车位私下转让法律风险</title>
-    <url>/2021/10/31/%E8%BD%A6%E4%BD%8D%E7%A7%81%E4%B8%8B%E8%BD%AC%E8%AE%A9%E6%B3%95%E5%BE%8B%E9%A3%8E%E9%99%A9/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="Oh, these decrypted content cannot be verified, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="10a82a58335795d0ef6d315388e05440ea734f9829ea8f7cfecf35e4b8edd4a5">4fd794d6b60cfd5261d4c1a55ab190591b81c11ee14424bdb4a4075e20dbfbb738e44f480d50f8f7265e36210c0d5a90f4d3dc775bc2b5ad81a19a36c50cdb4fe878e7bf1215229fbd1d480d97d88bde8e4ec8a1025ef0d4223d87e08f5014b799685e3c3a21505e71a635167e88d54664646f7a165c80eb6699c083027132723d2756488b076cd37ffe5406804d384894f0ba8f6543bb21d8ed7bfa77d2a15e20da691f166eb7ac694a866e4aeee553457a93f6eef092f1ce5ac9e9f4fca309f30348aad5c5e7829a19b510406cac3e899a09d91293c5e6bef49589769df832f1e27de77d8787e503051d1cc5dff7bad67e2bf7fe3421595a6c39b1bb82a8a816dbf3ad319b274881b524a6a8be1c9170714e08bf021d3f67ea6d91590b05d31aa2d6e06c8909132e0c43f471880b4a857ff4cfbbe74f466dd131024ca7ae335feda5a19e7cc546a72728515b8c0adbedd6dbecc7f09705e3e6a8f56f804de94acdf291160e90be243a78d2460be3325e851315ae82774aba4114c147b04848cbde9dcdc9d6e2dbbb1ba34f3bf117ee5ae1c04742bca54eb7dab5ddf86faa16e258d5fe9f739a30605d9de9ef3bfe77582ef5851e8be37776fdb7cfc5098d1b24e888b8646947036a015e0be173c105d50f2c23fa0418489a6ccc28b6ddfec76f7343338c5deb0ee1e82de61f876975f2539b061fcfd2540dead939aeebacf899e888f50b5a120c2c955f9cd20477dd41cc87589045c689a703d83e5702d9c1f37c910e29c6a36f91ae724dbdebc556be7f9eb1937fa37650fd52cba13b35568643150e20f7e5220eac854a484e26b5cd78522da1528bcf4fdedb85079678d993bef083193f2450a5498ce9e0bb5930b5944299d6fa6816ea5b396516e0f718493f517d8e368857bcbeb15f984e80690c261d291603fb95f063f656627828e8c9a46b789d78883a422947d468ffe78759d4f5c7203bba6efaa0e9a7c1bf740e07335a0e12dd80722ac28751f33821770ccf9bd5ff9d2cc2dc6c085fb1317c0e0d82273597143a77334f487d16d2e41282d7268551ed869dd16ec2039e3f03d6f9203685ba02fda16a82d022a36242e1bc35cb814e5745b37fa651362ac929246b59c2e6cfa3268ce504a2f75468c2703b7f594c79826f651ed1ead04415a0c62a8533ce1620e33bd6410639dae9cba321ba7ac39b19b80a04ff4c72ae4b78069c2bd84857bf357fc190b88decc823b42313ec59fe4ac203d5c521f8f766871b99c95a620710389c28aed0af4ebd855849ecbc4f4b4b7727bc64d8d5be1dc4d59245f3179146e803e88014fff0e1d899b8f6c203f686a84d0a4d9d9ec7fffdc84c22b9c6b695af6455ee673d6742cd6275d857eaf2f7d9b8506e5a0ce28d200b2d2540ad2c359a60ed92dae2ac0433780af5595dbeb1e7bd24f11c0a5d3eb67ee4710434db1da30398b8fb23bae0b9c3638782dd9d18ad58fc52f2d94a70d8048eb949ebb12133a15e2c7dd2288188cc06769f0789e5b54b4290c762e5a47ef9d178ecba54ef1c741e693533702e00c47c3e921375b73294dfe773b9a806ea24c67c348ede2a8d730b7ff385de237c4b93d1555a66ed5a5cf64ce78030581e71508490b9de87a3563bf3596cb53a7c805a27f6f54f6786dcf2c154d54ba0f4a3130d7712bb0f6f55e2b332c23a88f58835c216fbf76482d133be3a3a0563927940605dabd06915269e1c0c711e9f4fbdaa958fe118182939202f58e4e62f225930077d4269143fab13be3560a2054bef16e90b009ba4b1d254f14251c1745f9f09d9f5cbe6d6f59cbaa1567c5a31344bf89ded25e0beb15aed7459e254882088cdeead4a245a8f2e197d52c5b2183e2f777b13039c4a88238b62fffbb7e0b7a4ea8f933d1e6aff8e112a809ea1c5f9962d15b0261c75983b44cc8cab82d34d22376849a502d602b247b9c7223c74c90a3b56b4bbe1649a0d85865ebb461ee6c7eb15ba94982ec534981dcb7afbf8b17bcaff9d240152a609ed441d397e382abbe7d085b4e2102339d77a53eed48f1d8f0c4ebeff043e66af5ea0347898444287738c3639cffc375e2b499818373e6847ac3c888a7b5e9cba5138268b8da7d334754ac40eaa969ac9ec74d3fa65abf55cb4e6cd9caac45d6c0d7dfe96ca02b2feca1fd72372bbade146352db2a7b44c0761cdb129d4be446d10b0fcd96810370439a5b3dde97608ac10280b474fe3d99ab56b5f2a3e21ec90a10c86be7cd6f7f4c0b636b656dca6e6b539e7f9f631e0a8a5b8ad3424a577bf1ecd8834b1c6d544de9343e5777a36094e5824fa89c5c215aaeabfeae4fe04f9d0b3e3b88c34f9e78711fcf8b95d1660ee42795c10e00de22fef63506ed43f2f9f1ba6d44ffaa1abcb3791585ef7cf722814c804903b2c6d65d3d14246068a4cf9ed7e8ea3027bca1ebf5e78e0ffa9323e3d6197e56cfa00c97fc5897cd5c4ea18bd8a7630a46612b5aa829e62d16e0a9d4f55221cb3f6e46a2c577fb989ded2d1ea9a353d24b212d577e088763b54cfd8708772a326744b4355f9e689dd3cf745929286374fe3d0a3efb9bc38941ebcc3c6edbf966b75509d44636eae0e0b1bdf9e7dee8bd86352853fb0ccec210777aeddfafafb9c0d0a576ee82c7f1c44a49c9d35fc0bacc4760e8808719c381441fc1ede7666a6b64c73e996687db618ed00c6dc23e9316bc0c99f33ecd8a43a1046fe4d927e85bfb9873c320a6731c369e4c4aa7977ba0ebb6f4ac2656909c7300d49815d26003ba5a3381a7584e294f0c0613dac7985fe9b2a07c210469b7d7f17473c0d3f96a9842511de2c81b565f4aa29b9d80a57cdc12996d40cfaff8203ed39500131fc403dd95a74d8f2858f18ca2b6218cc2224ab5a26eae8360f4572a0b583c187ea8bc7e41dfd27f1e86fb580832bf1dd0ab532c39758c6d5b3423360ad96cb44ddefcaf2db325187b43a972ecaea3784cb309222bbb9dafd298404ad8995130b46a3fb8a3f95af41d33d4d715c5dcb50103404e9b2e525e31bba836540b52ed1d6c0eaf53e0bc0c171fc0ae3cf1f822f19808c274ae8ac93ae68ffb051d58d96f7b2d58e4dd12863431a4a348812a2c1b82d2682580f92fe341b29e98b4911506a2b930ced8dfed847b28f65130e62853e9da6e6edd14ee7a8267e414c3db545c045947188eb9b514a33dce2303bb2c1e9029f7944e325caedd4efe16ac0fa9886f5f9dc0aca0c5ab2438170bc71be69f1d2041c2d3e2f33ae8e7ba0123a47acf722fbbb559343300b258752c479a4b8ff09e286021aa438774aa38f628a493a7da3acf86d591befd56cfae5325a0a766a99895aca027c3908d37a8f0a0180cf87c220f96a7023585e3e0c91244286ef6387e0fe0d52200f6b4038da834933b285c5d3cd6e77b60351e95ea9872f3d491535c2577f90ded2040bf850bbd4cfe46f4263926c070037f9599b7b586f4a51d73853096d4ced062960b3b000a47fddbaacec40a4cfcba733fc6d69fd25716acaa6a2d68238fd40c6ecfcfa5854e6e4942e5c4e6c6521b088c6f9e5de8a116a26dad281019fb7a2942ccebee34514fa0d55516b5c199e233a7bfbc4fa2e9aed4b5ff347eddb2d4cd7b94a8ddb113599d9fcaa91a2edc8ed0024e23380e8a4a1d06e06826daa88eb1974128273e8d9b21d5a556184a146bf47cc4dd03083657f007d27765ccc26f5a07c36fbdf4aabf9135e0f5319b3561ec975d8904acde680b37a56934b251aefb4ad1e560a1253da86482f4f24cd0f1893734c5a58504f553a7c8b4b02bbd844f2f74562e6906cd4d923b3c5d7d41b5edabbf2b6e24dc5e9a5d294822b36e94312c786e17bf584e34c55012abb83c799709cfa4ec8084d36457e0afffd23835b107411db27f5e93b18b154aa04f273ea38d055c9171bf18f8faee5281ea877bbaf75e16c267985652fe17d28f6bc1032012c42b2ec95c50c0379cb3b4aa62f997a15cfefd01baac6eca7b06ce6102473749caeb9dfd37a56986275cd779a13ae2432b680311adfed5f82a07e9b9c5cb1cdcdaa2e018ed231f218a66ac5a4ac4560d7c096402d9e748530bdaa95aec2aef9143abdca917d8ed86ac99272b4ea26c0a80df8d7086c9fb7a2ae6c66efcd2d412b429d422fd3419de3bb28bbe82da1a4c5c29a3886896c2ca105d191980671194069798f9423f23f98fbd030a5e880969b14328d4e260825b9b0911a9b04f24ef7abb3a0b25ea8043cceb5cc4bdabe7a9e93cb9e993ae3bf1c1718eb55392ecffb47f01bf42ab3b27b96d9e25958970dfb39f3bebb17f301c5e8231a4f7b059e421e6e77284b721a4c82ded5f54e5f0ef99fdfd0992c3ac0f0bc5cc7021248a0c26c47f48b4e8f550f80f41fb9f4ab4afc329e116c12d8fcf8cf1094cee4cb845e54ada29b533d5e283d5be8a740e6dddc28d8a19d17a645adc04022177ce6c5dd00ff750e0642f793e628c05598c6997d9f86aa7ab155c90a40e8eb3706a9da65b3f7bda267ae07c4f532b5fe2667edd60dfed863f7cc9a061270d6b883b910b6e6d039ddcee9e26add1c1300443b549f20e52d3f1a057cadff83515b366bee690a29ae82cee805b05a193203890923e7c9767905da7496fc9724f1c72f8ea340a0d04a03d3ee076826a2498fdb2693dd71dac217cf8bbb2f402fe6dc4a241b5b8200faddb1d2bb0508eff7c4588dcf508d1558683c3c7bcc7bd04acf113f5c76e81187c76278306ba9bfa506901d26f11ad6388e91500c25797237e45ec3f430ab66eca2d0afeb06643735e9a55884cbda4f498410993f173759bef66313c285456e0a9dd93c69f621d3cd32a1657d0006b64eceee59f2b1d0ce41267937075afb33872279a4a8f1a003ab7d1aad7a410e44cd47bc64824e36fc41db3f6e0d7f9f642df9b9759b3b9c</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Please add my wechat(ID leeoshaw) to get the password.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>Law</category>
-        <category>Chinese law</category>
-        <category>Legal practice</category>
-      </categories>
-      <tags>
-        <tag>法律笔记</tag>
-        <tag>encryptPassage</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>删除 mac某个文件夹中的DS_Store 文件</title>
     <url>/2023/03/12/%E5%88%A0%E9%99%A4%20mac%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E7%9A%84DS_Store%20%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<p>参考1:<a href="https://zhuanlan.zhihu.com/p/439868892">https://zhuanlan.zhihu.com/p/439868892</a></p>
@@ -695,29 +696,28 @@
       </tags>
   </entry>
   <entry>
-    <title>删除一个文档里的所有中文和标点-适用于中文不夹杂在英文里的情况</title>
-    <url>/2023/07/13/%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E6%96%87%E6%A1%A3%E9%87%8C%E7%9A%84%E6%89%80%E6%9C%89%E4%B8%AD%E6%96%87%E5%92%8C%E6%A0%87%E7%82%B9-%E9%80%82%E7%94%A8%E4%BA%8E%E4%B8%AD%E6%96%87%E4%B8%8D%E5%A4%B9%E6%9D%82%E5%9C%A8%E8%8B%B1%E6%96%87%E9%87%8C%E7%9A%84%E6%83%85%E5%86%B5/</url>
-    <content><![CDATA[<p>虽然word文档里可以使用替换通配符方法将中文字符替换，但是有时候会将空格去掉，并不保险。所以本文采用的逻辑是—如果一行包含中文字符则将此行删掉，最终得出的版本与原版在word上利用审阅按钮下的compare功能进行比较，算法实现的python代码可以用gpt得到，特别适合中英文双语翻译的文档删除中文或英文获取单语版本的使用场景。</p>
-<span id="more"></span>
-<p>1、Python实现代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import docx</span><br><span class="line"></span><br><span class="line"># Open the Word file</span><br><span class="line">doc = docx.Document(&#x27;your_file_name.docx&#x27;)</span><br><span class="line"></span><br><span class="line"># Loop through all paragraphs in the document</span><br><span class="line">for para in doc.paragraphs:</span><br><span class="line">    # Check if the paragraph contains any Chinese characters</span><br><span class="line">    if any(&#x27;\u4e00&#x27; &lt;= c &lt;= &#x27;\u9fff&#x27; for c in para.text):</span><br><span class="line">        # If it does, remove the paragraph</span><br><span class="line">        doc._element.body.remove(para._element)</span><br><span class="line"></span><br><span class="line"># Save the modified document</span><br><span class="line">doc.save(&#x27;modified_file_name.docx&#x27;)</span><br></pre></td></tr></table></figure>
-<p>2、代码解释：This script uses the python-docx library to read and modify the Word document. The any() function is used to check if any Chinese character exists in the paragraph. If it does, the paragraph is removed from the document.</p>
-<p>You need to replace ‘your_file_name.docx’ and ‘modified_file_name.docx’ with the actual names of your input and output files. Also, make sure to install the python-docx library before running the script.</p>
-<p>Note that this script only works for Chinese characters. If you want to remove paragraphs that contain any non-Latin characters, you can modify the condition in the if statement accordingly.</p>
-<p>如果未安装docx库，安装docx库，注意如果电脑安装的是python3要用pip3 install：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">shawleo@ShawdeMacBook-Pro ~ % cd /Users/shawleo/Desktop </span><br><span class="line">shawleo@ShawdeMacBook-Pro Desktop % python3 clean-chinese-character.py</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;/Users/shawleo/Desktop/clean-chinese-character.py&quot;, line 1, in &lt;module&gt;</span><br><span class="line">    import docx</span><br><span class="line">ModuleNotFoundError: No module named &#x27;docx&#x27;</span><br><span class="line">shawleo@ShawdeMacBook-Pro Desktop % pip install python-docx</span><br><span class="line">zsh: command not found: pip</span><br><span class="line">shawleo@ShawdeMacBook-Pro Desktop % pip install python-docx</span><br><span class="line">zsh: command not found: pip</span><br><span class="line">shawleo@ShawdeMacBook-Pro Desktop % pip3 install python-docx</span><br><span class="line">Collecting python-docx</span><br></pre></td></tr></table></figure>
-<p>3、使用代码消除中文，只用把python下面这行代码改写，cd目录，然后python3 clean-chinese-character.py不用加文件路径，因为已经cd到该目录，注意word文件和py文件在同一目录下</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">doc = docx.Document(&#x27;1.docx&#x27;)</span><br></pre></td></tr></table></figure>
-<p>4、检查，利用word的compare功能，看一看是否只删去了中文，以防万一，选项按钮如下图所示：<br><img src="https://shawleeoblog-1257713203.cos.ap-nanjing.myqcloud.com/20230713-1.png" alt="image"></p>
-]]></content>
+    <title>车位私下转让法律风险</title>
+    <url>/2021/10/31/%E8%BD%A6%E4%BD%8D%E7%A7%81%E4%B8%8B%E8%BD%AC%E8%AE%A9%E6%B3%95%E5%BE%8B%E9%A3%8E%E9%99%A9/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="Oh, these decrypted content cannot be verified, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="10a82a58335795d0ef6d315388e05440ea734f9829ea8f7cfecf35e4b8edd4a5">4fd794d6b60cfd5261d4c1a55ab190591b81c11ee14424bdb4a4075e20dbfbb738e44f480d50f8f7265e36210c0d5a90f4d3dc775bc2b5ad81a19a36c50cdb4fe878e7bf1215229fbd1d480d97d88bde8e4ec8a1025ef0d4223d87e08f5014b799685e3c3a21505e71a635167e88d54664646f7a165c80eb6699c083027132723d2756488b076cd37ffe5406804d384894f0ba8f6543bb21d8ed7bfa77d2a15e20da691f166eb7ac694a866e4aeee553457a93f6eef092f1ce5ac9e9f4fca309f30348aad5c5e7829a19b510406cac3e899a09d91293c5e6bef49589769df832f1e27de77d8787e503051d1cc5dff7bad67e2bf7fe3421595a6c39b1bb82a8a816dbf3ad319b274881b524a6a8be1c9170714e08bf021d3f67ea6d91590b05d31aa2d6e06c8909132e0c43f471880b4a857ff4cfbbe74f466dd131024ca7ae335feda5a19e7cc546a72728515b8c0adbedd6dbecc7f09705e3e6a8f56f804de94acdf291160e90be243a78d2460be3325e851315ae82774aba4114c147b04848cbde9dcdc9d6e2dbbb1ba34f3bf117ee5ae1c04742bca54eb7dab5ddf86faa16e258d5fe9f739a30605d9de9ef3bfe77582ef5851e8be37776fdb7cfc5098d1b24e888b8646947036a015e0be173c105d50f2c23fa0418489a6ccc28b6ddfec76f7343338c5deb0ee1e82de61f876975f2539b061fcfd2540dead939aeebacf899e888f50b5a120c2c955f9cd20477dd41cc87589045c689a703d83e5702d9c1f37c910e29c6a36f91ae724dbdebc556be7f9eb1937fa37650fd52cba13b35568643150e20f7e5220eac854a484e26b5cd78522da1528bcf4fdedb85079678d993bef083193f2450a5498ce9e0bb5930b5944299d6fa6816ea5b396516e0f718493f517d8e368857bcbeb15f984e80690c261d291603fb95f063f656627828e8c9a46b789d78883a422947d468ffe78759d4f5c7203bba6efaa0e9a7c1bf740e07335a0e12dd80722ac28751f33821770ccf9bd5ff9d2cc2dc6c085fb1317c0e0d82273597143a77334f487d16d2e41282d7268551ed869dd16ec2039e3f03d6f9203685ba02fda16a82d022a36242e1bc35cb814e5745b37fa651362ac929246b59c2e6cfa3268ce504a2f75468c2703b7f594c79826f651ed1ead04415a0c62a8533ce1620e33bd6410639dae9cba321ba7ac39b19b80a04ff4c72ae4b78069c2bd84857bf357fc190b88decc823b42313ec59fe4ac203d5c521f8f766871b99c95a620710389c28aed0af4ebd855849ecbc4f4b4b7727bc64d8d5be1dc4d59245f3179146e803e88014fff0e1d899b8f6c203f686a84d0a4d9d9ec7fffdc84c22b9c6b695af6455ee673d6742cd6275d857eaf2f7d9b8506e5a0ce28d200b2d2540ad2c359a60ed92dae2ac0433780af5595dbeb1e7bd24f11c0a5d3eb67ee4710434db1da30398b8fb23bae0b9c3638782dd9d18ad58fc52f2d94a70d8048eb949ebb12133a15e2c7dd2288188cc06769f0789e5b54b4290c762e5a47ef9d178ecba54ef1c741e693533702e00c47c3e921375b73294dfe773b9a806ea24c67c348ede2a8d730b7ff385de237c4b93d1555a66ed5a5cf64ce78030581e71508490b9de87a3563bf3596cb53a7c805a27f6f54f6786dcf2c154d54ba0f4a3130d7712bb0f6f55e2b332c23a88f58835c216fbf76482d133be3a3a0563927940605dabd06915269e1c0c711e9f4fbdaa958fe118182939202f58e4e62f225930077d4269143fab13be3560a2054bef16e90b009ba4b1d254f14251c1745f9f09d9f5cbe6d6f59cbaa1567c5a31344bf89ded25e0beb15aed7459e254882088cdeead4a245a8f2e197d52c5b2183e2f777b13039c4a88238b62fffbb7e0b7a4ea8f933d1e6aff8e112a809ea1c5f9962d15b0261c75983b44cc8cab82d34d22376849a502d602b247b9c7223c74c90a3b56b4bbe1649a0d85865ebb461ee6c7eb15ba94982ec534981dcb7afbf8b17bcaff9d240152a609ed441d397e382abbe7d085b4e2102339d77a53eed48f1d8f0c4ebeff043e66af5ea0347898444287738c3639cffc375e2b499818373e6847ac3c888a7b5e9cba5138268b8da7d334754ac40eaa969ac9ec74d3fa65abf55cb4e6cd9caac45d6c0d7dfe96ca02b2feca1fd72372bbade146352db2a7b44c0761cdb129d4be446d10b0fcd96810370439a5b3dde97608ac10280b474fe3d99ab56b5f2a3e21ec90a10c86be7cd6f7f4c0b636b656dca6e6b539e7f9f631e0a8a5b8ad3424a577bf1ecd8834b1c6d544de9343e5777a36094e5824fa89c5c215aaeabfeae4fe04f9d0b3e3b88c34f9e78711fcf8b95d1660ee42795c10e00de22fef63506ed43f2f9f1ba6d44ffaa1abcb3791585ef7cf722814c804903b2c6d65d3d14246068a4cf9ed7e8ea3027bca1ebf5e78e0ffa9323e3d6197e56cfa00c97fc5897cd5c4ea18bd8a7630a46612b5aa829e62d16e0a9d4f55221cb3f6e46a2c577fb989ded2d1ea9a353d24b212d577e088763b54cfd8708772a326744b4355f9e689dd3cf745929286374fe3d0a3efb9bc38941ebcc3c6edbf966b75509d44636eae0e0b1bdf9e7dee8bd86352853fb0ccec210777aeddfafafb9c0d0a576ee82c7f1c44a49c9d35fc0bacc4760e8808719c381441fc1ede7666a6b64c73e996687db618ed00c6dc23e9316bc0c99f33ecd8a43a1046fe4d927e85bfb9873c320a6731c369e4c4aa7977ba0ebb6f4ac2656909c7300d49815d26003ba5a3381a7584e294f0c0613dac7985fe9b2a07c210469b7d7f17473c0d3f96a9842511de2c81b565f4aa29b9d80a57cdc12996d40cfaff8203ed39500131fc403dd95a74d8f2858f18ca2b6218cc2224ab5a26eae8360f4572a0b583c187ea8bc7e41dfd27f1e86fb580832bf1dd0ab532c39758c6d5b3423360ad96cb44ddefcaf2db325187b43a972ecaea3784cb309222bbb9dafd298404ad8995130b46a3fb8a3f95af41d33d4d715c5dcb50103404e9b2e525e31bba836540b52ed1d6c0eaf53e0bc0c171fc0ae3cf1f822f19808c274ae8ac93ae68ffb051d58d96f7b2d58e4dd12863431a4a348812a2c1b82d2682580f92fe341b29e98b4911506a2b930ced8dfed847b28f65130e62853e9da6e6edd14ee7a8267e414c3db545c045947188eb9b514a33dce2303bb2c1e9029f7944e325caedd4efe16ac0fa9886f5f9dc0aca0c5ab2438170bc71be69f1d2041c2d3e2f33ae8e7ba0123a47acf722fbbb559343300b258752c479a4b8ff09e286021aa438774aa38f628a493a7da3acf86d591befd56cfae5325a0a766a99895aca027c3908d37a8f0a0180cf87c220f96a7023585e3e0c91244286ef6387e0fe0d52200f6b4038da834933b285c5d3cd6e77b60351e95ea9872f3d491535c2577f90ded2040bf850bbd4cfe46f4263926c070037f9599b7b586f4a51d73853096d4ced062960b3b000a47fddbaacec40a4cfcba733fc6d69fd25716acaa6a2d68238fd40c6ecfcfa5854e6e4942e5c4e6c6521b088c6f9e5de8a116a26dad281019fb7a2942ccebee34514fa0d55516b5c199e233a7bfbc4fa2e9aed4b5ff347eddb2d4cd7b94a8ddb113599d9fcaa91a2edc8ed0024e23380e8a4a1d06e06826daa88eb1974128273e8d9b21d5a556184a146bf47cc4dd03083657f007d27765ccc26f5a07c36fbdf4aabf9135e0f5319b3561ec975d8904acde680b37a56934b251aefb4ad1e560a1253da86482f4f24cd0f1893734c5a58504f553a7c8b4b02bbd844f2f74562e6906cd4d923b3c5d7d41b5edabbf2b6e24dc5e9a5d294822b36e94312c786e17bf584e34c55012abb83c799709cfa4ec8084d36457e0afffd23835b107411db27f5e93b18b154aa04f273ea38d055c9171bf18f8faee5281ea877bbaf75e16c267985652fe17d28f6bc1032012c42b2ec95c50c0379cb3b4aa62f997a15cfefd01baac6eca7b06ce6102473749caeb9dfd37a56986275cd779a13ae2432b680311adfed5f82a07e9b9c5cb1cdcdaa2e018ed231f218a66ac5a4ac4560d7c096402d9e748530bdaa95aec2aef9143abdca917d8ed86ac99272b4ea26c0a80df8d7086c9fb7a2ae6c66efcd2d412b429d422fd3419de3bb28bbe82da1a4c5c29a3886896c2ca105d191980671194069798f9423f23f98fbd030a5e880969b14328d4e260825b9b0911a9b04f24ef7abb3a0b25ea8043cceb5cc4bdabe7a9e93cb9e993ae3bf1c1718eb55392ecffb47f01bf42ab3b27b96d9e25958970dfb39f3bebb17f301c5e8231a4f7b059e421e6e77284b721a4c82ded5f54e5f0ef99fdfd0992c3ac0f0bc5cc7021248a0c26c47f48b4e8f550f80f41fb9f4ab4afc329e116c12d8fcf8cf1094cee4cb845e54ada29b533d5e283d5be8a740e6dddc28d8a19d17a645adc04022177ce6c5dd00ff750e0642f793e628c05598c6997d9f86aa7ab155c90a40e8eb3706a9da65b3f7bda267ae07c4f532b5fe2667edd60dfed863f7cc9a061270d6b883b910b6e6d039ddcee9e26add1c1300443b549f20e52d3f1a057cadff83515b366bee690a29ae82cee805b05a193203890923e7c9767905da7496fc9724f1c72f8ea340a0d04a03d3ee076826a2498fdb2693dd71dac217cf8bbb2f402fe6dc4a241b5b8200faddb1d2bb0508eff7c4588dcf508d1558683c3c7bcc7bd04acf113f5c76e81187c76278306ba9bfa506901d26f11ad6388e91500c25797237e45ec3f430ab66eca2d0afeb06643735e9a55884cbda4f498410993f173759bef66313c285456e0a9dd93c69f621d3cd32a1657d0006b64eceee59f2b1d0ce41267937075afb33872279a4a8f1a003ab7d1aad7a410e44cd47bc64824e36fc41db3f6e0d7f9f642df9b9759b3b9c</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Please add my wechat(ID leeoshaw) to get the password.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
       <categories>
-        <category>Computer</category>
-        <category>Software</category>
-        <category>Word</category>
+        <category>Law</category>
+        <category>Chinese law</category>
+        <category>Legal practice</category>
       </categories>
       <tags>
-        <tag>计算机技能</tag>
-        <tag>Python</tag>
+        <tag>法律笔记</tag>
+        <tag>encryptPassage</tag>
       </tags>
   </entry>
 </search>
