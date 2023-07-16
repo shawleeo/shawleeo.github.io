@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Excel 工作表密码保护的解除方法</title>
-    <url>/2021/11/19/Excel%20%E5%B7%A5%E4%BD%9C%E8%A1%A8%E5%AF%86%E7%A0%81%E4%BF%9D%E6%8A%A4%E7%9A%84%E8%A7%A3%E9%99%A4%E6%96%B9%E6%B3%95/</url>
+    <url>/2021/11/20/Excel%20%E5%B7%A5%E4%BD%9C%E8%A1%A8%E5%AF%86%E7%A0%81%E4%BF%9D%E6%8A%A4%E7%9A%84%E8%A7%A3%E9%99%A4%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<p>PS:长密码不太好用<br>PS:克服的是”校阅”选项的”保护工作表”</p>
 <p>利用 VBA 巨集程式破解法</p>
 <span id="more"></span>
@@ -95,7 +95,7 @@
   </entry>
   <entry>
     <title>MAC下Hexo+Github博客搭建教学</title>
-    <url>/2021/10/09/MAC%E4%B8%8BHexo-Github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E5%AD%A6/</url>
+    <url>/2021/10/10/MAC%E4%B8%8BHexo-Github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E5%AD%A6/</url>
     <content><![CDATA[<p>参考1:<a href="https://segmentfault.com/a/1190000038373795">https://segmentfault.com/a/1190000038373795</a></p>
 <p>参考2:<a href="https://godweiyang.com/2018/04/13/hexo-blog/">https://godweiyang.com/2018/04/13/hexo-blog/</a></p>
 <p>开始之前需要在电脑上安装好Git和node.js，Mac上可以使用Homebrew命令行工具来安装Git和node.js</p>
@@ -237,7 +237,7 @@
   </entry>
   <entry>
     <title>Oracle Cloud 折腾记录</title>
-    <url>/2021/11/06/Oracle%20Cloud%20%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/</url>
+    <url>/2021/11/07/Oracle%20Cloud%20%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>PS：想问一下oracle cloud shell咋用？？会用的请评论</p>
 <p>PS：oracle cloud的官方文档写的不咋地，有些错误，请小心</p>
 <p>PS：下述脚本已经github备份，如果wget链接失效可以评论</p>
@@ -317,7 +317,7 @@
   </entry>
   <entry>
     <title>centos7的默认防火墙firewall与ipstable</title>
-    <url>/2022/01/15/centos7%E7%9A%84%E9%BB%98%E8%AE%A4%E9%98%B2%E7%81%AB%E5%A2%99firewall%E4%B8%8Eipstable/</url>
+    <url>/2022/01/16/centos7%E7%9A%84%E9%BB%98%E8%AE%A4%E9%98%B2%E7%81%AB%E5%A2%99firewall%E4%B8%8Eipstable/</url>
     <content><![CDATA[<p><strong>1、默认防火墙firewall</strong></p>
 <p>CentOS 7查看所有已开放端口命令：</p>
 <span id="more"></span>
@@ -432,7 +432,7 @@
   </entry>
   <entry>
     <title>ip失效后 Oracle Cloud更换ip 并重新配置agent</title>
-    <url>/2022/01/13/ip%E5%A4%B1%E6%95%88%E5%90%8E%20Oracle%20Cloud%E6%9B%B4%E6%8D%A2ip%20%E5%B9%B6%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEagent/</url>
+    <url>/2022/01/14/ip%E5%A4%B1%E6%95%88%E5%90%8E%20Oracle%20Cloud%E6%9B%B4%E6%8D%A2ip%20%E5%B9%B6%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEagent/</url>
     <content><![CDATA[<h1 id="更换IP"><a href="#更换IP" class="headerlink" title="更换IP"></a>更换IP</h1><p>点击相应的实例详情 – 【附加的 VNIC】- 点击VNIC详情 – 【IP地址】 – 【…】- 点击编辑</p>
 <span id="more"></span>
 
@@ -521,7 +521,7 @@
   </entry>
   <entry>
     <title>删除一个文档里的所有中文和标点-适用于中文不夹杂在英文里的情况</title>
-    <url>/2023/07/13/%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E6%96%87%E6%A1%A3%E9%87%8C%E7%9A%84%E6%89%80%E6%9C%89%E4%B8%AD%E6%96%87%E5%92%8C%E6%A0%87%E7%82%B9-%E9%80%82%E7%94%A8%E4%BA%8E%E4%B8%AD%E6%96%87%E4%B8%8D%E5%A4%B9%E6%9D%82%E5%9C%A8%E8%8B%B1%E6%96%87%E9%87%8C%E7%9A%84%E6%83%85%E5%86%B5/</url>
+    <url>/2023/07/14/%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E6%96%87%E6%A1%A3%E9%87%8C%E7%9A%84%E6%89%80%E6%9C%89%E4%B8%AD%E6%96%87%E5%92%8C%E6%A0%87%E7%82%B9-%E9%80%82%E7%94%A8%E4%BA%8E%E4%B8%AD%E6%96%87%E4%B8%8D%E5%A4%B9%E6%9D%82%E5%9C%A8%E8%8B%B1%E6%96%87%E9%87%8C%E7%9A%84%E6%83%85%E5%86%B5/</url>
     <content><![CDATA[<p>虽然word文档里可以使用替换通配符方法将中文字符替换，但是有时候会将空格去掉，并不保险。所以本文采用的逻辑是—如果一行包含中文字符则将此行删掉，最终得出的版本与原版在word上利用审阅按钮下的compare功能进行比较，算法实现的python代码可以用gpt得到，特别适合中英文双语翻译的文档删除中文或英文获取单语版本的使用场景。</p>
 <span id="more"></span>
 <p>1、Python实现代码：</p>
@@ -622,7 +622,7 @@
   </entry>
   <entry>
     <title>条约法下Signature ad referendum与Signature的区别</title>
-    <url>/2021/11/23/%E6%9D%A1%E7%BA%A6%E6%B3%95%E4%B8%8BSignature%20ad%20referendum%E4%B8%8ESignature%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <url>/2021/11/24/%E6%9D%A1%E7%BA%A6%E6%B3%95%E4%B8%8BSignature%20ad%20referendum%E4%B8%8ESignature%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[<h1 id="Signature-ad-referendum-暂签）"><a href="#Signature-ad-referendum-暂签）" class="headerlink" title="Signature ad referendum(暂签）"></a>Signature ad referendum(暂签）</h1><p>Where the signature is subject to ratification, acceptance or approval, the signature does not establish the consent to be bound. However, it is a means of authentication and expresses the willingness of the signatory state to continue the treaty-making process. The signature qualifies the signatory state to proceed to ratification, acceptance or approval. It representative may sign a treaty “ad referendum”, i.e., under the condition that the signature is confirmed by his state.  In this case, the signature becomes definitive once it is confirmed by the responsible organ.</p>
 <span id="more"></span>
 
@@ -646,7 +646,7 @@
   </entry>
   <entry>
     <title>甲骨文云通过Cloud Shell以控制台连接的方式连接实例</title>
-    <url>/2022/01/13/%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%91%E9%80%9A%E8%BF%87Cloud%20Shell%E4%BB%A5%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%96%B9%E5%BC%8F%E8%BF%9E%E6%8E%A5%E5%AE%9E%E4%BE%8B/</url>
+    <url>/2022/01/14/%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%91%E9%80%9A%E8%BF%87Cloud%20Shell%E4%BB%A5%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%96%B9%E5%BC%8F%E8%BF%9E%E6%8E%A5%E5%AE%9E%E4%BE%8B/</url>
     <content><![CDATA[<p>1、打开Cloud Shell</p>
 <span id="more"></span>
 
