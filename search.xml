@@ -721,10 +721,10 @@
       </tags>
   </entry>
   <entry>
-    <title>删除一个文档里的所有中文和标点-适用于中文不夹杂在英文里的情况</title>
+    <title>blog-hexo部署到GitHub出现的问题</title>
     <url>/2023/07/17/blog-hexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>参考1:<a href="https://gugeshenjineng.github.io/2021/07/02/hexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/">https://gugeshenjineng.github.io/2021/07/02/hexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/</a></p>
-<p>参考2:<a href="https://stackoverflow.com/questions/13363553/git-error-host-key-verification-failed-when-connecting-to-remote-repository/29908140#29908140">https://stackoverflow.com/questions/13363553/git-error-host-key-verification-failed-when-connecting-to-remote-repository/29908140#29908140</a></p>
+    <content><![CDATA[<p>参考1:<br><a href="https://gugeshenjineng.github.io/2021/07/02/hexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/">https://gugeshenjineng.github.io/2021/07/02/hexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/</a></p>
+<p>参考2:<br><a href="https://stackoverflow.com/questions/13363553/git-error-host-key-verification-failed-when-connecting-to-remote-repository/29908140#29908140">https://stackoverflow.com/questions/13363553/git-error-host-key-verification-failed-when-connecting-to-remote-repository/29908140#29908140</a></p>
 <p>1、在hexo d之后，出现如下代码：</p>
 <span id="more"></span>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ERROR: Permission to gugeshenjineng/gugeshenjineng.github.io.git denied to googleshenjineng.</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (G:\blog\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (events.js:375:28)</span><br><span class="line">      at ChildProcess.cp.emit (G:\blog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">      at Process.ChildProcess._handle.onexit (internal/child_process.js:277:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br><span class="line"></span><br></pre></td></tr></table></figure>
