@@ -743,4 +743,18 @@
         <tag>博客搭建</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Mac Word -- Clear the content in Table</title>
+    <url>/2024/08/29/Mac%20Word%20--%20Clear%20the%20content%20in%20Table/</url>
+    <content><![CDATA[<p>1、Open the Word document;<br>2、Select the table in Word from which you want to delete content;<br>3、Hold down the “Fn key” and press the “Delete key” to remove the content without damaging the table.</p>
+]]></content>
+      <categories>
+        <category>Computer</category>
+        <category>Software</category>
+        <category>Word</category>
+      </categories>
+      <tags>
+        <tag>计算机技能</tag>
+      </tags>
+  </entry>
 </search>
